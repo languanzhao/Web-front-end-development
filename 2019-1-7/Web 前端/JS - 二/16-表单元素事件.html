@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<!-- 1. onchange    http://www.runoob.com/try/try.php?filename=tryjsref_onchange
+  	 2. onsubmit    
+  	 3. onreset  
+  	 4. onselect 
+  	 5. onblur 
+  	 6. onfocus 
+-->
+</head>
+<body>
+	输入你的名字: <input type="text" id="fname" onchange="myFunction1()">
+<p>当你离开输入框后，函数将被触发，将小写字母转为大写字母。</p>
+
+	<p>当提交表单是，触发函数并弹出提示信息。</p>
+<form action="12-选项卡示例.html" onsubmit="myFunction2()">
+  输入名字:  <input type="text" name="fname">
+            <input type="submit" value="提交">
+</form>
+
+<p>当表单被重置后，触发函数并弹出提示信息。</p>
+<form action="12-选项卡示例.html" onreset="myFunction3()">
+	输入您的名字: <input type="text">
+	<input type="reset">
+</form>
+
+选中文本时发生的事件: <input type="text" value="Hello world!" onselect="myFunction4()">
+
+输入你的名字: <input type="text" id="fname2" onblur="myFunction5()">
+<p>当你离开输入框, 即失去焦点，会弹出窗口</p>
+
+输入你的名字: <input type="text" onfocus="myFunction6()" id="focus">
+<p>当输入框获取焦点时，修改背景色（background-color属性） 将被触发。</p>
+
+    <script type="text/javascript">
+    	//1. onchange
+		function myFunction1(){
+	var x=document.getElementById("fname");
+	x.value=x.value.toUpperCase();
+}
+
+    	//2. onsubmit  
+    	function myFunction2() {
+    	 alert("表单已提交");
+}
+		//3. onreset  
+		function myFunction3() {
+    	 alert("表单已重置");
+}
+		//4. onselect 
+		function myFunction4(){
+		 alert("你选中了一些文本");
+}
+		//5. onblur 
+		function myFunction5(){
+		 alert('失去焦点')
+}
+
+		//6. onfocus 
+		function myFunction6(){
+		  var y = document.querySelector('#focus')
+    	  y.style.background="yellow";
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/公共样式.css"/>
+<script type="text/javascript" src="js/jquery1.42.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.source.js"></script>
+<style type="text/css">
+.banner{width: auto;height: auto;}            /* banner的设置为了放左右按钮*/
+.slidebox{width: 1920px;height: 600px;overflow: hidden;position: relative; left: 50%; margin-left: -960px;}/*包含了图片层和对应的按钮层*/
+
+/*用li 转为行内块级的方法*/
+ol{width: 100%;height: 20px;text-align: center;font-size: 0px;position: absolute;left: 0px;bottom: 20px;}
+ol li{width:20px;height: 20px;margin: 0px 10px;display: inline-block;cursor: pointer;background: aqua;}
+
+
+ol li:hover{background: red;}
+ol .on{background: red;}
+
+.prev{display:block;width: 40px;height: 40px;background: url(img/index_prev.png);position: absolute;left: 100px;top:280px;}
+.next{display:block;width: 40px;height: 40px;background:url(img/index_next.png);position: absolute;right: 100px;top:280px;}
+.prev:hover{background: url(img/index_prev_hover.png);}
+.next:hover{background: url(img/index_next_hover.png);}
+</style>
+	</head>
+	<body>
+		<div class="banner">
+		<div class="slidebox">
+	      		<ul>
+	      			<li><a href=""><img src="img/banner1.jpg"/></a></li>
+	      			<li><a href=""><img src="img/banner2.jpg"/></a></li>
+	      			<li><a href=""><img src="img/banner3.jpg"/></a></li>
+	      		</ul>
+	      		<ol>
+	      			<li class="on"></li>
+	      			<li></li>
+	      			<li></li>
+	      		</ol>
+	    </div>
+	    			<a class="prev" href="javascript:void(0);"></a>
+					<a class="next" href="javascript:void(0);"></a>
+	     </div>
+	</body>
+	<script type="text/javascript">
+	jQuery(".banner").slide({mainCell:".slidebox ul",titCell:".slidebox ol li",effect:"leftLoop",autoPlay:true,trigger:"mouseover",titOnClassName:"on"}); // mouseover和click两种触发方式
+</script>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>banner</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/common.css" rel="stylesheet">
+<style type="text/css" media="screen">
+	.banner{width: 1920px;height: 600px;position: relative;left: 50%;margin-left: -960px;overflow: hidden;}
+	ol{width:100%;height:50px;position: absolute;left:0px;bottom:30px;text-align: center;font-size: 0px;}
+	ol li{width: 50px;height: 50px;background: red;display: inline-block;margin:0px 10px;}
+	ol .on{background: #21E4B3;}
+</style>
+</head>
+<body>
+    <div class="banner">
+    	<ul>
+    		<li><a href="" title=""><img src="img/banner1.jpg" alt=""></a></li>
+    		<li><a href="" title=""><img src="img/banner2.jpg" alt=""></a></li>
+    		<li><a href="" title=""><img src="img/banner3.jpg" alt=""></a></li>
+    	</ul>
+    	<ol>
+    		<li class="on"></li>
+    		<li></li>
+    		<li></li>
+    	</ol>
+    </div>
+</body>
+<script type="text/javascript">
+	var index = 0
+	var time
+	function Banner(info){
+		this.banner = document.querySelector(info.banner)
+		this.li = document.querySelectorAll(info.li)
+		this.btn = document.querySelectorAll(info.btn)
+		this.toPlay()
+		this.autoPlay()
+		this.StopStart()
+	}
+
+	Banner.prototype.toPlay = function(){
+		var that = this
+		that.btn.forEach(function(item,i){
+			item.onclick = function(){
+				for (var j = 0; j < that.btn.length; j++) {
+					that.btn[j].className = ''
+					that.li[j].style.display = 'none'
+				}
+				that.btn[i].className = 'on'
+				that.li[i].style.display = 'block'
+				index = i         //需要添加   当显示第三个时点击第二个会跳到第一个
+			}
+		})
+	}
+	
+	Banner.prototype.autoPlay = function(){      //注意是Banner
+		var that = this
+		time = setInterval(function(){
+			if(index >= that.btn.length -1){
+					index = 0
+			}else{
+					index++
+			}
+			for (var j = 0; j < that.btn.length; j++) {
+					that.btn[j].className = ''
+					that.li[j].style.display = 'none'
+				}
+				that.btn[index].className = 'on'
+				that.li[index].style.display = 'block'
+		},1000)
+	}
+
+	Banner.prototype.StopStart = function(){
+		var that = this
+		that.banner.onmouseenter = function(){
+		clearInterval(time)	
+		}
+
+		that.banner.onmouseleave = function(){
+			time = setInterval(function(){
+			if(index >= that.btn.length -1){
+					index = 0
+			}else{
+					index++
+			}
+			for (var j = 0; j < that.btn.length; j++) {
+					that.btn[j].className = ''
+					that.li[j].style.display = 'none'
+				}
+				that.btn[index].className = 'on'
+				that.li[index].style.display = 'block'
+		},1000)
+		}
+	}
+
+	var banner = new Banner({
+		banner:'.banner',
+		li:".banner ul li",              //注意写标点符号
+		btn:".banner ol li"
+	})
+</script>
+</html>

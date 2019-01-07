@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<!-- <script type="text/javascript" language="JavaScript" src="js/jquery-1.11.0.js"></script> -->
+</head>
+<body>
+   <form class="form">
+			<input type="text" value="1" class="val">
+			<input type="button" class="add" value="+">
+			<input type="button" class="min" value="-">
+	</form>
+</body>
+<script type="text/javascript">	
+	    //js 写法
+    
+    var num = document.querySelector(".form")
+    var num_val = num.querySelector(".val")
+    var add = num.querySelector(".add")
+    var min = num.querySelector(".min")
+
+    add.onclick = function(){
+     var value = Number(num_val.value)
+         value++
+     num_val.value = value                       	  // num_val.value = value ++
+    }
+    min.onclick = function(){
+     var value = Number(num_val.value)
+     if(value > 1){
+         value--
+         num_val.value = value
+     }
+    }
+    num_val.onblur = function(){                      //可写成如下写法  
+     var value = this.value                           // var value = num_val.value  
+     var  re = /^\+?[1-9][0-9]*$/                     //可放头部，作为全局变量使用
+     if(!re.test(value)){                             //input框失去焦点，val值为正则表达式    
+         this.value = 1                  			  // num_val.value = 1
+     }
+    }
+    
+
+        //jq 写法                                          //需链接 js 插件
+    
+	// (function(){
+	// 	var num     = $(".form")
+	// 	var	buy_num = num.find(".val")
+	// 	var	add 	= num.find(".add")
+	// 	var	min 	= num.find(".min")
+	// 	var  re 	= /^\+?[1-9][0-9]*$/
+
+	// 	add.click(function(){
+	// 		var val = Number(buy_num.val())         
+	// 		val++
+	// 		buy_num.val(val)							//buy_num.val(val++)
+	// 	})
+
+	// 	min.click(function(){
+	// 		var val = Number(buy_num.val())
+	// 		if(val > 1){
+	// 			val--
+	// 		buy_num.val(val)
+	// 		}
+	// 	})
+	// 	buy_num.blur(function(){
+	// 		var val = $(this).val()
+	// 		if(!re.test(val)){                           //test() 方法用于检测一个字符串是否匹配某个模式.
+	// 			$(this).val(1)
+	// 		}
+	// 	})
+	// })()
+</script>
+</html>

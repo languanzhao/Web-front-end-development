@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<!-- v-model
+    (1)
+    v-model 会忽略所有表单元素的 value、checked、selected 特性的初始值而总是将 Vue 实例的数据作为数据来源。
+    
+    (2)
+    对于需要使用输入法 (如中文、日文、韩文等) 的语言，你会发现 v-model 不会在输入法组合文字过程中得到更新。
+    如果你也想处理这个过程，请使用 input 事件。  
+    
+    修饰符
+	.lazy 在“change”时而非“input”时更新
+	.number 将用户的输入值转为数值类型
+    .trim 自动过滤用户输入的首尾空白字符 
+-->
+</head>
+<body>
+    <div id="app">
+       <input type="checkbox" v-model="checked">
+       <p>{{text}</p>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script type="text/javascript">
+                var vm = new Vue({
+                       el:"#app",
+                       data:{
+                            checked:true
+                       },  
+                       methods:{
+                         
+                       
+                       }      
+                            })
+    </script>
+</html>

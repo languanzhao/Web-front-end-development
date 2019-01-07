@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script type="text/javascript" src="js/jquery1.11.js"></script>
+<style type="text/css" media="screen">
+	div{width: 100px;height: 100px;background: red;position: absolute;opacity: 0;right: 0;left: 0;margin: 0 auto;top:50px;}
+</style>
+</head>
+<body>
+	<button>开关</button>
+	<div>变大</div>
+	<script type="text/javascript">
+//    http://www.runoob.com/jquery/jquery-animate.html
+	// $("button").click(function(){
+	// 	$("div").animate({
+	// 		left:"500px",
+	// 		opacity:"0.6",
+	// 		width:"500px",
+	// 		height:"500",
+	// 		fontSize:"136px"                 //注意fontSize
+	// 	},5000,function(){
+	// 		alert(123)
+	// 	})                            //可设置时间
+	// })
+
+	$("button").click(function(){
+		$("div").animate({
+			left:"0",
+			right:'0',
+			margin:"auto",
+			opacity:"0.6",
+			width:"500px",
+			top:"50px",
+			height:"500px",
+			opacity:'1',
+			fontSize:"136px"                 //注意fontSize
+		},1500,function(){
+			// $(this).animate({marginLeft:"-200px"})      //先执行第一个animate再执行function里的animate
+		})                          
+	})
+    </script>
+</body>
+</html>

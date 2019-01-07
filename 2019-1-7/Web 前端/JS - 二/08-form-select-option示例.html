@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <form name="myForm">
+        <select name="country">
+            <option value="0">请选择所在的国家</option>
+            <option value="1">中国</option>
+            <option value="2">美国</option>
+            <option value="3">英国</option>
+            <option value="4">意大利</option>
+        </select>
+        <select name="city">
+            <option value="0">请选择所在的城市 </option>
+        </select>
+    </form>
+</body>
+<script type="text/javascript">
+//定义一个二维数组
+var city = [
+    ["北京", "上海", "广州", "深圳"],
+    ["华盛顿", "纽约", "旧金山", "西雅图"],
+    ["剑桥", "伦敦", "苏格兰地区", "北爱尔兰地区"],
+    ["罗马", "米兰", "威尼斯", "都灵"]
+];
+
+
+    // var sltCountry = document.myForm.country;                 //获得国家下拉框的对象
+    // var sltCity = document.myForm.city;                       //获得城市下拉框的对象
+       var sltCountry = document.getElementsByName('country')[0]
+       var sltCity = document.getElementsByName('city')[0]
+       
+       sltCountry.onchange = function () {
+       var country = city[sltCountry.selectedIndex - 1];            //得到对应国家的城市数组
+      sltCity.length = 1;                                          //清空城市下拉框，仅留提示选项。
+                                                                 //通过for循环，将城市中的值填充到城市下拉框中
+        for (var i = 0; i < country.length; i++) {
+        sltCity[i + 1] = new Option(country[i], country[i]);
+    }
+}
+</script>
+
+</html>

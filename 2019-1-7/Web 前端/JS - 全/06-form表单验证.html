@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>注册页</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style type="text/css">
+	label{ width: 85px; display: inline-block; text-align: justify; }
+    label.error { width: 200px; }
+</style>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="dist/jquery.validate.min.js"></script>
+<script type="text/javascript" src="dist/localization/messages_zh.min.js"></script>
+</head>
+<body>
+    <form id="reg" action="">
+    	<ul>
+    		<li><label for="">用户名：</label><input name="username" type="text"></li>
+    		<li><label for="">密码：</label><input id="password" name="password" type="text"></li>
+    		<li><label for="">确认密码：</label><input name="confirm_password" type="text"></li>
+    		<li><label for="">手机号：</label><input name="phone" type="text"></li>
+    		<li><label for="">e-mail：</label><input name="email" type="text"></li>
+    		<li><input name="agree" type="checkbox">同意本协议</li>
+    		<li><input type="submit" name="" value="确认注册"></li>
+    	</ul>
+    </form>
+</body>
+<script type="text/javascript">
+	/*$.validator.setDefaults({
+	    submitHandler: function() {
+	      alert("提交事件!");
+	    }
+	});
+	//初始化验证插件
+	$(function(){
+		$("#reg").validate();
+	})*/
+
+	$(function() {
+	// 在键盘按下并释放及提交后验证提交表单
+	  $("#reg").validate({
+	  	//设置规则
+	    rules: {
+	      username: {
+	        required: true,
+	        minlength: 6
+	      },
+	      password: {
+	        required: true,
+	        range:[6,18]
+	      },
+	      confirm_password: {
+	        required: true,
+	        range:[6,18],
+	        equalTo: "#password"
+	      },
+	      email: {
+	        required: true,
+	        email: true
+	      },
+	      phone: {
+	        required: true,
+	        number: true
+	      },
+	      topic: {
+	        required: "#newsletter:checked",
+	        minlength: 5
+	      },
+	      agree: "required"
+	    },
+	    messages: {
+	      username: {
+	        required: "请输入用户名",
+	        minlength: "用户名必需由两个字母组成"
+	      },
+	      password: {
+	        required: "请输入密码",
+	        minlength: "密码长度不能小于 6 个字母"
+	      },
+	      confirm_password: {
+	        required: "请输入密码",
+	        minlength: "密码长度不能小于 6 个字母",
+	        equalTo: "两次密码输入不一致"
+	      },
+	      email: "请输入一个正确的邮箱",
+	      phone: "请输入一个正确的手机号码",
+	      agree: "请接受我们的声明",
+	     }
+	    })
+	});
+</script>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <script type="text/javascript">
+//例子一
+//      ES5继承
+// 		function Student(name){
+// 			this.name = name
+// 		}
+// 		var xiaoming = new Student("小明")
+// 		console.log(xiaoming)
+
+// 		// 好学生
+// 		function goodStudent(name){
+// 			Student.call(this,name)        //逗号
+// 		}
+// 		
+// 		//过桥函数
+// 		function f(){}
+// 		
+// 		f.prototype.__proto__ = Student.prototype
+// 		
+// 		goodStudent.prototype = new f()
+// 		
+// 		goodStudent.prototype.constructor = goodStudent
+// 		
+// 		var xiaohong = new goodStudent("小红")
+		
+		// console.log(xiaohong.__proto__ === goodStudent.prototype)
+		// console.log(goodStudent.prototype.__proto__ === f.prototype)
+		// console.log(f.prototype.__proto__ === Student.prototype)
+		// console.log(Student.prototype.__proto__ === Object.prototype)
+		
+		
+// 		console.log(xiaohong instanceof goodStudent)
+// 		console.log(goodStudent.prototype instanceof Student)
+// 		console.log(xiaohong instanceof Student)
+	
+//      console.log(xiaohong.name)
+		
+		
+		
+// 		class Student{
+// 			constructor(name,age) {
+// 			    this.name = name
+// 				this.age = age
+// 			}
+// 			call(){
+// 				console.log(this.name)
+// 			}
+// 		}
+// 		
+// 		var xiaoming = new Student("小明",18)
+// 		xiaoming.call()
+		
+// 		class Student{
+// 			constructor(name) {
+// 				this.name = name
+// 			}
+// 		}
+// 		var xiaoming = new Student("小明")
+
+// 		class goodStudent extends Student{
+// 		}
+// 		var xiaohong = new goodStudent("小红")
+// 		console.log(xiaohong.name)
+        
+//例子二
+
+    	// ES5继承
+    	 
+		// 动物猫
+		// function Animal(name){
+		// 	this.name = name
+		// }
+		
+		// var cat = new Animal("喵喵")
+		// console.log(cat)
+		// // 其他动物 狗
+		// function otherAnimal(name){
+		// 	Animal.call(this,name)
+		// }
+ 		
+ 	// 	//过桥函数
+		// function f(){}
+		
+		// f.prototype.__proto__ = Animal.prototype
+		
+		// otherAnimal.prototype = new f()
+		
+		// otherAnimal.prototype.constructor = otherAnimal
+		
+		//var dog = new otherAnimal("汪汪")
+
+ 		//console.log(dog)	
+
+
+        //ES6
+ 		// 	class Animal{
+		// 	constructor(name) {
+		// 		this.name = name
+		// 	}
+		// }
+		
+		// var cat = new Animal("喵喵")
+
+		// class otherAnimal extends Animal{
+		// }
+		// var dog = new otherAnimal("汪汪")
+		// console.log(dog)
+    </script>
+</body>
+</html>

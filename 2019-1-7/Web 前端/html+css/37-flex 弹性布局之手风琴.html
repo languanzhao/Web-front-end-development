@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/common.css" rel="stylesheet">
+<!-- flex-grow      flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。
+     flex-shrink    flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+     flex-basis     它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。
+     flex           flex属性是flex-grow, flex-shrink 和 flex-basis的简写，
+                    默认值为0 1 auto。后两个属性可选。 
+ -->
+<style type="text/css" media="screen">
+	.flex{width: 300px;border:2px solid pink;display: flex;flex-direction: column;overflow: hidden;margin: 0px auto;}
+	.flex div{flex:1 1 auto;height: 50px;transition:height 0.7s ease-out;border:1px solid #681919;}
+	.flex div:hover{height: 300px;}
+	.flex div:nth-child(1){background: #416941;}
+    .flex div:nth-child(2){background: #9E5F98;}
+    .flex div:nth-child(3){background: #A3B54D;}
+    .flex div:nth-child(4){background: gray;}
+    .flex div:nth-child(5){background: #7D74AB;}
+	.flex h2{font-size: 18px;text-align: center;}
+	.flex p{text-align: center;}
+	img{width: 457px;height:300px; }
+
+</style>
+</head>
+<body>
+    <div class="flex">
+    	<div>
+    		<h2>金马服装城</h2>
+    		<!-- <a href="" title=""><img src="img/1.jpg" alt=""></a> -->
+    		<p>快速减肥是房价来说哦</p>
+    	</div>
+    	<div>
+    		<h2>龙归服装城</h2>
+    		<!-- <a href="" title=""><img src="img/2.jpg" alt=""></a> -->
+    		<p>案件发生复数发是积</p>
+    	</div>
+    	<div>
+    		<h2>龙归服装城</h2>
+    		<!-- <a href="" title=""><img src="img/3.jpg" alt=""></a> -->
+    		<p>案件发生复数发是积</p>
+    	</div>
+    	<div>
+    		<h2>龙归服装城</h2>
+    		<!-- <a href="" title=""><img src="img/4.jpg" alt=""></a> -->
+    		<p>案件发生复数发是</p>
+    	</div>
+    	<div>
+    		<h2>龙归服装城</h2>
+    		<!-- <a href="" title=""><img src="img/5.jpg" alt=""></a> -->
+    		<p>案件发生复数发是</p>
+    	</div>
+    </div>
+</body>
+</html>

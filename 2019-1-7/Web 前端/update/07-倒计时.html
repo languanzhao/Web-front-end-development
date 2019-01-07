@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+<body>
+    <input type="button" id="btn" value="免费获取验证码" onclick="sendemail()" /> 
+</body>
+<script>
+    var countdown=60;    //初始60秒
+   function sendemail(){
+       var yzm = $("#btn");
+       settime(yzm);
+       
+       }
+   function settime(yzm) { //发送验证码倒计时
+       if (countdown == 0) { 
+           yzm.attr('disabled',false); 
+        
+           yzm.val("免费获取验证码");
+           countdown = 60; 
+           return;
+       } else { 
+           yzm.attr('disabled',true);
+           yzm.val("重新发送(" + countdown + ")");
+           countdown--; 
+       } 
+    setTimeout(function() { 
+       settime(yzm) 
+    }
+       ,1000) 
+   }
+   
+   </script>
+</html>

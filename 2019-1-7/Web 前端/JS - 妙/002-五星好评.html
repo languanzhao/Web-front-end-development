@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>五星好评</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/common.css" rel="stylesheet">
+<style type="text/css" media="screen">
+.mark{width: 135px;margin: 10px auto;height: 28px;}
+.mark li{width: 27px;height: 28px;float: left;cursor: pointer;
+	background:url(img/star.gif) no-repeat 0px 0px;}
+</style>
+</head>
+<body>
+    <div class="mark">
+    	<ul>
+    		<li></li>
+    			<li></li>
+    				<li></li>
+    					<li></li>
+    						<li></li>
+    	</ul>
+    </div>
+</body>
+<script type="text/javascript">									//使用一张图片
+	var mark = document.getElementsByClassName('mark')[0];
+	var li = mark.getElementsByTagName('li');
+	var i=0;
+	 for(i=0;i < li.length;i++){
+	 	li[i].index = i;
+	 	li[i].onmouseover = function(){
+	 		for(i=0;i < li.length;i++){
+	 			if(i <= this.index){
+	 			li[i].style.background ="url(img/star.gif) no-repeat 0px -29px";
+	 			}else{
+	 			li[i].style.background ="url(img/star.gif) no-repeat 0px 0px";
+	 			}
+	 		}
+	 	}
+	 	li[i].onmousedown=function ()
+		{
+			alert('提交成功:' + (this.index+1) + '分' );
+		};
+	 }
+</script>
+</html>

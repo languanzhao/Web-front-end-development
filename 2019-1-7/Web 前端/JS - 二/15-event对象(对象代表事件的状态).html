@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	.a{width: 200px;height: 200px;background: red;}
+	.b{width: 100px;height: 100px;background: green;}
+
+</style>
+</head>
+<body>
+    <form class="form">
+    	<input type="submit" name="">
+    </form>
+    <div class="a">
+    	<div class="b"></div>
+    </div>
+</body>
+<script type="text/javascript">
+	//preventDefault() 
+	var submit = document.querySelector('.form')
+	submit.onclick = function(event){
+		event.preventDefault()             //阻止事件的默认行为   即 无法进行提交
+	}
+	
+	//stopPropagation()
+	var a = document.querySelector('.a')
+	var b = document.querySelector('.b')
+		
+		a.addEventListener('click',function(){
+
+			console.log('a')
+		},false)
+
+		b.addEventListener('click',function(event){
+			event.stopPropagation()        // 阻止事件的传播 即b在a上面时，点击只会触发到b，不会触发到a
+			console.log('b')
+		},false)
+</script>
+</html>

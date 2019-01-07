@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>overflow 属性</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style type="text/css">
+	div{width: 900px;height: auto;}    /* overflow:hidden;的其他用法*/
+p{ width: 250px; height: 100px; background: #F138C2; }
+.visible{ overflow: visible;}
+.hidden{ overflow: hidden; }
+.scroll{ overflow: scroll; }
+.auto{ overflow: auto; }
+</style>
+</head>
+<body>
+	<div>
+		overflow:hidden通常理解下是裁剪超出内容的，实际用途它还有很多用处，比如可以防止当前区域面积被别的元素侵犯
+
+比方一个元素A的所有子元素都是float浮动的，那么这个元素A是没有高度的，尽管他的子元素是有高度的。
+
+那么这个元素A的兄弟元素B可能和他的子元素区块有重合的地方，相当于被其他元素侵犯了。
+
+这时给A加上overflow:hidden，他就会有自己的高度，此高度的范围包含了所有子元素（取其子元素最高的那个高度）。
+
+这时元素A就不会和别的元素区块发生重合被侵犯的现象。很多浮动元素的父元素加上overflow:hidden。都是这个目的，是为了给予高度，并不是真正的防止溢出。
+	</div>
+    <p class="visible">这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要，用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也会出现滚动条。</p>
+    <p class="hidden">这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要，用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也会出现滚动条。</p>
+    <p class="scroll">这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要，用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也会出现滚动条。</p>
+    <p class="auto">这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要，用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也会出现滚动条。</p>
+</body>
+</html>

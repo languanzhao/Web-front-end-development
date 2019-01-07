@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>选项卡</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style type="text/css" media="screen">
+	*{margin: 0;padding: 0;list-style: none;}
+	.tab{width: 323px;height: 322px;border: 1px solid;margin: 0 auto;}
+	.hd{height: 60px;border-bottom: 1px solid;}
+	.hd a{font-size: 50px;line-height: 60px;text-decoration: none;margin: 0px 15px;}
+	.hd li{width: 60px;height: 60px;float: left;border-right: 1px solid;text-align: center;line-height: 60px;}
+	.hd .on{background: #9acd32;}
+	.bd div{display: none;text-align: center;color: #1e8ed8}
+	.bd .on{display: block;}
+	img{width: 323px ;height: 240px;}
+</style>
+</head>
+<body>
+    <div class="tab" @mouseover="enter" @mouseleave="leave">
+		<div class="hd">
+			<ul>
+				<li 
+								v-for="(item,i) of list" 
+								:class="index === i ? 'on' : null" 
+								@click="toClick(i)"
+				>{{item}}</li>
+			</ul>
+			<a href="javascript:void(0)" class="prev" @click="leftBtn">&lt;</a>
+			<a href="javascript:void(0)" class="next" @click="rightBtn">&gt;</a>
+		</div>
+		<div class="bd">
+			<div 
+								v-for="(item,i) of main" 
+								:class="index === i ? 'on' : null"
+			>{{item.con}}<img :src="item.src"></div>
+		</div>
+	</div> 
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	<script type="text/javascript" src="js/选项卡-Vue.js"></script>
+</body>
+<script type="text/javascript">
+
+</script>
+</html>

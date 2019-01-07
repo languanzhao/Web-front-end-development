@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>                    https://cn.vuejs.org/v2/guide/                  </title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+	<div class="app">
+	<!-- <p>{{text}}</p> -->                    	<!-- 插值 -->
+	<!-- <p v-html="html"></p> -->              	<!-- 插标签 -->
+	<!-- <p v-bind:class="css"></p> -->         	<!-- 插类名 -->
+	<!-- <p>{{number+1*23}}</p> -->             	<!-- js表达式 -->
+	<!-- <p>{{type === true ? 1 : 0}}</p> -->   	<!-- 可以写三元运算符，不可写if...else... -->
+	<!-- <p v-if="seen">看得到</p> -->           	<!-- 控制元素是否显示 true 和 false -->
+	<p v-for="txt in arr">{{txt.text}}</p> <!--v-for指令可以绑定数组的数据来渲染一个项目列表： -->
+	
+	<!--<button v-on:click="reverseMessage">逆转信息</button>--><!--v-on指令添加一个事件监听器 -->
+	<!-- <p>{{message}}</p> -->
+
+ 	<!-- <input type="text" name="" v-model="content"> -->   <!-- v-model 指令  双向绑定 -->
+	<!-- <p>{{content}}</p> -->
+	</div>
+		
+	
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	
+    <script type="text/javascript">
+    	// var vm = new Vue({
+    	// 	el:".app",
+    	// 	data:{
+    	// 		name:"小明",
+    	// 		age:18,
+    	// 		hobby:["听歌","跳舞"]
+    	// 	},
+    	// 	methods:{
+    	// 		say:function(){
+    	// 			console.log(this.name);
+    	// 		}
+    	// 	}
+    	// })
+    	// vm.say()
+    	
+    	var vm = new Vue({
+    		el:".app",
+
+    		data:{
+    			text:"显示文本内容",             //插值
+    			html:"<span>显示标签</span>",    //插标签  //容易被xss攻击
+    			css:"a",                        //插类名
+    			number:1,					    //js表达式
+    			type:true,                      //可以写三元运算符，不可写if...else...(true 和 false)
+    			seen:false,                    //控制元素是否显示 true 和 false
+    			arr: [							//v-for 指令可以绑定数组的数据来渲染一个项目列表
+      				{ text: '学习 JavaScript' },
+      				{ text: '学习 Vue' },
+      				{ text: '整个牛项目' }
+    				   ],
+    			message:"文本反转过来",							//v-on 指令添加一个事件监听器
+    			content:"实现表单输入和应用状态之间的双向绑定。"  //v-model 指令  双向绑定
+    			},
+                 
+    			methods:{
+    				reverseMessage:function(){
+    					this.message = this.message.split('').reverse().join('')//this -> vm
+    					console.log(this.message);
+    				}
+    			}
+    	})
+        // 若添加 v-once 则无法添加其他元素进入 arr 中，因为  v-once 只执行一次，不允许其他事件发生
+        vm.arr.push({ text: '新项目' })
+        console.log(vm.arr.push({ text: '新项目' }));
+        //在控制台里，输入 vm.arr.push({ text: '新项目' }),你会发现列表最后添加了一个新项目。
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+<style type="text/css">
+	.box{width: 200px;height: 200px;background: orange;}
+	
+</style>
+<script type="text/javascript">
+	window.onload = function(){
+		var oShow = document.getElementById('show');
+		var oHide = document.getElementById('hide');
+		var oBox = document.getElementById('box');
+		
+		oHide.onclick = function(){
+			oBox.style.display = 'none';
+		}
+		oShow.onclick = function(){
+			oBox.style.display = 'block';
+		}
+	};
+</script>
+	</head>
+	<body>
+		<input id="show" type="button" value="显示" />
+		<input id="hide" type="button" value="隐藏"/>
+		<div id="box" class="box"></div>
+		
+	</body>
+</html>

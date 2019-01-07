@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.js"></script>
+</head>
+<body>
+    <p>段落1</p>
+    <p>段落2</p>
+    <p>段落3</p>
+    <p>段落4</p>
+    <a href="javascript:$('p').show();">显示所有</a>
+
+
+    <span id="foo:bar"></span>
+    <span id="foo[bar]"></span>
+    <span id="foo.bar"></span>s
+</body>
+<script type="text/javascript">
+	
+	// $(document).ready(function(){     //预加载
+		
+	// 	//p的点击事件
+	//   $("p").click(function(){
+	//   	//把当前的元素隐藏掉
+	//     $(this).hide();
+	//     //this.style.display = 'none'
+	//   });
+	// });
+
+	$(function(){						 //预加载简写
+		
+			//p的点击事件
+		  $("p").click(function(){
+		  	//把当前的元素隐藏掉
+		    $(this).hide();
+		    //this.style.display = 'none'
+		  });
+	})
+
+
+	for (var i = 0; i < document.getElementsByTagName('p').length; i++) {
+		document.getElementsByTagName('p')[i].style.color = 'red';
+	}
+
+	$('p').css('color','green');    //一个写法
+
+	$('p').css({                    //多个写法
+		fontSize: '48px',      //jquery写法            font-size:48px;
+		lineHeight: '60px'
+	});
+
+	
+	
+	console.log($('#foo\\[bar\\]'));
+</script>
+</html>

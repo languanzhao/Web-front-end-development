@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css" media="screen">
+	.hide{display: none}
+</style>
+<script type="text/javascript" src="js/jquery1.11.js"></script>
+</head>
+<body>
+<button>隐藏/显示</button>
+<p>这是显示内容</p>
+<p class="hide">这是隐藏内容</p>
+</body>
+<script type="text/javascript">
+	// toggle() 方法来切换 hide() 和 show() 方法。显示被隐藏的元素，并隐藏已显示的元素：
+	$("button").click(function(){
+    $("p").toggle(3000);                     //也可添加时间
+  });
+</script>
+</html>

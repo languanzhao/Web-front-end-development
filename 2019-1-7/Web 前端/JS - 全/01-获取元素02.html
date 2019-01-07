@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--<script type="text/javascript">
+			window.onload = function(){           
+		 otext = document.getElementById('text');
+		     }
+			function change(){    
+					otext.style.color = 'red';
+				}
+	</script>-->
+	<script type="text/javascript">
+		var otext = document.getElementById('text');
+		 function change(){    
+		 		otext.style.color = 'red';
+		 	}
+	</script>
+	</head>
+	<body>
+		<div id="text" onclick="change()">点击我改变颜色</div>       
+	</body>
+	<!--<script type="text/javascript">
+		var otext = document.getElementById('text');   
+		 function change(){    
+		 		otext.style.color = 'red';
+		 	}
+	</script>-->
+	<!--若放在头部需  将  function 方法放 外面 且 去掉var-->
+	<!--此方法与01-获取元素01 中的方法二 不同于 其把 var 放在 function 内-->
+</html>

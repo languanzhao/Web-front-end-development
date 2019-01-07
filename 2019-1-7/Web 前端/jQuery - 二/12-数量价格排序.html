@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css" media="screen">
+*{margin: 0;padding: 0;list-style: none;}
+ul{display: flex;}
+li{width: 150px;height: 200px;border: 1px solid;}
+h2{text-align: center;}
+.price{color:red;font-size: 36px}
+.nums{color:blue;font-size: 18px}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<h2>id:01</h2>
+				<p>价钱:
+					<span class="price">200</span>
+				元</p>
+				<p>数量:
+					<span class="nums">10</span>
+				</p>
+			</li>
+			<li>
+				<h2>id:02</h2>
+				<p>价钱:
+					<span class="price">320</span>
+				元</p>
+				<p>数量:
+					<span class="nums">18</span>
+				</p>
+			</li>
+			<li>
+				<h2>id:03</h2>
+				<p>价钱:
+					<span class="price">500</span>
+				元</p>
+				<p>数量:
+					<span class="nums">8</span>
+				</p>
+			</li>
+			<li>
+				<h2>id:04</h2>
+				<p>价钱:
+					<span class="price">10</span>
+				元</p>
+				<p>数量:
+					<span class="nums">3</span>
+				</p>
+			</li>
+			<li>
+				<h2>id:05</h2>
+				<p>价钱:
+					<span class="price">220</span>
+				元</p>
+				<p>数量:
+					<span class="nums">7</span>
+				</p>
+			</li>
+		</ul>
+		<button type="button" class="numSort" sort="升序">数量排序↑</button>
+		<button type="button" class="priceSort" sort="升序">价钱排序↑</button>
+		
+		<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/JavaScript">
+			// 假设数组可以排序,那列表怎么排序的?↑ ↓
+var arrList = []
+var arr = []
+
+// 排序
+function toSort(arr,sorting){
+	if(sorting === "升序"){
+		arr.sort(function(a, b) {
+			return a > b
+		})
+	}else if(sorting === "降序"){
+		arr.sort(function(a, b) {
+			return a < b
+		})
+	}
+}
+
+// 判断点击的按钮
+function toType(types){
+	arr = []
+	if(types === "numSort"){
+		// 获取数量
+		$(".nums").each(function(i,item){
+			arr.push(Number($(item).text()))
+		})
+		return arr
+	}else if(types === "priceSort"){
+		//获取价钱
+		$(".price").each(function(i,item){
+			arr.push(Number($(item).text()))
+		})
+		return arr
+	}
+}
+
+// 循环显示
+function show(arr,arrList,btnType){
+	if(btnType === "numSort"){
+		arr.forEach(function(item,i){
+			arrList.forEach(function(items,j){
+				var n = Number($(items).find(".nums").text())
+				if(item === n){
+					$(items).appendTo($("ul"))
+				}
+			})
+		})
+	}else if(btnType === "priceSort"){
+		arr.forEach(function(item,i){
+			arrList.forEach(function(items,j){
+				var n = Number($(items).find(".price").text())
+				if(item === n){
+					$(items).appendTo($("ul"))
+				}
+			})
+		})
+	}
+}
+
+$("button").click(function(){
+	var btnType = $(this).attr("class")//获取点击按钮的类型
+	var reorder = $(this).attr("sort")//获取点击按钮的排序
+	
+	var list = $("li")
+	list.each(function(i,item){
+		arrList.push($(item))
+	})
+	
+	toType(btnType)//获取数量或者价钱
+	
+	toSort(arr,reorder)//排序 
+	
+	show(arr,arrList,btnType)//循环显示
+})
+	$(".numSort").click(function(){
+		if($(this).attr("sort") === "升序"){
+		$(this).text("数量排序↓").attr("sort","降序")
+	}else{
+		$(this).text("数量排序↑").attr("sort","升序")
+	}
+	})
+
+	$(".priceSort").click(function(){
+		if($(this).attr("sort") === "升序"){
+		$(this).text("价钱排序↓").attr("sort","降序")
+	}else{
+		$(this).text("价钱排序↑").attr("sort","升序")
+	}
+	})
+		</script>
+	</body>
+</html>
+

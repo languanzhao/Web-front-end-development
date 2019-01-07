@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>     https://blog.csdn.net/a250758092/article/details/78354319       </title>
+<!-- 事件处理的事件修饰符：
+    .prevent / event.preventDefault / event.currentTarget / .stop /.self 与.stop相像，.self只让元素作用于本身
+    .once / .capture / .passive 
+-->
+
+</head>
+<body>
+    <div id="app">
+        <!-- <form @click.prevent.capture="toClick($event)"></form>  添加.capture成为捕获事件 -->
+        <form @click.prevent="toClick($event)">
+            <input type="text">
+                                                        <!-- 冒泡事件：button => form 添加.stop后阻止发生冒泡发生事件传递 -->
+            <!-- <button type="submit" @click.prevent="toClick($event)">点击</button>   -->
+            <button type="submit" @click.prevent.stop="toClick($event)">点击</button>
+                                                        <!-- $event 固定写法 -->
+                                                        <!-- .prevent阻止默认事件发生 -->
+                                                        <!-- .stop阻止事件传递 -->
+        </form>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script>
+                var vm = new Vue({
+                       el:"#app",
+                       methods:{
+                            toClick(event){
+                                //event.preventDefault();        //.prevent阻止默认事件发生
+                                console.log(event.currentTarget)
+                            },
+                            toClick(event){
+                                console.log(event.currentTarget)
+                            }
+                       }         
+                            })
+    </script>
+</html>

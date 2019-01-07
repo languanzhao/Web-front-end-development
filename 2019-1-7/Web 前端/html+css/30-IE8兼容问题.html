@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery1.42.min.js"></script>
+	</head>
+	<body>
+		<div>
+					<p>//css3 IE8兼容							<br />
+添加PIE.htc进入js里，将 behavior:url(js/PIE.htc);position:relative; 哪里有css3，就黏贴到哪里</p>
+
+					<p>//IE8表单占位符兼容问题	                <br />
+
+先链接 jq插件（jquery1.42.min.js） 再链接 value.js 给 form 标签添加 ID 名，在body底部写调用语句。
+					<script type="text/javascript">
+							$('ID名').Form();
+					</script>                                                             </p>
+<p>1.<img src="img/IE8占位符兼容问题.PNG" /></p>
+<p>2.<img src="img/IE8占位符兼容问题02.PNG" /></p>
+<p>3.<img src="img/IE8占位符兼容问题03.PNG" /></p>
+<p>4.<img src="img/IE8占位符兼容问题04.PNG" /></p>
+<p>a.form里的input，textarea等在兼容情况下需使其ling-height 垂直居中。</p>
+<p> b.若想input标签 透明 可用background:transparent;</p>
+<p>例子见创晟电子有限公司</p>
+		</div>
+	</body>
+</html>

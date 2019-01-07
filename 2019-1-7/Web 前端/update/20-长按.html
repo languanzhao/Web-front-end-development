@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+      .Toalert{width: 100%;height: 100%;background:rgba(0,0,0,0.5);position: absolute;left: 0;top: 0;display: none;}
+    </style>
+</head>
+<body>
+    <div class="btn">长按1秒后松手 自动弹出识别二维码，点击识别</div>
+    <div class="btn">长按1秒后松手 自动弹出识别二维码，点击识别</div>
+    <div class="btn">长按1秒后松手 自动弹出识别二维码，点击识别</div>
+    <div class="btn">长按1秒后松手 自动弹出识别二维码，点击识别</div>
+    <div class="btn">长按1秒后松手 自动弹出识别二维码，点击识别</div>
+    <div class="btn">长按1秒后松手 自动弹出识别二维码，点击识别</div>
+    <div class="btn">长按1秒后松手 自动弹出识别二维码，点击识别</div>
+    <div class="btn">长按1秒后松手 自动弹出识别二维码，点击识别</div>
+    <div class="btn">长按1秒后松手 自动弹出识别二维码，点击识别</div>
+    <div class="Toalert">
+
+    </div>
+</body>
+<script>
+            var btn = document.querySelectorAll(".btn")
+            var Toalert = document.querySelector(".Toalert")
+            Toalert.style.display = "none"
+var start = 0
+for(var i=0;i<btn.length;i++){
+    btn[i].addEventListener("touchstart", function(event) {
+    event.preventDefault();
+    start = new Date();
+    var tId = setTimeout(function() {
+        var end = new Date()
+        var time = end - start
+        event.target.innerHTML = "你已经长按" + (time / 100) + "S"
+        (end - start < 2000) && setTimeout(arguments.callee, 10)
+    }, 10)
+}, false)
+
+btn[i].addEventListener("touchend", function(event) {
+    event.preventDefault();
+    if(new Date() - start > 800){
+           Toalert.style.display = "block"
+    }
+    
+}, false)  
+
+}
+
+
+ 
+</script>
+</html>

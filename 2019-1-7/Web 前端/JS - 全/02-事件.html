@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>事件</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <div class="show">
+    	显示
+    </div>
+    <a onclick="hide()" href="javascript:void(0)">点击隐藏</a>
+    <a onmouseenter="hide()" onmouseleave="show()" href="javascript:void(0)">经过隐藏</a>
+
+	<form>
+<input id="username" type="text" name="username" value="请输入用户名" placeholder="请输入用户名" onfocus="FOCUS()" onblur="BLUR()">
+<input type="text" name="tel" id="tel" value="17017270701" onchange="change()">
+    </form>
+</body>
+<script type="text/javascript">
+	
+	function hide() {
+		var hide = document.getElementsByClassName('show')[0];
+		hide.style.display = 'none';
+	}
+	function show() {
+		var show = document.getElementsByClassName('show')[0];
+		show.style.display = 'block';
+	}
+	function FOCUS() {
+		document.getElementById('username').value = '';
+	}
+	function BLUR() {
+		var value = document.getElementById('username').value;
+		var placeholder = document.getElementById('username').placeholder;
+		if (value == '') {
+			document.getElementById('username').value = placeholder;
+		}
+	}
+	function change() {
+//		alert('数据发生改变');
+//		document.getElementById('tel').value = '';
+	}
+</script>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 800px;
+            height: auto;
+            margin: 100px auto;
+            border: 1px solid skyblue;
+        }
+
+        .box ul {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+
+        .box ul li {
+            width: auto;
+            height: 200px;
+            list-style: none;
+            text-align: center;
+            border: 1px solid skyblue;
+        }
+
+        .box ul li h2 {
+            margin: 20px 0;
+        }
+
+        .box ul li span {
+            display: block;
+            width: auto;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            float: left;
+            margin-left: 30px;
+        }
+
+        .box ul li span i {
+            color: red;
+        }
+
+        .box input {
+            width: 100px;
+            height: 50px;
+            border: none;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+
+        .box input:hover {
+            background-color: skyblue;
+        }
+    </style>
+
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li>
+            <h2>id:01</h2>
+            <span>价钱：<i>200</i>&nbsp;元</span>
+            <span>数量：<b>32</b></span>
+        </li>
+        <li>
+            <h2>id:02</h2>
+            <span>价钱：<i>2500</i>&nbsp;元</span>
+            <span>数量：<b>56</b></span>
+        </li>
+        <li>
+            <h2>id:03</h2>
+            <span>价钱：<i>120</i>&nbsp;元</span>
+            <span>数量：<b>100</b></span>
+        </li>
+        <li>
+            <h2>id:04</h2>
+            <span>价钱：<i>3000</i>&nbsp;元</span>
+            <span>数量：<b>120</b></span>
+        </li>
+        <li>
+            <h2>id:05</h2>
+            <span>价钱：<i>100</i>&nbsp;元</span>
+            <span>数量：<b>10</b></span>
+        </li>
+    </ul>
+    <form action="">
+        <input type="button" value="数量排序" id="sortNum">
+        <input type="button" value="价格排序" id="sortPrice">
+    </form>
+</div>
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+<script>
+    $(function () {
+
+        $("#sortNum").click(
+            function () {
+                fn("ul li span b");
+            }
+        );
+
+        $("#sortPrice").click(
+            function () {
+                fn("ul li span i");
+            }
+        );
+
+    });
+
+    function fn(ele) {
+        var arr = []
+        $(ele).each(function (index, e) {
+            arr[index] = parseInt($(e).text());
+        });
+        //  排序开始
+        arr.sort(function (a ,b) {
+            return a > b;
+        });
+        for (i = 0; i < arr.length; i++) {
+            for (j = 0; j < arr.length; j++) {
+                //console.log($(ele).eq(j).text());
+                if (arr[i] == $(ele).eq(j).text()) {
+                   // $(ele).eq(j).parents("li").remove().appendTo("ul");
+                    $(ele).eq(j).parents("li").appendTo("ul");
+                    break;
+                }
+            }
+        }
+    }
+
+</script>
+
+</html>

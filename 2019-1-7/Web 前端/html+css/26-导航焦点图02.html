@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link type="text/css" rel="stylesheet" href="css/common.css">
+<script type="text/javascript" language="javascript" src="js/jquery1.42.min.js"></script>
+<script type="text/javascript" language="javascript" src="js/jquery.SuperSlide.2.1.1.source.js"></script>
+<style type="text/css" media="screen">
+ 			.slidebox{width: 600px;height: 600px;margin: 0px auto;border: 5px solid pink;position: relative;}
+ 			.pic{width:600px;height: 500px;border-bottom: 5px solid pink; overflow: hidden;}
+ 			.pic ul li a img{width: 600px;height: 500px;}
+ 			
+ 			.btn {width: 520px;height: 80px;overflow: hidden;margin:8px auto 0px auto;}
+ 			.btn ul{width: auto;height: 80px;}
+ 			.btn ul li{float:left;width: 150px;height: 78px;margin-right:32px;border: 1px solid #FFFFFF;}
+ 			.btn ul li img{width: 150px;height: 78px;}
+ 			
+			.slidebox .prev{width:40px;height: 80px;display: block;position: absolute;left: 0px;bottom: 6px;background: url(img/index_prev.png) no-repeat center;}
+			.slidebox .next{width:40px;height: 80px;display: block;position: absolute;right: 0px;bottom: 6px;background: url(img/index_next.png) no-repeat center;}
+			.slidebox .prev:hover{background: url(img/index_prev_hover.png) no-repeat center;}
+			.slidebox .next:hover{background: url(img/index_next_hover.png) no-repeat center;}
+			
+			/*.slidebox .btn ul .on{border-color:red;}*/
+			
+</style>
+</head>
+<body>
+<div class="slidebox">
+		<div class="pic">
+			<ul>
+				<li><a href="#"><img src="img/banner1.jpg" alt="" /> </a></li>
+				<li><a href="#"><img src="img/banner2.jpg" alt="" /> </a></li>
+				<li><a href="#"><img src="img/banner3.jpg" alt="" /> </a></li>	
+			</ul>
+		</div>
+		<div class="btn">
+			<ul>
+				<li><img src="img/banner1.jpg" alt="" /></li>
+				<li><img src="img/banner2.jpg" alt="" /></li>
+				<li><img src="img/banner3.jpg" alt="" /></li>
+			</ul>
+		</div>
+		<a class="prev" href="javascript:void(0);"></a>
+		<a class="next" href="javascript:void(0);"></a>
+</div>
+</body>
+<script type="text/javascript">
+		jQuery(".slidebox").slide({mainCell:".pic ul",titCell:".btn ul li",effect:"leftLoop",autoPlay:true });
+		jQuery(".slidebox").slide({mainCell:".btn ul",autoPage:true,effect:"leftLoop",autoPlay:true,scroll:1,vis:3});
+	</script>
+</html>

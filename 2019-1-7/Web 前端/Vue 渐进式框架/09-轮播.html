@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/common.css">
+    <style type="text/css" media="screen">
+        
+        .banner{width: 1920px;height: 600px;position: relative;left: 50%;margin-left: -960px;overflow: hidden;}
+        ul li{display: none;}
+        ul .on{display: block;}
+        ol{width:1920px;height:50px;position: absolute;left: 0px;bottom:30px;text-align: center;font-size: 0px;}
+        ol li{width: 50px;height: 50px;background: #EFE8E8;display: inline-block;margin:0px 10px;font-size: 36px;color:red;text-align: center;line-height: 50px;border-radius: 50%;}
+        ol .on{background: #21E4B3;}
+        
+        .banner .prev{width:40px;height: 40px ;display:block;background:url(img/index_prev.png);position:absolute;top: 280px;left:350px;}
+        .banner .next{width:40px;height: 40px ;display:block;background:url(img/index_next.png);position:absolute;top: 280px;right:350px;}
+        .banner .prev:hover{background:url(img/index_prev_hover.png) ;}
+        .banner .next:hover{background:url(img/index_next_hover.png) ;}
+    </style>
+</head>
+<body>
+  <div class="banner" @mouseover="toEnter" @mouseleave="toLeave">
+          <ul>
+              <li 
+                    v-for="(item,i) of imgs" 
+                    :class="index === i ? 'on' : null"
+              ><a 
+                    :href="item.href"
+              ><img 
+                    :src="item.src"
+              ></a></li>
+          </ul>
+          <ol>
+              <li 
+                    v-for="(item,i) of btn" 
+                    @mouseover="toClick(i)"
+                    :class="index === i ? 'on' : null"
+              >{{item}}</li>
+          </ol>
+          <a href="javascript:void(0)" @click="leftBtn" class="prev"></a>
+          <a href="javascript:void(0)" @click="rightBtn" class="next"></a>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</body>
+<script>
+                var vm = new Vue({
+                    el:".banner",
+                    data:{
+                        imgs:[{
+                            "href":"#",
+                            "src":"img/banner1.jpg"
+                        },{
+                            "href":"#",
+                            "src":"img/banner2.jpg"
+                        },{
+                            "href":"#",
+                            "src":"img/banner3.jpg"
+                        }],
+                        btn:["","",""],
+                        index:0,
+                        timer:"",
+                        delayTime:500 
+                        },
+                    methods:{
+                        toClick:function(i){
+                            this.index = i
+                        },
+                        leftBtn:function(){
+                            this.index <= 0 ? this.index = this.btn.length -1 : this.index-- 
+                        },
+                        rightBtn:function(){
+                            this.index >= this.btn.length - 1 ? this.index = 0 : this.index++
+                        },
+                        toLeave:function(){
+                            this.autoPlay()
+                            // var that = this
+                            // that.timer = setInterval(function(){
+                            //     that.index >= that.btn.length - 1 ? that.index = 0 : that.index++
+                            // },1000)
+                        },
+                        toEnter:function(){
+                            clearInterval(this.timer)
+                        },
+                        autoPlay:function(){       //window.setInterval(function(){  }) 所以setInterval里指向window
+                            var that = this
+                            this.timer = setInterval(function(){
+                                that.rightBtn()
+                                // that.index >= that.btn.length - 1 ? that.index = 0 : that.index++  
+                            },this.delayTime)
+                        },
+                             },
+                    mounted:function(){    //当创造出 autoPlay 方法时。无法执行该函数时使用生命周期函数 mounted 或 created
+				        this.autoPlay()
+				        },  
+                })
+</script>
+</html>

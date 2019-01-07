@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <script type="text/javascript">
+// 1.shift() 删除原数组第一项，并返回删除元素的值；如果数组为空则返回undefined
+// 2.unshift() 将参数添加到原数组开头，并返回数组的长度 
+// 3.pop() 删除原数组最后一项，并返回删除元素的值；如果数组为空则返回undefined
+// 4.push() 将参数添加到原数组末尾，并返回数组的长度 
+// 5.concat() 返回一个新数组，是将参数添加到原数组中构成的 
+// 6.splice(start,deleteCount,val1,val2,...):从start位置开始删除deleteCount项，并从该位置起插入val1,val2,... 
+// 7.reverse() 将数组反序 
+// 8.sort(orderfunction) 按指定的参数对数组进行排序 
+// 9.slice(start,end):返回从原数组中指定开始下标到结束下标之间的项组成的新数组 
+//10.join(separator):将数组的元素组起一个字符串，以separator为分隔符，省略的话则用默认用逗号为分隔符 
+		//1.
+		var a = ['1','2','3','4','5','6','88','22','12']
+		//console.log(a.shift());
+
+		//  a.shift()
+		// console.log(a)
+		 
+		 //2.
+		//console.log(a.unshift());
+		 
+		   // a.unshift('8')
+		   // console.log(a);
+		   
+		   //3.
+		   //console.log(a.pop());
+		   
+		   // a.pop()
+		   // console.log(a);
+    		
+    		//4.
+    		//console.log(a.push('999','000'));
+    		
+    		// a.push('999','000')
+    		// console.log(a);
+    		
+    		//5.
+    		// var b = ['a','b','c']
+    		// console.log(a.concat(b));
+    		
+    		//6.
+    		//console.log(a.splice(1,3));
+    		
+    		// a.splice(1,3,'22','33','44')
+    		// console.log(a);
+    		
+    		//7.1   反转方法一
+    		//console.log(a.reverse());
+			
+			//7.2   反转方法二//////////////////////////////////////////////////////////////////////////////////////////////
+			// https://www.cnblogs.com/wuyuxin/p/7017246.html  反转数组顺序
+			// a.sort(function(a,b){
+			// 	return 1              //正数为反转 负数为排序  return a-b 从小到大   return b-a 从大到小
+			// });
+			// console.log(a); 
+
+    		//8.
+    		// a.sort(function(a,b){
+    		// 		return a - b
+    		// })
+    		// console.log(a);
+
+    		// function number(a,b){
+    		// 	return a - b
+    		// }
+    		// for(var i in a){    
+    		// var sort = a.sort(number)
+    		// console.log(sort[i]);
+    		//  }
+    		
+    		//9.
+    		//console.log(a.slice(2,5));    //3 4 5
+    		//console.log(a.slice(1,6));	   //2 3 4 5 6
+    		//console.log(a.slice(3,8));     //4 5 6 88 22
+    		
+    		//10.
+    		//console.log(a.join(''));
+    		//console.log(a.join());
+    		//console.log(a.join(':'));
+    </script>
+</body>
+</html>

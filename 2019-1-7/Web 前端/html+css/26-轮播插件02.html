@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>首页</title>   
+<style type="text/css">
+.banner{ width: auto; height: 600px;/*  position: relative; */}  
+.slidebox{ width: 1920px; height: 600px; background: #F95CE1;/*  position: absolute;*/overflow: hidden; position: relative;left: 50%; margin-left: -960px; }  	/*也可以将相对定位写在.banner 绝对定位写在.slidebox与绝对定位写在.slidebox方法一样.*/
+								/*若绝对定位写在.slidebox.则左右按钮是绝对定位根据浏览器定位.不是根据.slidebox的绝对定位.*/
+
+.slidebox .btn{ width: 100%; height: 23px; position: absolute; left: 0px; bottom: 14px;}
+.slidebox .btn ul{ width: 100%; text-align: center; font-size: 0px; }
+.slidebox .btn ul li{ width: 17px; height: 17px; border: 3px solid #ffffff; border-radius: 50%; margin: 0 11px; display: inline-block; cursor: pointer; }
+.slidebox .btn ul li:hover{ background: #fff; }
+.slidebox .btn ul li.select{ background: #fff; }
+	
+.prev{display:block;width: 40px;height: 40px;background: url(img/index_prev.png);position: absolute;left: 100px;top:280px;}
+.next{display:block;width: 40px;height: 40px;background:url(img/index_next.png);position: absolute;right: 100px;top:280px;}
+.prev:hover{background: url(img/index_prev_hover.png);}
+.next:hover{background: url(img/index_next_hover.png);}
+</style>
+<meta name="description" content="">
+<meta name="keywords" content="">
+			<link href="css/common.css" rel="stylesheet">
+			<script type="text/javascript" src="js/jquery1.42.min.js"></script>
+			<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.source.js"></script>
+			
+</head>
+<body>
+	<div class="banner">
+	    <div class="slidebox">
+	    	<div class="picture">
+	    		<ul>
+	    			<li><a href="#"><img src="img/banner1.jpg" alt=""></a></li>
+	    			<li><a href="#"><img src="img/banner2.jpg" alt=""></a></li>
+	    			<li><a href="#"><img src="img/banner3.jpg" alt=""></a></li>
+	    		</ul>
+	    	</div>
+	    	<div class="btn">
+	    		<ul>
+	    			<li class="select"></li>
+	    			<li></li>
+	    			<li></li>
+	    			
+	    		</ul>
+	    	</div>
+	    </div>
+	    <a class="prev" href="javascript:void(0);"></a>
+		<a class="next" href="javascript:void(0);"></a>
+	</div>
+</body>
+<script type="text/javascript">
+	jQuery(".banner").slide({mainCell:".picture ul",titCell:".btn li",effect:"leftLoop",autoPlay:true,trigger:"click",titOnClassName:"select"});
+</script>
+</html>

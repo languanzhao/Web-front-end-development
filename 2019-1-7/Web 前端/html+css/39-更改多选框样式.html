@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+
+<style type="text/css">
+	/* 最大包裹层相对定位 */
+.mycheck {
+	width: 20px;height: 20px;
+	position: relative;
+}
+/* 勾选框绝对定位及勾选框的样式 */
+.mycheck label {
+	cursor: pointer;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background: #e5e5e5;
+	border-radius:1px;            
+}
+/* 勾选框钩子的样式 */
+.mycheck label:after {
+	opacity: 0;
+	content: '';
+	width: 30px;
+	height: 30px;
+	background: url(img/true.png) center center no-repeat;
+	background-size: 30px;
+	position: absolute;
+	bottom: 0px;
+	left: -4px;
+}
+/* 点击勾选时显示 */
+.mycheck input[type=checkbox]:checked + label:after {
+	opacity: 1;
+}
+</style>
+</head>
+<body>
+											<!-- 注意for需要添加 -->
+<div class="mycheck">
+  <input type="checkbox" id="checkbox" hidden/>
+  <label for="checkbox"></label>
+</div>
+</body>
+<script type="text/javascript">
+	
+</script>
+</html>

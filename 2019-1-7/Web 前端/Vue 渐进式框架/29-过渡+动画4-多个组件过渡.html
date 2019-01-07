@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>访问元素</title>
+<style>
+.fade-enter-active,.fade-leave-active{
+        transition:opacity 1s;
+}
+.fade-enter,.fade-leave-to{
+        opacity:0;
+}
+.fade-enter-to,.fade-leave{
+        opacity: 1;
+} 
+</style>
+</head>
+<body>
+        <div id="app">
+            <ul>
+                <li 
+                  v-for="(item,index) of list"
+                  @click="handleClick(index)"
+                >{{item}}</li>
+              </ul>
+              <transition name="fade" mode="out-in">
+                <component :is="view"></component>
+              </transition>
+        </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script type="text/javascript">
+		Vue.component("my-component1",{
+				template:"<p>组件1</p>"
+			})
+			
+			Vue.component("my-component2",{
+				template:"<p>组件2</p>"
+			})
+			
+			var vm = new Vue({
+				el: "#app",
+				data:{
+					list:["标题1","标题2"],
+					view:"my-component1",
+					viewList:["my-component1","my-component2"]
+				},
+				methods:{
+					handleClick(i){
+						this.view = this.viewList[i]
+					}
+				}
+			})
+    </script>
+</html>

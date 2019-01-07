@@ -1,0 +1,9 @@
+.main{width: auto;height: auto;}
+			.slidebox{width: 1200px;height: 150px;margin: 0px auto;}
+			.pic{width: 1030px;height: 150px;margin: 0px auto;overflow: hidden;}
+			ul{width: auto;height: 150px;}
+			ul li{width:300px;height: 150px;float: left ;margin-right: 30px;}
+			.prev{width:40px ;height:40px ;background: url(img/index_prev.png);position: absolute;left: 0px;top: 55px;}
+			.next{width:40px ;height:40px ;background: url(img/index_next.png);position: absolute;right: 0px;top: 55px;}
+			.prev:hover{background: url(img/index_prev_hover.png);}
+			.next:hover{background: url(img/index_next_hover.png);}

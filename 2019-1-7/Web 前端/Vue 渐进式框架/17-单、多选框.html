@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div id="app">
+        <form>
+               <label v-for="(item,i) of list1">
+                   {{item}}
+                   <input type="checkbox" @click="toClick(item,$event,i)">
+               </label>
+        </form>
+            <p v-for="item of list2">{{item}}</p>
+    <form>
+        <input type="radio" value="篮球" name="ball" v-model="text">篮球
+        <input type="radio" value="足球" name="ball"  v-model="text">足球 	
+        <input type="radio" value="橄榄球" name="ball" v-model="text">橄榄球 
+    </form>
+    <p>{{text}}</p>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script type="text/javascript">
+                var vm = new Vue({
+                       el:"#app",
+                       data:{
+                         list1:["篮球","足球","橄榄球"],
+                         list2:[],
+                         text:""
+                        
+                       },  
+                       methods:{
+                          toClick(item,event,i){
+                             if(event.currentTarget.checked == true){
+                                 this.list2.push(item)
+                             }else{
+                                 this.list2.splice(i,1)
+                             }
+                              
+                          }
+                       
+                       }      
+                            })
+    </script>
+</html>

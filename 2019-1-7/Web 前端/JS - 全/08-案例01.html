@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com) 例子： http://www.runoob.com/try/try.php?filename=tryjsref_win_settimeout</title>
+</head>
+
+<body>
+    <p>点击按钮，3 秒后会弹出 "Hello"。</p>
+    <button id="button">点我</button>
+</body>
+    <script type="text/javascript">
+        var button= document.getElementById('button');
+    button.onclick = function myFunction() {
+         setTimeout(alert("Hello"), 3000);
+       
+    }
+    myFunction()
+    </script>
+
+</html>

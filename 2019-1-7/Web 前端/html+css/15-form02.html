@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/date.js"></script>
+																			<!--1.布局  相对应的id year month day
+																			2.连接相对应的js-->
+																			
+	</head>
+	<body>
+		<form class="user">
+					<label for="username">用户名</label><input id="username" type="text" /><br />
+					<label for="logname">登录名</label><input id="logname" type="text" /><br />
+					<label for="nickname">昵称</label><input id="nickname" type="text" /><br />
+					<label>性别</label>
+					<input type="radio" name="sex" value="男" id="male" checked="checked" /><label for="male">男</label>
+					<input type="radio" name="sex" value="女" id="female" /><label for="female">女</label>
+					<input type="radio" name="sex" value="保密" id="secret" /><label for="secret">保密</label><br />
+					<label>生日</label>
+					<select id="year">
+						<option value="year">年</option>
+					</select>
+					<select id="month">
+						<option value="month">月</option>
+					</select>
+					<select id="day">
+						<option value="day">日</option>
+					</select><br />
+					<label>邮箱</label><a href="javascript:void(0)">立即验证</a><br />
+					<label for="realname">真实姓名</label><input type="text" id="realname" /><br />
+					<label for="hobby">兴趣爱好</label><input type="text" id="hobby" /><br />
+					<input type="submit" value="提交" id="submit" name="submit" onclick="return false" />
+			</form>
+	</body>
+	
+</html>

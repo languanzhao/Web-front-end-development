@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>时钟</title>
+		<style type="text/css">
+			#box {
+				width: 300px;
+				height: 300px;
+				margin: 0 auto;
+				border-radius: 50%;
+			}
+
+			#clock {
+				width: 300px;
+				height: 300px;
+				border-radius: 50%;
+				position: relative;
+				background: url(img/clock.jpg) no-repeat center;
+			}
+
+			#clock:after {
+				content: "";
+				background: #000;
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				position: absolute;
+				left: 0px;
+				right: 0px;
+				top: 0px;
+				bottom: 0px;
+				margin: auto;
+			}
+
+			/*放置指针容器*/
+			.hours_box,
+			.minutes_box,
+			.seconds_box {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				margin:auto;
+				overflow: hidden;
+			}
+
+			.hours {
+				position: absolute;
+				width: 8px;
+				height: 86px;
+				background: #000;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				top:70px;
+				
+				/* transform-origin: 50% 100%; */
+			}
+
+			.minutes {
+				position: absolute;
+				width: 5px;
+				height: 110px;
+				background: #000;
+				left: 0;
+				margin: 0 auto;
+				right: 0;
+				top: 50px;
+				
+				/* transform-origin: 50% 100%; */
+
+			}
+
+			.seconds {
+				position: absolute;
+				width: 2px;
+				height: 160px;
+				background: #f00;
+				left: 0;
+				margin: 0 auto;
+				right: 0;
+				top:20px;
+				
+				transition-duration: .5s;
+				/* transform-origin: 50% 90%; */
+
+
+			}
+		</style>
+
+	</head>
+	<body>
+		<div id="box">
+			<div id="clock">
+				<div class="hours_box">
+					<div class="hours">
+
+					</div>
+				</div>
+				<div class="minutes_box">
+					<div class="minutes">
+
+					</div>
+				</div>
+				<div class="seconds_box">
+					<div class="seconds">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var hours_box = document.querySelector('.hours_box')
+		var minutes_box = document.querySelector('.minutes_box')
+		var seconds_box = document.querySelector('.seconds_box')
+
+		function time() {
+			var now = new Date()
+
+			var hour = now.getHours()
+			var minute = now.getMinutes()
+			var second = now.getSeconds()
+
+			var secondDegree = second * 6
+			var minuteDegree = minute * 6
+			var hourDegree = (hour / 12) * 360
+
+			hours_box.style.transform = `rotateZ(${hourDegree}deg)`
+			minutes_box.style.transform = `rotateZ(${minuteDegree}deg)`
+			seconds_box.style.transform = `rotateZ(${secondDegree}deg)`
+		}
+		setInterval(time,1000)
+	</script>
+</html>

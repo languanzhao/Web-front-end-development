@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+							<!-- computed 用 get(获取值)和set(修改值) -->
+</head>
+<body>
+		<div id="app">
+			<input type="text" v-model="text">
+			<p>{{changeText}}</p>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	<script type="text/javascript">
+			var vm = new Vue({
+				el: "#app",
+				data:{
+					text:""
+				},
+				computed:{
+					// changeText(){							   //这个是以方法书写
+					// 	return this.text.toUpperCase()
+					// }
+					changeText:{                                   //computed有两个值 get 和 set ，以键值对形式写进去
+						get(){
+							return this.text.toUpperCase()
+						},
+						set(newVal){
+							this.text = newVal+"我是新的值"          // 浏览器输入   vm.changeText = "sfd"
+						}
+					}
+				}
+			})
+
+    </script>
+</body>
+</html>

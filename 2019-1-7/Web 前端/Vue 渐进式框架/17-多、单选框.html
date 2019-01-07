@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div id="app">
+    <form>
+                <!-- 多选框 -->
+                    <input type="checkbox" id="1" value="篮球" v-model="checked">
+                    <label for="jack">篮球</label>
+                    <input type="checkbox" id="2" value="足球" v-model="checked">
+                    <label for="john">足球</label>
+                    <input type="checkbox" id="3" value="桌球" v-model="checked">
+                    <label for="mike">桌球</label>
+                    <br>
+                    <span>{{ checked }}</span>
+    </form>
+    <form>
+                <!-- 单选框 -->
+                    <input type="radio" id="4" value="男" v-model="text">
+                    <label for="one">男</label>
+                    <br>
+                    <input type="radio" id="5" value="女" v-model="text">
+                    <label for="two">女</label>
+                    <br>
+                    <span>{{ text }}</span>
+    </form>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script type="text/javascript">
+                var vm = new Vue({
+                       el:"#app",
+                       data:{
+                        checked:[],
+
+                        text:""
+                       },  
+                            })
+    </script>
+</html>

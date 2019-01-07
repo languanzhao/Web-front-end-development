@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>jQuery弹出层效果</title>
+		<meta content="网页特效,特效代码,jQuery,css特效,Js代码,广告幻灯,图片切换" name="keywords" />
+		<meta content="jQuery弹出层效果，有关闭按钮，代码简单易懂，你可以随意修改弹出层的参数。" name="description" />
+		<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+		
+		<style>
+			body{
+				max-width: 640px;
+
+margin: 0 auto;
+			}
+		.box {
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index:2;
+}
+button {
+	padding:10px 40px;
+	cursor:pointer;
+	outline:none;
+	border-radius:6px;
+	background:black;
+	color:#fff;
+	border:1px solid #f5f5f5;
+}
+.box button {
+	display:block;
+	margin:0 auto;
+	margin-top:0px;
+}
+.popup {
+	display:none;
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index:2;
+	background:rgba(0,0,0,0.6);
+}
+.popup.active {
+	display:block;
+}
+.popup-content {
+	width:300px;
+	padding:20px;
+	border-radius:6px;
+	background:#fff;
+	text-align:right;
+	margin:0 auto;
+	margin-top:50px;
+}
+.popup-content h3 {
+	text-align:center;
+	margin:0;
+}
+.popup-content p {
+	text-align:left;
+	border:1px solid #aaa;
+	border-width:1px 0 1px 0;
+	line-height:60px;
+	margin:20px -20px;
+	padding:0 20px;
+}
+
+</style>
+		<script type="text/javascript">
+		window.onload = function(){
+						document.getElementById('btn1').onclick = function() {
+				document.getElementsByClassName('popup')[0].className = 'popup active';
+			}
+			document.getElementById('btn2').onclick = function() {
+				document.getElementsByClassName('popup')[0].className = 'popup';
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<div class="box">
+    <button id="btn1">点我</button>
+</div>
+<div class="popup">
+    <div class="popup-content">
+        <h3>标题</h3>
+        <p>我是弹出层</p>
+        <button id="btn2">确定</button>
+    </div>
+</div>
+	</body>
+</html>

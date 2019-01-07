@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+    <div id="app">
+        {{value}}
+       <c @b="a($event)"></c>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script type="text/javascript">
+    //子组件
+    Vue.component("c",{
+       data(){                                 
+           return{                                       //注意在全局里写data需要添加上  return
+               mes:"我是子组件的数据"    
+           }
+       },
+        template:`<p @click="$emit('b',mes)">点击</p>`
+    })
+    //父组件
+            var vm = new Vue({
+                 el:"#app",
+                data:{
+                  value:"呵呵"
+                },
+                methods:{ 
+                    a(event){
+                        this.value = "已更改+" + event 
+                    }
+                }
+
+                    })
+    </script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Js基础</title>
+</head>
+
+<body>
+	<ul>
+		<li>
+			<b>新闻1</b>
+			<span class="move">删除</span>
+		</li>
+		<li>
+			<b>新闻2</b>
+			<span class="move">删除</span>
+		</li>
+		<li>
+			<b>新闻3</b>
+			<span class="move">删除</span>
+		</li>
+		<li>
+			<b>新闻4</b>
+			<span class="move">删除</span>
+		</li>
+		
+		<li>
+			<b>新闻5</b>
+			<span class="move">删除</span>
+		</li>
+	</ul>                     <!--  当有很多li时，需要点击或获取每一个时 应当 forEach 可遍历出全部item -->
+	<script type="text/javascript"> 
+		// var list = document.querySelectorAll('li')      //访问DOM元素 querySelectorAll()
+		// list.forEach(function(item,i){
+		// 	var span = item.children[1]					//访问子级元素 children
+		// 	span.onclick = function(){
+		// 		item.remove()
+		// 	}
+		// })
+
+		   // var allspan = document.querySelectorAll('ul li span')
+		   // for(var i = 0;i < allspan.length;i++){
+		   // 	   allspan[i].onclick = function(){
+		   // 	   	this.parentNode.remove()
+		   // 	 // this.parentNode.style.display = 'none'
+		   // 	   }  
+		   // }
+		   
+	</script>
+	
+</body>
+
+</html>

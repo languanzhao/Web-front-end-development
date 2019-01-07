@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>焦点轮播</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/common.css" rel="stylesheet">
+<style type="text/css">
+	.main { width:600px; height: 600px; position: absolute;left: 35px;top: 35px;border:#000000 5px solid;background: #FFFFFF;}
+	.slidebox{ width:600px; height: 600px; border: 15px solid #000; margin:50px auto; position: relative;}
+	.btn{width: 500px;height: 80px;overflow: hidden;margin: 10px auto 0px auto;}
+	.btn ul{ width: 99999px;height: 76px;  }
+	.btn ul li{ float: left; width: 150px; height: 76px;cursor:pointer;border:2px solid #999999;margin-right: 19px; }
+	.btn ul li img{width: 150px;height: 76px;}
+	.btn ul li.on{border:2px solid red; }
+	.show a{width: 600px;height: 495px;display: block;}
+	.show a img{width: 600px;height:495px;border-bottom:5px solid #000000;}
+    
+    .slidebox .prev{width:40px;height: 80px;display: block;position: absolute;left: 5px;bottom: 14px;background: url(img/index_prev.png) no-repeat center;}
+	.slidebox .next{width:40px;height: 80px;display: block;position: absolute;right: 5px;bottom: 14px;background: url(img/index_next.png) no-repeat center;}
+	.slidebox .prev:hover{background: url(img/index_prev_hover.png) no-repeat center;}
+	.slidebox .next:hover{background: url(img/index_next_hover.png) no-repeat center;}
+	
+</style>
+</head>
+<body>
+    <div class="slidebox">
+    		<div class="main">
+    	<div class="show">
+           <a href=""><img src="img/banner1.jpg" id="big_img"/></a>
+    	</div>
+    	<div class="btn">
+    		<ul>
+                <li class="on"><img src="img/banner1.jpg"/></li>
+                <li><img src="img/banner2.jpg"/></li>
+                <li><img src="img/banner3.jpg"/></li>
+    		</ul>
+    	</div>
+    	<a class="prev" href="javascript:void(0)"></a>
+      <a class="next" href="javascript:void(0)"></a>
+    </div>
+    	</div>
+    		
+</body>
+<script type="text/javascript">
+	
+      var slidebox = document.getElementsByClassName('slidebox')[0];
+      var btn = document.getElementsByClassName('btn')[0];
+      var ulli = btn.getElementsByTagName('ul')[0].getElementsByTagName('li');
+      var big_img = document.getElementById('big_img');
+      var left = document.getElementsByClassName('prev')[0];
+      var right = document.getElementsByClassName('next')[0];
+      var index= 0;
+      var timer = null;
+      
+           for(i = 0;i < ulli.length;i++){
+          	ulli[i].onmouseenter = function(){
+          		big_img.src = this.getElementsByTagName('img')[0].src;  //点击自动切换图片
+          	 for(i = 0;i < ulli.length;i++){
+          	 	  ulli[i].className = '';
+          	 }
+          	  this.className = 'on';
+          	}
+          }
+//      左按钮
+        left.onclick = function(){
+            if(index <= 0){
+                index = ulli.length - 1;
+            }else{
+                index--;
+            }
+           big_img.src = ulli[index].getElementsByTagName('img')[0].src;
+            for(i = 0;i < ulli.length;i++){
+          	 	  ulli[i].className = '';
+          	 }
+          	 ulli[index].className = 'on';
+        }
+        
+//    	 右按钮
+        right.onclick = function(){
+            if(index >= ulli.length - 1){
+                index = 0;
+            }else{
+                index++;
+            }
+           big_img.src = ulli[index].getElementsByTagName('img')[0].src;
+            for(i = 0;i < ulli.length;i++){
+          	 	  ulli[i].className = '';
+          	}
+          	  ulli[index].className = 'on';
+            } 
+            
+       // 自动播放
+            function autoPlay() {
+                if(index >= ulli.length - 1){
+                        index = 0;
+                }else{
+                        index++;
+                }
+                   big_img.src = ulli[index].getElementsByTagName('img')[0].src;
+                    for(i = 0;i < ulli.length;i++){
+                  	 	  ulli[i].className = '';
+                }
+                  	  ulli[index].className = 'on';
+                }
+  
+      // 设置定时器
+         timer = setInterval(autoPlay,2000);
+         
+        //消除定时器操作
+        slidebox.onmouseenter = function () {
+            clearInterval(timer);
+            timer = null;
+        }
+        //重新开始定时器
+        slidebox.onmouseleave = function () {
+            timer = setInterval(autoPlay,2000);
+        }
+
+</script>
+</html>

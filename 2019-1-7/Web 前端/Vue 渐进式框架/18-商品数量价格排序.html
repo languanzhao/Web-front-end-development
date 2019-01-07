@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css" media="screen">
+*{margin: 0;padding: 0;list-style: none;}
+ul{display: flex;}
+li{width: 150px;height: 200px;border: 1px solid;}
+h2{text-align: center;}
+.price{color:#ff0000;font-size: 36px}
+.nums{color:blue;font-size: 18px}
+		</style>
+	</head>
+	<body>
+        <div id="app">
+		<ul>
+			<li v-for="item of list">
+				<h2>id:{{item.id}}</h2>
+				<p>价钱:
+					<span class="price">{{item.price}}</span>
+				元</p>
+				<p>数量:
+					<span class="nums">{{item.num}}</span>
+				</p>
+			</li>
+		</ul>
+		<button type="button" class="numSort"  @click="numSort()"  v-model="textnum">{{textnum}}</button>
+		<button type="button" class="priceSort"  @click="priceSort()"  v-model="textprice">{{textprice}}</button>
+    </div>	
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script type="text/JavaScript">
+                var vm = new Vue({
+                    el:"#app",
+                    data:{
+                        list:[
+                              {"id":1,"price":2,"num":8},
+                              {"id":2,"price":3,"num":2},
+                              {"id":3,"price":6,"num":5},
+                              {"id":4,"price":0,"num":7},
+                              {"id":5,"price":5,"num":9}
+                             ],
+                        textnum:"数量排序↑",
+                        textprice:"价格排序↑"
+                    },
+                    computed:{
+                        sortnum:function(){
+                            return sortKey(this.list,'num')
+                        },
+                        sortprice:function(){
+                            return sortKey(this.list,'price') 
+                        },
+                        sortnum2:function(){   
+                            return sortKey2(this.list,'num')
+                        },
+                        sortprice2:function(){   
+                            return sortKey2(this.list,'price')
+                        }
+                    },
+                    methods:{
+                        numSort:function(){  
+                            if (this.textnum === "数量排序↑"){
+                                this.textnum = "数量排序↓"
+                            this.list === this.sortnum
+                            }else{
+                                this.textnum = '数量排序↑'
+                                this.list === this.sortnum2
+                            }
+                    },
+                        priceSort:function(){
+                            if (this.textprice === "价格排序↑"){
+                                this.textprice = "价格排序↓"
+                            this.list === this.sortprice
+                            }else{
+                                this.textprice = '价格排序↑'
+                                this.list === this.sortprice2
+                            }
+                        }
+                   
+                    }
+                })
+                function sortKey(array,key){
+                 return array.sort(function(a,b){
+                     var x = a[key]
+                     var y = b[key]
+                     return ((x<y)?-1:(x>y)?1:0)
+                 })
+             }
+             function sortKey2(array,key){
+                 return array.sort(function(a,b){
+                     var x = a[key]
+                     var y = b[key]
+                     return ((x>y)?-1:(x<y)?1:0)
+                 })
+             }
+		</script>
+	</body>
+</html>
+

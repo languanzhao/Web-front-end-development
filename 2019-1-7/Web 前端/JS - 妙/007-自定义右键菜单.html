@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+	<head>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			li {
+				list-style-type: none;
+				text-indent: 5px;
+				padding: 5px 0px 10px 0px;
+				cursor: pointer;
+				border: 1px solid #EFEFEF;
+			}
+
+			li:hover {
+				background: #D8BFD8;
+				border: 1px solid #00FFFF;
+			}
+
+			#ul1 {
+				width: 100px;
+				background: #EFEFEF;
+				border: 1px solid black;
+				position: absolute;
+				display: none;
+			}
+
+			li span {
+				float: right;
+				font-size: 20px;
+				line-height: 20px;
+			}
+		</style>
+		
+		<script>
+			document.oncontextmenu = function(ev) //oncontextmenu为右击点击事件
+			{
+				var oUl = document.getElementById('ul1');
+				var oEvent = ev || event;
+				oUl.style.display = 'block';
+				oUl.style.left = oEvent.clientX + 'px'; //获取ul的左位置
+				oUl.style.top = oEvent.clientY + 'px'; //获取ul的顶部位置
+
+				return false;
+			};
+
+			document.onclick = function() {
+				var oUl = document.getElementById('ul1');
+				oUl.style.display = 'none'; //当你点击页面任何一个位置的时候，出现的自定义菜单栏都会消失
+			};
+		</script>
+	</head>
+
+	<body>
+		<ul id="ul1">
+			<li>查看<span>&gt;</span></li>
+			<li>排序方式<span>&gt;</span></li>
+			<li>粘贴</li>
+			<li>撤销</li>
+			<li>复制</li>
+			<li>新建<span>&gt;</span></li>
+			<li>设置<span>&gt;</span></li>
+			<li>属性</li>
+		</ul>
+	</body>
+</html>

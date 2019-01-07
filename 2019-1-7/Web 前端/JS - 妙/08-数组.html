@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>案例2</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+	<script type="text/javascript">
+    //1.字符串转为数字	(parseInt)
+    // var a = '12';
+    // var x = parseInt(a);
+    // alert( x + 1);
+
+    //2.字符串连接		 (concat)
+     // var array1 = [1,2,3];
+     // var array2 = [4,5,6];
+     // var array3 = ['a','b','c'];
+     // alert(array1.concat(array2).concat(array3));
+
+     //3.三元运算符   ( ?  : )
+     //var a = 6;
+     //a>5?alert('大于5'):alert('小于5');
+     
+     //4.数组 join()
+     // var array = [1,2,3,4,5,6];
+     // alert(array.join(':'));
+     
+     //5.数组 pop() 方法用于删除并返回数组的最后一个元素。
+ 	//  var arr=[1,2,3];
+ 	//  arr.pop()
+	 // alert(arr);    
+	
+	 //6.数组 push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。
+	 // var arr=[1,2,3];
+	 // arr.push(4,5,6,);
+	 // alert(arr);
+
+	 //7.数组 shift() 方法用于把数组的第一个元素从其中删除，并返回第一个元素的值。
+	  //var arr=[1,2,3];
+	  //arr.shift();
+	  //alert(arr);
+	  
+	  //8.unshift() 方法可向数组的开头添加一个或更多元素，并返回新的长度。
+	// var arr=[1,2,3];
+	// arr.unshift(4,5,6);
+	// alert(arr);	
+
+	 //9.数组 splice splice()的用法:
+	 //https://blog.csdn.net/anshuangxin6666/article/details/78741539
+	
+	//var arr=[1,2,3,4,5,6,7,8];
+//1.中间删除;删除功能，第一个参数为第一项位置，第二个参数为要删除几个。
+// arr.splice(2, 3);
+// alert(arr);
+
+//2.中间插入;插入功能，第一个参数（插入位置），第二个参数（0），第三个参数（插入的项）
+// arr.splice(5, 0, 'a', 'b', 'c');
+// alert(arr);
+
+//3.替换;替换功能，第一个参数（起始位置），第二个参数（删除的项数），第三个参数（插入任意数量的项）
+// arr.splice(1, 2, 'a', 'b');
+// alert(arr);
+		
+		//10.sort()用法详解	https://blog.csdn.net/u011250873/article/details/78731162
+		// 1.按照字母顺序排序；
+		// var arr=['float', 'zindex', 'xy', 'absolute', 'good', 'leo'];
+		// arr.sort();
+		// alert(arr);
+		 
+		// 2.要实现这排序，就必须使用一个排序函数；
+		// function sortNumber(a,b){		//升序排列 a - b ; 降序排列 b - a
+		// 	return a - b
+		// 	};
+		// var arr = [10,5,40,25,1000,1];
+		// document.write(arr + "<br />");
+		// document.write(arr.sort(sortNumber));
+
+		//11.return
+		// function show(){
+		// return (1+1);
+		// } 
+		// alert(show());
+</script>
+</body>
+</html>

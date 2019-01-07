@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>左边固定，右边自适应</title>
+<style type="text/css">
+	#box{width:500px;height:150px;border:2px solid;margin:0 auto;}
+	#a1{width: 100px;height:100px;background: red;  float: left;}
+	#a2{height:100px;background:blue;}
+	
+	#box2{width:500px;height:150px;border:2px solid;margin:0 auto;  display: flex;}
+	#b1{height:100px;background: red;  flex: 0 0 100px;}
+	#b2{height:100px;background:blue;  flex:1;}
+	
+	#box3{width:500px;height:150px;border:2px solid;margin:0 auto;}
+	#c1{width:100px;height:100px;background: red;  float: left;}
+	#c2{height:100px;background:blue;  float: right;width:calc(100% - 100px);}
+</style>
+		
+	</head>
+	<body>
+		第一种方法
+				  <div id="box">
+					  <div id="a1">
+							on the left
+					  </div>
+					  <div id="a2">
+							on the right
+					  </div>
+				  </div>
+		第二种方法
+				  <div id="box2">
+						<div id="b1">
+							on the left
+						</div>
+						<div id="b2">
+							on the right
+						</div>
+				  </div>
+		第三种方法
+				  <div id="box3">
+					  <div id="c1">
+							on the left
+					  </div>
+					  <div id="c2">
+							on the right
+					  </div>
+				  </div>
+	</body>
+</html>

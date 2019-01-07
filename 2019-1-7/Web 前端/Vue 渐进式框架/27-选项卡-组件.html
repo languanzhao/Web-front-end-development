@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{margin: 0px;padding: 0px;list-style-type: none;}
+    .tab{margin: 0px auto;width: 210px;height: 200px;border: 1px solid;}
+    .title{font-style: 18px;width: 210px;height: 30px;display:flex;border-bottom: 1px solid;color:blueviolet}
+    .title li{width: 70px;height: 30px;border-left:1px solid;text-align: center;line-height: 30px;cursor: pointer;}
+    .title li:first-child{border: 0px none;}
+    .con{text-align: justify;}
+    .title .current{background:#74e008}
+    .con div{display: none}
+    .con .current{display: block}
+    </style>
+
+</head>
+<body>
+    <div id="app">
+        <my-component :list="list" :con="con"></my-component>
+        <my-component :list="list" :con="con"></my-component>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script type="text/javascript">
+    Vue.component("my-component",{
+        data(){
+           return{
+            index:0
+           }
+        },
+        props:["list","con"],
+        template:`<div class="tab">
+        <ul class="title">
+            <li v-for="(item,i) of list" @click="toClick(i)" :class="i === index ? 'current' : null ">{{item}}</li>
+        </ul>
+        <div class="con">
+            <div v-for="(item,i) of con" :class="i === index ? 'current' : null ">{{item}}</div>
+        </div>
+                </div>`,
+        methods:{
+                toClick(i){
+                    this.index = i
+                }
+                }
+    })   
+            var vm = new Vue({
+                 el:"#app",
+                data:{
+                    list:["标题一","标题二","标题三"],
+                    con:["内容一","内容二","内容三"]
+                }  
+                    })
+    </script>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>layer基本功能   https://layer.layui.com/  </title>
+    <input type="password" name="" value="" placeholder="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="css/layui.css" >
+    <link rel="stylesheet" href="css/layer.css"  >
+    <script type="text/javascript" src="../js/js/jquery.js"></script>
+    <script type="text/javascript" src="js/layer.js"></script>
+</head>
+<body>
+    <div class="clearfix layer-text">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend>先睹为快</legend>
+        </fieldset>
+        <div class="clearfix layer-area" id="chutiyan">
+            <a class="layui-btn layui-btn-primary" href="javascript:layer.alert('内容');">初体验</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">第三方扩展皮肤</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;" id="confirm">询问层</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">提示层</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;" id="green">墨绿深蓝风</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;" style="_display:none;">捕获页</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">页面层</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">自定页</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">tips层</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">iframe层</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">iframe窗</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">加载层</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">loading层</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">小tips</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">prompt层</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">tab层</a>
+            <a class="layui-btn layui-btn-primary" href="javascript:;">相册层</a>
+            <a class="layui-btn layui-btn-primary" href="http://www.layui.com/demo/layim.html" target="_blank">WebIM</a>
+        </div>
+        <!-- layer-970*90 -->
+        <div style="margin-top:10px; text-align:center;">
+            <ins class="adsbygoogle" style="display:inline-block;width:970px; height:90px;" data-ad-client="ca-pub-6111334333458862" data-ad-slot="5254867833" data-adsbygoogle-status="done">
+                <ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:970px;background-color:transparent;">
+                    <ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:970px;background-color:transparent;">
+                        <iframe width="970" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;width:970px;height:90px;"></iframe>
+                    </ins>
+                </ins>
+            </ins>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+$('#confirm').click(function(event) {
+	//询问框
+
+	layer.confirm('您是如何看待前端开发？', {
+	  btn: ['重要','奇葩','无所谓'] //按钮
+	  , yes : function(){
+	  	  layer.msg('的确很重要', {icon: 1});
+	  	}, btn2 : function(){
+	  	  layer.msg('也可以这样', {
+	  	    time: 20000, //20s后自动关闭
+	  	    btn: ['明白了', '知道了']
+	  	  });
+	  	}, btn3 : function(){
+	  	  layer.msg('滚', {icon: 3});
+	  	}
+	});
+});
+
+$('#green').click(function(event) {
+	//墨绿深蓝风
+
+	layer.alert('墨绿风格，点击确认看深蓝', {
+	  skin: 'layui-layer-molv' //样式类名
+	  ,closeBtn: 2,
+	  btnAlign: 'c',
+	  shade: [0.8, 'red']
+	}, function(){
+	  layer.alert('偶吧深蓝style', {
+	    skin: 'layui-layer-lan'
+	    ,closeBtn: 0
+	    ,anim: 4 //动画类型
+	  });
+	});
+});
+</script>
+</html>

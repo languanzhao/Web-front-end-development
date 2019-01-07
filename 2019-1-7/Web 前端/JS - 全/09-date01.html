@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> 菜鸟教程(runoob.com) http://www.w3school.com.cn/tiy/t.asp?f=jsrf_date_timing_clock</title>
+    <!-- <script type="text/javascript" src="js/钟表-时分秒.js"></script> -->
+    <style type="text/css" media="screen">
+    #date {
+        font-size: 36px;
+        margin: 0px auto;
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="date"></div>
+</body>
+<script>
+function startTime() {
+    var today = new Date();
+
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds(); // 在小于10的数字前加一个'0'
+
+    m = checkTime(m);
+    s = checkTime(s);
+
+    document.getElementById('date').innerHTML = "现在的时间是：" + h + ":" + m + ":" + s;
+
+    //每隔500毫秒（0.5秒）刷新一次时间，为了实现时间动态显示效果
+    t = setTimeout(function() {
+        startTime() 
+ }, 500);
+    
+}
+
+startTime();
+
+//checkTime函数，设置小于10的时间数字格式，例如5秒显示成05秒
+function checkTime(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
+</script>
+
+</html>

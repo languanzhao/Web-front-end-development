@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+</head>
+<body>
+    <script type="text/javascript">
+    //例子一
+    //1.給所有的对象添加一个新属性name,值小明
+    // Object.prototype.name = '小明'
+
+    // var obj = {age:"18",sex:'男'}
+    // var obj2 = {age:"19",sex:'女'}
+
+    // console.log(obj)
+    // console.log(obj2)
+
+    //例子二 
+    //2.給所有的数组添加一个新方法,要做出由小到大的排序
+    //单个数组排序 方法一
+    // var arr = [1, 2, 3, 9, 8, 7]
+
+    //function sortNumber(a,b){		
+    // 	return a - b
+    // 	}
+
+    // for(var i in arr){ 
+    // 	arr.sort(sortNumber)
+    //  }
+    //  console.log(arr)
+
+    //单个数组排序 方法二
+    //   var arr = [1, 2, 3, 9, 8, 7]
+    //   var arr2 = [22,457,366,2,5,8,9,0,425,34,32,99]
+    //   Array.prototype.sorts = function(){
+    //     var list = this
+    //     list.sort(function(a,b){
+    //     	return a - b
+    //     })
+    // }
+    // 	arr.sorts()
+    //  arr2.sorts()
+    // 	console.log(arr2);
+
+     //单个数组排序 方法三
+     // Array.prototype.sorts = function(){
+     //    var list = this
+     //    for (var i = 0; i <= list.length; i++) {
+     //        for (var j = 0; j <= list.length; j++) {
+     //            if(list[j] > list[j+1]){
+     //                var x
+     //                x = list[j]
+     //                list[j] = list[j+1]
+     //                list[j+1] = x
+     //            }
+     //        }
+     //    }
+     // }
+     //    var arr = [3,2,1]
+     //    arr.sorts()
+     //    console.log(arr)
+
+//两者交换位置   顺序和位置不能换
+// var x
+// x = a
+// a = b
+// b = x
+
+     //多个数组排序 方法一
+    // var arr = [1, 2, 3, 9, 8, 7]
+    // var arr2 = [4, 5, 6, 0, ]
+    // var newarr = arr.concat(arr2)
+
+    //function sortNumber(a,b){		
+    // 	return a - b
+    // 	}
+
+    // for(var i in newarr){ 
+    // 	newarr.sort(sortNumber)
+    //  }
+    //  console.log(newarr)
+    //  
+    
+    //多个数组排序 方法二
+    //     var arr = [1, 2, 3, 9, 8, 7]
+    //     var arr2 = [0,4,5,6]
+    //     var arr3 = [11,55,22,88,44,888]
+    //     var newarr = arr.concat(arr2).concat(arr3)
+
+    //     Array.prototype.sorts = function(){
+    //     var list = this
+    //     list.sort(function(a,b){
+    //      return a - b
+    //     })
+    // }
+    //           newarr.sorts()
+    //        console.log(newarr);
+    </script>
+</body>
+
+</html>

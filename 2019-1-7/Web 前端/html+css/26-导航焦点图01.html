@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery1.42.min.js"></script>	
+		<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.source.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/公共样式.css"/>
+		
+		<style type="text/css">
+		.slidebox{margin:0 auto;width:467px;height: auto; border:1px solid #ccc;padding:10px;}
+		.slidebox .pic img{ width:467px; height:230px;}  /*大图显示定宽高*/
+		
+		.slidebox .btn{ width:467px;height: auto; padding-top:5px;overflow:hidden; }
+		.slidebox .btn ul{width:9999px;height: auto;overflow:hidden; }
+		.slidebox .btn ul li{width: 110px;height: 65px;float:left;text-align:center; border:2px solid #ddd; cursor:pointer; margin-right:3px;}
+		.slidebox .btn ul li img{ width:110px; height:65px;} /*小图显示定宽高*/
+		
+		.slidebox .btn ul li.on { border-color:#f60;}
+		</style>
+	<body>
+		<div class="slidebox">
+			<div class="pic">
+				<ul>
+					<li><a  href=""><img src="img/5.jpg" /></a></li>
+					<li><a  href=""><img src="img/1.jpg" /></a></li>
+					<li><a  href=""><img src="img/4.jpg" /></a></li>
+					<li><a  href=""><img src="img/banner1.jpg" /></a></li>
+					<li><a  href=""><img src="img/4.jpg" /></a></li>
+					<li><a  href=""><img src="img/banner1.jpg" /></a></li>
+				</ul>
+			</div>
+
+			<div class="btn">
+				<ul>
+					<li class="on"><img src="img/5.jpg" /></li>
+					<li><img src="img/1.jpg" /></li>
+					<li><img src="img/4.jpg" /></li>
+					<li><img src="img/banner1.jpg" /></li>
+					<li><img src="img/4.jpg" /></li>
+					<li><img src="img/banner1.jpg" /></li>
+				</ul>
+			</div>
+
+		</div>
+	</body>
+	<script type="text/javascript">
+		jQuery(".slidebox").slide({mainCell:".pic ul",titCell:".btn ul li",effect:"leftLoop",autoPlay:true });
+	</script>
+</html>

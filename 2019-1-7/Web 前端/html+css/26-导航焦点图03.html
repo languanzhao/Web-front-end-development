@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link type="text/css" rel="stylesheet" href="css/common.css">
+<script type="text/javascript" language="javascript" src="js/jquery1.42.min.js"></script>
+<script type="text/javascript" language="javascript" src="js/jquery.SuperSlide.2.1.1.source.js"></script>
+<style type="text/css">
+	.slidebox{width: 600px;height: 600px;border:6px solid pink;margin: 0px auto;position: relative;}
+	.pic {width: 600px;height: 495px;border-bottom:5px solid #00FFFF ;overflow: hidden;}
+	.pic ul li a img{width: 600px;height: 495px;}
+	
+	.btn{width: 500px;height: 84px;margin: 10px auto 0px auto;overflow: hidden;}
+	.btn ul{width: auto;height: 84px;}
+	.btn ul li{width: 150px;height: 80px;border:2px solid #FFFFFF;float: left;margin-right: 19px;}
+	.btn ul li img{width: 150px;height: 80px;}
+	
+	.slidebox .prev{width:40px;height: 80px;display: block;position: absolute;left: 5px;bottom: 6px;background: url(img/index_prev.png) no-repeat center;}
+	.slidebox .next{width:40px;height: 80px;display: block;position: absolute;right: 5px;bottom: 6px;background: url(img/index_next.png) no-repeat center;}
+	.slidebox .prev:hover{background: url(img/index_prev_hover.png) no-repeat center;}
+	.slidebox .next:hover{background: url(img/index_next_hover.png) no-repeat center;}
+	
+	.slidebox .btn ul .on{border-color:red;}
+	
+</style>
+	</head>
+	<body>
+		<div class="slidebox">
+			<div class="pic">
+				<ul>
+					<li><a href=""><img src="img/banner1.jpg"/></a></li>
+					<li><a href=""><img src="img/banner2.jpg"/></a></li>
+					<li><a href=""><img src="img/banner3.jpg"/></a></li>
+					
+				</ul>
+			</div>
+			<div class="btn">
+				<ul>
+					<li><img src="img/banner1.jpg"/></li>
+					<li><img src="img/banner2.jpg"/></li>
+					<li><img src="img/banner3.jpg"/></li>
+					
+
+				</ul>
+			</div>
+			<a  class="prev" href="javascript:void(0);"></a>
+			<a  class="next" href="javascript:void(0);"></a>
+		</div>
+	</body>
+	<script type="text/javascript">
+		jQuery(".slidebox").slide({mainCell:".pic ul",titCell:".btn ul li",effect:"leftLoop",autoPlay:true });
+		jQuery(".slidebox").slide({mainCell:".btn ul",autoPage:true,effect:"leftLoop",autoPlay:true,scroll:1,vis:3});
+	</script>
+</html>

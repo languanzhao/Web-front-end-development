@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>深入组件</title>
+
+</head>
+<body>
+        <div id="app">
+                <my-component>
+                    <template slot="header">头部1</template>
+                    <template slot="content">中部1</template>
+                    <template slot="footer">尾部1</template>
+                </my-component>
+                <my-component>
+                    <template slot="header">header</template>
+                    <template slot="content">middle</template>
+                    <template slot="footer">footer</template>
+                </my-component>
+            </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script type="text/javascript">
+   var myComponent = {
+				"props":["text"],
+				"template":`<div>
+                                <ul>
+				                    <li><slot name="header"></slot></li>
+                                    <li><slot name="content"></slot></li>
+                                    <li><slot name="footer"></slot></li>
+                                </ul>
+				            </div>`
+			}
+			var vm = new Vue({
+				el:"#app",
+				components:{
+					myComponent
+				},
+				data:{
+					cssName:"b"
+				}
+			})
+    </script>
+</html>

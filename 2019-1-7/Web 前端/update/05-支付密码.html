@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>支付密码</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style>
+		form{margin: 0 auto;width:500px;height: 150px;border: 1px solid;text-align: center;line-height:90px;position: relative;}
+		form input[type="text"]{text-align: center;width: 50px;height: 50px;font-size:40px;}
+		form input[type="submit"]{position: absolute;left: 0px;right: 0px;margin:0 auto;bottom: 10px;width:100px;height:50px;font-size: 22px;
+														background: #00AEFF;border: none;color: #fff;}
+														
+		.btn{width:100px;height:50px;border: 1px solid;text-align: center;line-height:50px;}
+	</style>
+	
+	
+  </head>
+  
+  <body>
+		<div class="btn">点击弹窗</div>
+    <form>
+			<input type = "text" maxlength="1">   
+			<input type = "text" maxlength="1"> 
+			<input type = "text" maxlength="1"> 
+			<input type = "text" maxlength="1">
+			<input type = "text" maxlength="1">
+			<input type = "text" maxlength="1">
+			<input type="submit" value="提交" id="submit"/>
+    </form> 
+  </body>
+  <script type="text/javascript">
+		var btn = document.querySelector('.btn')
+		var form = document.querySelector('form')
+	  var input = form.querySelectorAll('input[type="text"]')
+		var submit = document.querySelector('#submit')
+		
+	  input[0].focus()            																			//第一个框聚焦
+		for(i=0;i<input.length;i++){
+				input[i].onkeyup = function(){          											//执行onkeyup事件
+						for(i=0;i<input.length;i++){
+								input[i].value=input[i].value.replace( /[^\d]/g,'')		//每个输入框只能输入数字
+										if(input[i].value.length === 1){                  //若输入一个就聚焦到下一个
+												if(i <= 4){	                                  //限制输入框数量
+														input[i+1].focus()
+										}
+								}
+						}
+				}
+		}
+		
+		
+		form.style.display = 'none'
+		btn.onclick = function(){
+			if(form.style.display === 'none'){
+				form.style.display = 'block'
+			}else{
+				form.style.display = 'none'
+			}
+		}
+		
+		submit.onclick = function(event){                                 //阻止事件刷新
+			event.preventDefault()
+		}
+  </script>
+</html>

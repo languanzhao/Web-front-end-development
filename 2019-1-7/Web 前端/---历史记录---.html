@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style type="text/css" media="screen">
+/*  1.注意jq的写法找元素时要用到 $ 符    this也需要    $(this)
+    2.注意输入为数字的input框需要转为数字格式  Number()
+    3. $("body").find("div").eq(2).addClass("blue");
+       $("body").find("div").eq(2).css("background","pink")  
+       //从单个样式变成多个样式时，需要 1. 加{} 2. 间隔用逗号隔开 3. font-size要写成fontSize
+       $("body").find("div").eq(2).css({"background":"pink","border":"5px solid red"})
+       $("span").parent().css({"color":"red","border":"2px solid red"});
+    4.
+     $("#btn1").click(function(){$("#test1").text("Hello world!");});           Hello world!
+     $("#btn2").click(function(){$("#test2").html("<b>Hello world!</b>");});    Hello world!(粗体)
+     html中的内容会继承b标签的样式
+*/
+</style>
+</head>
+<body>                    
+<script type="text/javascript">
+//                             http://www.divcss5.com/ 进入DIVCSS5网站CSS学习指南
+//     0.i++ i--                                         number.js
+//     1.点击购物车时将把数据发送到本地离线存储              details.js
+//     2.从本地存储中获取数据并appendTo进入html             buycar.js
+
+//     3.                                                  count.js
+//     3.1 添加进入购物车时默认的(单价 * 数量 == 小计)                   
+//     3.2 未勾选选框时，改变商品数量后失去焦点重新计算小计
+//     3.3 勾选选框时计算总价    
+//     3.4 勾选选框时，失去焦点数量修改，小计/总计修改
+//     3.5 点击全选
+//     3.6 点击反选
+//     3.7 点击删除
+
+//     4. 表格(table,tr,th,td)                             html+css
+
+//     5. 在同一页面跳转到对应位置(还有一种滑动效果)          js - 二
+//     5.1 用id名（a标签跳转到任意标签）         
+//     5.2 用name名（a标签跳转到a标签）     
+
+//     6. 11-修改DOM元素内容及位置                          js - 二
+   
+//     7.append appendTo parent parents
+//     
+//     8.商品数量价格排序                                     jq - 二
+//     
+//     9.flex 弹性布局                                       html+css 
+//     
+//     10. 冒泡排序  
+//        var arr = [24,78,1,45,8,43,536]
+//        function bubbleSort() {
+//        for (var i = 0; i < arr.length - 1; i++) {
+//         for (var j = 0; j < arr.length - 1; j++) {
+//             if (arr[j] > arr[j+1]){        // 相邻元素两两对比
+//                 var c = arr[j]        // 元素交换
+//                 arr[j] = arr[j+1]
+//                 arr[j+1] = c
+//              }
+//            }
+//          }
+//        }
+//          bubbleSort()
+//          console.log(arr)
+//      11. 去重                                        //06-数组(filter).html
+//      12. ajax 
+//      13. 两者一样功能  
+//          <input type="submit">    
+//          <button type="submit"></button>  
+//      14. (放大镜效果)    
+//      15. (layer-弹窗)
+//      16. (支付密码)
+//      17. (css3)
+//      18. (js滚动条插件)             
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/公共样式.css"/>
+		<style type="text/css">
+			.banner{width:auto;height:600px;position: relative;}
+			.banner ul{width: 1920px;height:600px;position: absolute;left: 50%;margin-left: -960px;overflow: hidden;}
+			
+			.banner ol{width: 1920px;height:50px;text-align: center;font-size: 0px;position: absolute;left: 50%;margin-left:-960px;bottom:60px;}
+			.banner ol li{width:50px;height: 50px;display: inline-block;margin: 0px 10px;background: #00FFFF;}
+			 /*让ol 下的li转成行内块级,ol 就可以使用 text-align: center;font-size: 0px;li 则不需用浮动  float:left; 令li 自动居中,不用像以往li 的宽度加上间距那样设置ol 的宽度,此处用法	与页码用法相同*/
+		</style>
+	</head>
+	<body>
+		<div class="banner">
+				<ul>
+					<li><img src="img/banner1.jpg" /></li>
+					<li><img src="img/banner2.jpg" /></li>
+					<li><img src="img/banner3.jpg" /></li>
+				</ul>
+				<ol>
+					<li> </li>
+					<li> </li>
+					<li> </li>
+				</ol>
+			<a class="prev" href="javascript:void(0);"></a>
+			<a class="next" href="javascript:void(0);"></a>
+			</div>
+	</body>
+</html>

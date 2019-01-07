@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>循环		https://blog.csdn.net/suyimin2010/article/details/80504344		</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+</head>
+
+<body>
+    <script type="text/javascript">
+    //1.计算1+2+3+...+100的值
+    // var x = 0;
+    // var i;
+    // for(i = 1;i <= 100;i++){
+    // 	x = x + i;
+    // }
+    // alert(x);  // 5050
+
+    //1.1 利用for循环计算1 * 2 * 3 * ... * 10的结果：
+    // var x = 1;
+    // var i;
+    // for(i = 1;i <= 10;i++){
+    // 	x = x * i;
+    // }
+    // alert(x);	//3628800
+
+    // 2.for循环最常用的地方是利用索引来遍历数组：   注意：如果函数内声明变量不用var,那就等于声明了一个全局变量，这样一循环肯定要出错的...
+    // var arr = ['Apple', 'Google', 'Microsoft'];
+    // var x,i;
+    // for(i = 0;i < arr.length;i++){
+    // 	x = arr[i];
+    // console.log(x);	//Apple Google Microsoft
+    // }
+    
+    //3.for循环的一个变体是for ... in循环，它可以把一个对象的     (所有属性)     依次循环出来：
+    //for..in循环可遍历对象的所有可枚举属性，所以一般用来遍历对象而不是数组
+    //     var o = {
+    //     name: 'Jack',
+    //     age: 20,
+    //     city: 'Beijing'
+    // };
+    // for (var key in o) {
+    //     console.log(key); //name age city
+    //     console.log(o[key]);  
+    //     console.log(key + ':' + o[key]);        
+    // }
+    
+    //3.1由于Array也是对象，而它的每个元素的索引被视为对象的属性，
+    //因此，for ... in循环可以直接循环出Array的索引：
+    // 	var a = ['A', 'B', 'C'];
+    // 	for (var i in a) {
+    //     console.log(i); // '0', '1', '2'        //若只输出 i;则 显示 数组长度；如例子3.1.1
+    //     console.log(a[i]); // 'A', 'B', 'C'     //若输出 a[i]；则显示数组里的值；如例子3.1.2
+    // }
+    //3.1.1 若只输出 i;则 显示 数组长度；
+    // var arr = ['Bart', 'Lisa', 'Adam'];
+    //  for(var x in arr){
+    //      console.log('Hello!' + x);
+    //  }
+
+     //3.1.2 若输出 a[i]；则显示数组里的值；
+     // var arr = ['Bart', 'Lisa', 'Adam'];
+     // for(var x in arr){
+     //     console.log('Hello!' + (arr[x]));
+     // }
+
+     //3.2 for...in循环除用于数组的循环外，还可以用于对象的key循环  { "key":"value"}
+//         var myObject = {"id":"1","name":"john"};
+//         for (var obj in myObject) {
+//         //console.log(obj);                      //id  name
+//         //console.log(myObject[obj]);            //1   john
+//         //console.log(obj + ':' + myObject[obj]);//id:1 name:john 
+// };
+
+    //练习：请利用循环遍历数组中的每个名字，并显示Hello, xxx!：
+
+    //方法一：利用for...in循环；
+    // var arr = ['Bart', 'Lisa', 'Adam'];
+    // for(var x in arr){
+    //     console.log('Hello!' + (arr[x]));
+    // }
+   
+    //方法二：利用 for循环；
+    // var arr = ['Bart', 'Lisa', 'Adam'];
+    // var x;
+    // var i;
+    // for(i = 0;i < arr.length;i++){
+    //     x = arr[i];
+    // console.log('Hello!' + x);
+    // }
+    </script>
+</body>
+<!-- web前端之javaScript 循环总结
+https://blog.csdn.net/qq_33559304/article/details/53191211 -->
+</html>

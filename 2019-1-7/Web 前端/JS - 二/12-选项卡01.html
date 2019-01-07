@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Js基础</title>
+	<style type="text/css" media="screen">
+	*{margin: 0;padding: 0;list-style: none;}
+	.tab{width: 500px;height: 500px;border: 1px solid;margin: 0 auto;}
+	.hd{height: 100px;border-bottom: 1px solid;}
+	.hd li{width: 100px;height: 100px;float: left;border-right: 1px solid;text-align: center;line-height: 100px;}
+	.hd .on{background: yellowgreen;}
+	.bd div{display: none;}
+	.bd .on{display: block;}
+	</style>
+</head>
+<body>
+	<div class="tab">
+		<ul class="hd">
+			<li class="on">标题一</li>
+			<li>标题二</li>
+			<li>标题三</li>
+		</ul>
+		<div class="bd">
+			<div class="on">123456</div>
+			<div>67890</div>
+			<div>abcdefg</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+		var li = document.querySelectorAll('li')
+		var div = document.querySelectorAll('.bd div')
+
+			li.forEach(function(item,i){
+				item.onclick = function(){
+					for(var j = 0;j < li.length;j++){
+						li[j].className = ''
+						div[j].className = ''
+					}
+					item.className = 'on'
+					div[i].className = 'on'
+				}
+			})
+
+// 		var title = document.querySelectorAll(".hd li")
+// 		var con = document.querySelectorAll(".bd div")
+// 	    title.forEach(function(item,i){
+// 	    item.onclick = function(){
+		
+// 		for(j=0;j<=title.length-1;j++){
+// 			title[j].className = ""
+// 			con[j].className = ""
+// 		}
+// 		item.className = "on"
+// 		con[i].className = "on"
+// 	}
+// })
+	</script>
+</body>
+</html>

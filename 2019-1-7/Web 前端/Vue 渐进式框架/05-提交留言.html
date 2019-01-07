@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title> https://cn.vuejs.org/v2/guide/ </title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+</head>
+
+<body>
+    <div class="app">
+                                                        <!-- .trim 自动过滤用户输入的首尾空白字符 -->
+        <input type="text" v-model.trim="value">
+        <button v-on:click="toclick">点击</button>
+        <ul>
+            <li v-for="(item,i) of list">
+                <p> 
+                <span>{{item}}</span>
+                <b v-on:click="remove(i)">删除</b>
+                </p>
+            </li>
+        </ul> 
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script type="text/javascript">
+            var vm = new Vue({
+                el: ".app",
+                data: {
+                    list: [],
+                    value:""
+                },
+                methods:{
+                    remove:function(i){
+                       this.list.splice(i,1)          //删除第i个，删除1项
+                    },
+                    toclick:function(){
+                    if(this.value != ""){                        //步骤分析
+                        var val = this.value                     //1.获取当前输入在输入框的值
+                        this.list.push(val)                      //2.把输入的值添加到list中
+                        this.value = ""                          //3.点击添加后输入框清空
+                        }else{
+                            alert("提示:内容为空或输入空格")       //4.如果没有输入内容就弹出提示
+                        }
+                    }
+                }
+            })
+    </script>
+</body>
+
+</html>

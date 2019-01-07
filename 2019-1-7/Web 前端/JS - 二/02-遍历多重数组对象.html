@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+	<script type="text/javascript">	
+		var arr = [1,2,3,4,5,6]
+
+		//第一种方法
+		// for(i = 0;i < arr.length;i++){
+		// 	console.log(arr[i]);
+		// }
+		
+		//第一种方法
+		 for (var i in arr){
+		 	console.log(arr[i]);
+		 }
+		 
+		 //第三种方法
+		 // arr.forEach(function(item,i){
+		 // 	console.log(item);
+		 // })
+////////////////////////////////////////////////////////////////////////////////////////////////
+		//第一层
+			// var a = {name:"小明",age:18,hobby:"泡妞"} 
+			// for(var i in a){
+			// 	console.log(a[i])
+	 	// 	}
+
+		//第二层
+     // var a = [{name:"诸葛亮",age:"22"},
+     // 		  {name:"周瑜",age:"33"},
+     // 		  {name:"曹操",age:"44"}
+     // 		  ]
+     // 	for(var i in a){
+     // 		for(var j in a[i]){
+     // 			console.log(a[i][j]);
+     // 		}
+     // 	}
+     // 	
+   
+     	//第三层
+   // 	  	var b = [{
+			// 	countryName: "中国",
+			// 	cities: [{
+			// 		cityName: "广州",code:"001"
+			// 	}, {
+			// 		cityName: "上海",code:"002"
+			// 	}, {
+			// 		cityName: "北京",code:"003"
+			// 	}]
+			// }, {
+			// 	countryName: "日本",
+			// 	cities: [{
+			// 		cityName: "东京",code:"101"
+			// 	}, {
+			// 		cityName: "北海道",code:"102"
+			// 	}, {
+			// 		cityName: "大阪",code:"103"
+			// 	}]
+			// }, {
+			// 	countryName: "美国",
+			// 	cities: [{
+			// 		cityName: "纽约",code:"201"
+			// 	}, {
+			// 		cityName: "华盛顿",code:"202"
+			// 	}, {
+			// 		cityName: "洛杉矶",code:"203"
+			// 	}]
+			// }]
+
+		 //     for(var i in b){
+		 //     	for(var j in b[i].cities){
+		 //     		for(var k in b[i].cities[j]){
+		 //     			console.log(b[i].cities[j][k]);
+		 //     		}
+		 //     	}
+		 //     }
+	</script>
+</body>
+</html>

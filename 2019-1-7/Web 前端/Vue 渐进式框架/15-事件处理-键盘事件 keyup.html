@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+                                    <!-- 键盘事件 keyup -->
+<!-- 1.按键修饰符:
+    .enter
+    .tab
+    .delete
+    .esc
+    .space
+    .up
+    .down
+    .left
+    .right
+    2.自定义修饰符:
+    Vue.config.keyCodes.f1 = 112  
+-->
+</head>
+<body>
+        <div id="app">
+                                                <!-- 键盘事件在keyup下进行 -->
+                <input @keyup.space="toClick" value="按空格键观察控制台" />
+        </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script type="text/javascript">
+               var vm =new Vue({
+                   el:"#app",
+                   data:{
+
+                   },
+                   methods:{
+                    toClick:function(){
+                        console.log(75*2);
+                        
+                    }
+                   }
+               })
+    </script>
+</html>

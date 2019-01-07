@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{width: 200px;height: 200px;background: orange;
+			animation:box 3s;    /*命名为box的动画运行时间为3秒*/
+			position: relative;  /*相对定位*/
+			animation-iteration-count:infinite; /* 运行这个动画的次数为2/无数次*/
+			}
+			/*@keyframes box{
+				from{background:red;}
+				to{background: green;}
+			}*/
+			@keyframes box{
+				0% {background: orange;left: 0px;top: 0px;}
+				25% {background: #00F6F6;left: 200px;top: 0px;}
+				50% {background: #008000;left: 200px;top:200px;}
+				75% {background: #0A0A0A;left: 0px;top:200px;}
+				100% {background: #FF0000;left: 0px;top: 0px;}
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

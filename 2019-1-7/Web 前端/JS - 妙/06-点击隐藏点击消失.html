@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/common.css" rel="stylesheet">
+<script type="text/javascript" language="JavaScript" src="js/jquery1.11.js"></script>
+<style type="text/css">
+.list { width: 200px;overflow: hidden; border: 1px solid #aab4bc; margin: 50px auto 0; }
+.list h2 { height: 25px; line-height: 25px; border: 1px solid #dee3e6; border-top: 1px solid #f3f5f7;font-size: 14px;color:#ffffff; cursor: pointer; padding-left: 10px;background: #C080B5;}
+.list ul{ width: 200px; overflow: hidden; background:#e9edf2;font-size:12px;display: none;}
+.list ul li { width: 200px; float: left; }
+.list ul li a { display: block; line-height: 25px; padding-left: 10px; color:#6b7980; text-decoration: none; }
+.list ul li a:hover { background: #FFFFFF; text-decoration: underline; }
+</style>
+</head>
+<body>
+	<div class="list">
+    <h2>播放列表</h2>
+    <ul>
+        <li><a href="#">玩爱之徒 - 蔡依林</a></li>
+        <li><a href="#">原谅我就是这样的女生 - 戴佩妮</a></li>
+        <li><a href="#">猜不透 - 丁当</a></li>
+        <li><a href="#">自导自演 - 周杰伦</a></li>
+        <li><a href="#">浪漫窝 - 弦子</a></li>
+        <li><a href="#">流年 - 王非</a></li>
+        <li><a href="#">十年 - 陈奕迅</a></li>
+        <li><a href="#">海阔天空 - beyond</a></li>
+        <li><a href="#">她来听我的演唱会 - 张学友</a></li>
+    </ul>
+    </div>
+<script type="text/javascript">
+             //var main = document.querySelector(".list")
+ 		         //var title = document.querySelector(".list h2")
+ 		         //var content = document.querySelector(".list ul")
+                      //content.style.display = 'none'            //注意需要在这里添加none,否则会出现点击两次才出现的情况
+ 		              //title.onclick = function(){
+ 			              //if (content.style.display === 'none'){
+ 				                 //content.style.display = 'block'
+ 			              //}else{
+ 				                 //content.style.display = 'none'
+ 			            //}
+ 		           //}
+          
+        
+   //      title.onmouseover = function(){
+   //          content.style.display = 'block';
+   //      }
+   //      main.onmouseleave = function(){
+   //          content.style.display = 'none';
+   //      }
+
+        //jq写法
+             $("h2").click(function(){
+              $("ul").slideToggle("slow");                    //$("ul").slideToggle(3000);可设时间        
+  });
+</script>
+</body>
+</html>

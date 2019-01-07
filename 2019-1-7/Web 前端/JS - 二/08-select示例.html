@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Js基础</title>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+	<!-- 1) -->
+	<!-- <ul>
+		<li>
+			<b>新闻1</b>
+			<span>删除</span>
+		</li>
+		<li>
+			<b>新闻2</b>
+			<span>删除</span>
+		</li>
+		<li>
+			<b>新闻3</b>
+			<span>删除</span>
+		</li>
+		<li>
+			<b>新闻4</b>
+			<span>删除</span>
+		</li>
+		
+		<li>
+			<b>新闻5</b>
+			<span>删除</span>
+		</li>
+	</ul> -->
+
+	<!-- 2) -->
+	<div>
+		<select class="country">
+			<option>==请选择国家==</option>
+		</select>
+		<select class="city">
+			<option>==请选择城市==</option>
+		</select>
+	</div>
+	
+	<script>
+		//      1)
+		// 		var list = document.querySelectorAll("li")
+		// // 		console.log(Object.prototype.toString.call(list))
+		// // 		
+		// // 		var li = [...list]
+		// // 		console.log(Object.prototype.toString.call(li))
+		// 		list.forEach(function(item,i){
+		// 			var span = item.children[1]     //获取li下的子元素，children[1],因此获取的为span
+		// 			span.onclick = function(){
+		// 				item.remove()
+		// 			}
+		// 		})
+
+
+		//      2)
+		var obj = [{
+			countryName: "中国",
+			cities: [{
+				cityName: "广州"
+			}, {
+				cityName: "北京"
+			}, {
+				cityName: "珠海"
+			}]
+		}, {
+			countryName: "日本",
+			cities: [{
+				cityName: "东京"
+			}, {
+				cityName: "大阪"
+			}, {
+				cityName: "北海道"
+			}]
+		}, {
+			countryName: "韩国",
+			cities: [{
+				cityName: "首尔"
+			}, {
+				cityName: "釜山"
+			}, {
+				cityName: "济州岛"
+			}]
+		}]
+		
+		obj.forEach(function(item,i){
+			//		添加一个option标签,内容为item.countryName,填充到country里面
+			$("<option></option>").text(item.countryName).appendTo($(".country"))
+		})
+		
+		
+		$(".country").change(function(){
+			$(".city option:gt(0)").remove()   //	每次值发生改变,都先删除city里面的option
+			var val = $(this).val()				//	获取当前的发生改变的值
+
+			obj.forEach(function(item,i){
+				if(item.countryName === val){   //如果当前的值与遍历出的countryName一致
+					var cities = item.cities     //获取当前的国家对应的cities
+					
+					cities.forEach(function(item,i){  //再循环这个cities
+						$("<option></option>").text(item.cityName).appendTo($(".city")) 
+						//最后把内容填充到.city里面
+					})
+				}
+			})
+		})
+	</script>
+</body>
+
+</html>

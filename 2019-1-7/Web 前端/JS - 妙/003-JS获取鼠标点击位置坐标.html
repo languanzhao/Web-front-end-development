@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+</head>
+//              https://blog.csdn.net/honeymao/article/details/76828421
+<body>
+    <script type="text/javascript">
+    document.onmousemove = function(ev) {
+        var oEvent = ev || event;          //这么写是要兼容各个浏览器  且不能反过来写
+        var oLeft = oEvent.clientX + 'px';
+        var oTop = oEvent.clientY + 'px'
+        console.log(oLeft + ',' + oTop)
+
+    }
+    </script>
+</body>
+</html>

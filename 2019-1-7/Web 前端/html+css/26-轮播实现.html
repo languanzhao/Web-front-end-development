@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript" src="js/jquery1.42.min.js">
+</script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js">
+</script>
+
+		<style type="text/css">
+ol,li{margin: 0px;padding: 0px;}
+.banner{width:auto;height: 600px;position: relative;}
+.slidebox{width: 1920px;height: 600px;overflow: hidden;position:absolute;left:50%;margin-left:-960px;}
+.slidebox .btn{width:300px ;height:50px;position: absolute;left: 50%;bottom: 20px;margin-left: -100px;}
+.slidebox .btn ul li{width: 50px;height: 50px;background: #00F6F6;margin:0px 10px;float: left;list-style-type: none;}
+.slidebox .btn ul li:hover{background: red;}
+.slidebox .btn ul .on{background: red;}
+.banner	.prev{display:block;width: 40px;height: 40px;background: url(img/index_prev.png);position: absolute;left: 100px;top:280px;}
+.banner	.next{display:block;width: 40px;height: 40px;background:url(img/index_next.png);position: absolute;right: 100px;top:280px;}
+.banner	.prev:hover{background: url(img/index_prev_hover.png);}
+.banner	.next:hover{background: url(img/index_next_hover.png);}
+
+#div{width: 100px;height: 100px;background: #00F6F6;position: absolute;left: 100px;top: 100px;}
+		</style>
+
+	</head>
+	<body>
+		<div class="banner">
+			<div class="slidebox">
+				<div class="pic">
+					<ul>
+						<li><a href=""><img src="img/banner1.jpg"/></a></li>
+	      				<li><a href=""><img src="img/banner2.jpg"/></a></li>
+	      				<li><a href=""><img src="img/banner3.jpg"/></a></li>
+					</ul>
+				</div>
+				<div class="btn">
+					<ul>
+						<li class="on"></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				
+			
+			</div>
+			<a class="prev" href="javascript:void(0);"></a>
+			<a class="next" href="javascript:void(0);"></a>
+		</div>
+	</body>
+	<script type="text/javascript">
+	jQuery(".banner").slide({mainCell:".pic ul",titCell:".btn ul li",effect:"fold",autoPlay:true,trigger:"mouseover",titOnClassName:"on",prevCell:".prev",nextCell:".next"});     
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+                                                                <!-- 数组形式 -->
+        <!-- <ul id="app">                                      
+                <li v-for="(item,i) in list">                  
+                    {{item}}
+                </li>
+        </ul> -->
+                                                                <!-- 对象形式 -->
+        <ul id="app">                                          
+                <li v-for="(value,key,index) in obj">
+                {{index}} : {{key}} : {{value}}
+                </li>
+        </ul>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+                    el: "#app",
+                    data: {                                      //数组形式
+                        //list:["小明","小红","小刚"]
+
+                        obj:{                                    //对象形式
+                            "firstname":"小明",
+                            "age":18,
+                            "sex":"女"
+                            }
+                    }
+                    })
+  
+            //vm.list.splice(1,1)           //删除第二个，删除一个
+            //console.log(vm.list);
+//数组写法一           
+            //vm.list.splice(1,1,"999")     //把第二个替换成999
+            //console.log(vm.list)
+//数组写法二
+            //vm.$set(vm.list,1,"999999")
+            //console.log(vm.list);
+
+//对象写法一  
+            //vm.$set(vm.obj,"age",209)
+            //console.log(vm.obj);
+//对象写法二     
+            //vm.obj = Object.assign({},vm.obj,{"age":188})
+            //console.log(vm.obj)
+</script>
+</html>

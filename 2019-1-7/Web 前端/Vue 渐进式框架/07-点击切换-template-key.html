@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css" media="screen">
+
+</style>
+</head>
+<body>
+	<div class="app">
+		<template v-if="bool"> <!-- v-if只能作用在一个元素上，所以如果要同时作用多个元素，使用template 且不显示标签-->
+			<label>邮箱</label>
+			<input type="text" placeholder="请输入邮箱" key="email">   		<!-- 更改不同的key值，去掉复用性 -->
+		</template>
+		<template v-else>
+			<label>电话</label>
+			<input type="text" placeholder="请输入电话" key="tel">
+		</template>
+	    <button @click="toggle">点击切换</button>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</body>
+<script type="text/javascript">
+			var vm = new Vue({
+				el:".app",
+				data:{
+					bool:true
+				},
+				methods:{
+					toggle:function(){
+						if(this.bool){               //判断语句  默认为 this.bool === true
+							this.bool = false        //赋值语句
+						}else{
+							this.bool = true
+						}
+						//this.bool = !this.bool      //简写   在true和false之间切换
+					}
+				}
+			})
+</script>
+</html>         
+		<!--    1/
+						if(this.bool === true){             
+							this.bool = false       
+						}else{
+							this.bool = true
+						}
+				2/
+				    this.bool === true ? this.bool = false : this.bool = true
+				3/
+					this.bool = !this.bool 
+		-->
+
+

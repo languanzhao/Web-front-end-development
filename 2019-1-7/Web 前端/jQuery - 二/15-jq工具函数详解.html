@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>jq工具函数详解</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery1.11.js"></script>
+    <style type="text/css" media="screen">
+    </style>
+</head>
+
+<body>
+
+</body>
+<script type="text/javascript">
+//1.$.each
+	// var arr = ["小明","xiaohong","小红"]
+	// $.each(arr,function(i,item){
+	// 	console.log(i);
+	// 	console.log(item);
+	// })
+
+	// arr.forEach(function(item,i) {
+	// 	console.log(i);
+	// 	console.log(item);
+	// })
+//2.$.grep
+		// var arr1 = ["哈哈哈","呵呵呵","咳咳咳"];
+
+		// var x = $.grep(arr1,function(item,i){
+		// 		return i>=0;
+		// 	})
+		// console.log(x);
+	
+		// var arr2 = [1,6,8,3,225,6,7]
+		// function fn(num){
+		// 	 return num > 3
+		// }
+		// b = arr2.filter(fn) 
+		// console.log(b);
+//3.$.merge
+		 // var arr2 = [1,6,8,3,225,6,7]
+		 // var arr1 = [35,57,36]
+		// 1
+		// var x = $.merge(arr1,arr2)
+		// console.log(x);
+		// 2
+		//var x = [...arr1,...arr2]
+		//console.log(x);
+		// 3
+		//var x = arr1.concat(arr2)
+		//console.log(x);
+//4.$.extend    //只有属性相同的被替换，合并数组
+       // var json1 = {"name":"xiaoming","age":16,"sex":"男"}
+       // var json2 = {"name":"小红","true":16,"sex22":"男"}
+       // var x = $.extend(json1,json2)   //json2覆盖json1
+       // console.log(x);
+//5.$.inArray() 查找参数的索引值
+  //     var arr1 = ["哈哈","咳咳","呵呵"];
+		// var x = $.inArray("咳咳",arr1);
+		// console.log(x);
+//6.$.isNumeric()	判断是否是数字
+        // var a = "123"
+        // var b = Number(a)
+        // console.log($.isNumeric(b));
+        // console.log(isNaN(b));
+//7.$.type(obj) 判断对象类型   
+       // var arr = [3,5,67,7]
+       // console.log($.type(arr));
+       // console.log(typeof arr);   //数组也是一个对象
+</script>
+
+</html>

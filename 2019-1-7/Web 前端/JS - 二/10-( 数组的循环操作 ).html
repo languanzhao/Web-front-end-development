@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <script type="text/javascript">
+// 1. every（） ：对数组中的每一项运行给定函数，如果该函数对每一个项都返回true,则返回true
+// 2. some（）	  ：对数组中的每一项运行给定函数，如果该函数对任一一项返回true,则返回true
+// 3. filter（） ：对数组中的每一项运行给定函数，返回该函数会返回true的项组成的数组
+// 4. foreach（）：对数组中的每一项运行给定函数，没有返回值
+// 5. map（）     ：对数组中的每一项运行给定函数，返回每次函数调用的结果组成的数组
+	
+	//1.every()    购物车 全选   每一个 都为true 才为true
+		//var a = [true,true,true,true,true]
+			 // function f(a){
+			 // 	return a == true
+			 // }
+			 // a = a.every(f)
+			 // console.log(a);
+	
+	//2.some()           数组a 里有一个false；只要有一个是false返回的是true        
+	// var a = [true,true,true,false,true]
+ // 			function f(a){
+	// 		 	return a == false
+	// 		 }
+	// 		 a = a.some(f)
+	// 		 console.log(a);
+
+	//3.filter()         选出双数            
+			// var b = [1,2,3,4,5,6]
+			// function f(b){
+			// 	return b % 2 == 0
+			// }
+			// b = b.filter(f)
+			// b.forEach(function(item,i){
+			// 	console.log(item);
+			// })
+	//4.forEach()
+	// var arr = [1,2,3,4,5,6]
+	//  arr.forEach(function(item,i){
+	// 	 	console.log(item);
+	// 	 })
+
+	// //5.map()      对数组的每个 值进行改变  
+	// var b = [1,2,3,4,5,6]
+	// //写法一
+	// function f(b){
+	// 	return  b * 2
+	// }
+	// b = b.map(f)
+	// console.log(b)
+
+	// //写法二   相当于把名为 f 的函数 放入map()
+	// b = b.map(function f(b){
+	// 	return  b * 2
+	// })
+	// console.log(b)
+
+    </script>
+</body>
+</html>
+

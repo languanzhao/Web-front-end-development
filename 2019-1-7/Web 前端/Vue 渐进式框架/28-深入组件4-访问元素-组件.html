@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>访问元素</title>
+</head>
+<body>
+        <div id="app">
+                <my-component></my-component>
+                                                    <!-- //注意标签写的是   ref   而获取/打印出来写的是    $refs -->
+                <ul ref="ul">
+                    <li v-for="item of list" ref="li">{{item}}</li>
+                </ul>
+            </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script type="text/javascript">
+    Vue.component("my-component",{
+        template:`<p @click="toClick()">点击</p>`,
+        methods:{
+            toClick(){
+                //console.log(this.$parent)            //2. 访问父级组件实例 $parent
+                //console.log(this)
+            }
+        }
+    })
+			var vm = new Vue({
+				el:"#app",
+                data:{
+                    text:"文字",
+                    list:[1,2,3,4,5,6]
+                },
+                methods:{
+                    toClick(){
+                        console.log("方法")
+                    }
+                }
+			
+			})
+        //1.访问根实例 $root
+            // console.log(vm.$root)
+            // console.log(vm.$root.$el)
+            // console.log(vm.$root.text)
+            // console.log(vm.$root.toClick())
+        //3.访问子组件实例或子元素 ref
+        //console.log(vm.$refs.ul)
+        //console.log(vm.$refs.li)             //注意标签写的是   ref   而获取/打印出来写的是    $refs
+        console.log(vm.$data)
+    </script>
+</html>

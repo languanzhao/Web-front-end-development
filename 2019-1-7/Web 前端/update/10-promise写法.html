@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script>
+//https://www.jianshu.com/p/270f129e5af3
+// 			1,异步函数
+// 			2,promise     es6
+// 			3,async await es7
+			
+			
+			function test(){
+				var num = Math.round(Math.random()*10)
+				return new Promise(function(resolve,reject){
+					setTimeout(function(){
+						if(num>=5){
+							resolve(num)
+							console.log(num)
+							console.log('大于等于5')
+						}else{
+							reject(num)
+							console.log(num)
+							console.log('小于5')
+						}
+					},1000)
+				})
+			}
+			
+			
+			function test2(num){
+				return new Promise(function(resolve,reject){
+					setTimeout(function(){
+						if(num>=8){
+							resolve(num)
+							console.log(num)
+							console.log('大于等于8，成功')
+						}else{
+							reject(num)
+							console.log(num)
+							console.log('小于8，成功')
+						}
+					})
+				})
+			}
+			
+			
+			async function asyFn(){
+				try{
+					var t = await test()
+					var t2 = await test2(t)
+				}catch(err){
+					console.log(err)
+				}
+			}
+			
+			asyFn()
+		</script>
+	</body>
+</html>
+
+
+<!-- test 这个函数只能判断返回大于等于5或者小于5的值
+
+test2 这个函数能够判断大于等于5之后是不是大于等于8
+
+
+最终结果：我们要的数字是大于等于8 -->

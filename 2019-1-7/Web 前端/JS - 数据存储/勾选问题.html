@@ -1,0 +1,111 @@
+<html>
+<head>
+<script src="js/jquery-1.11.0.js"></script>
+						<!-- https://blog.csdn.net/u014000377/article/details/52371836 -->
+<script>
+    window.onload = function(){
+        var dom_a = document.getElementById('a1');
+        var dom_b = document.getElementById("b1");
+        //alert("A="+dom_a.value+" || B="+dom_b.value);
+    }
+
+                                    //以下开始操作 radio 的取消和勾选
+    //原生js操作
+    function fn1(){
+        var dom_a = document.getElementById('a1');
+        var dom_b = document.getElementById("b1");
+        //勾选
+        dom_a.checked = true;
+        //dom_a.checked = 'false';
+        //dom_a.checked = 123;
+        //取消勾选
+        dom_b.checked = false;//取消勾选
+        //dom_b.checked = '';
+        //dom_b.checked = null;//取消勾选
+        //dom_b.checked = undefined;//取消勾选
+
+    }
+    //利用jQuery操作
+    function fn2(){
+        var jQ_a = $('#a2');
+        var jQ_b = $("#b2");
+        //勾选
+        jQ_a.prop('checked',true);
+        //jQ_a.prop('checked','123');
+        //jQ_a.prop('checked','true');
+        //jQ_a.prop('checked','abc');
+        //jQ_a.prop('checked',123);//数字可以
+        //jQ_a.prop('checked',-1);
+        //jQ_a.prop('checked',abc);//会报错,abc未定义  {所以预猜测checked只要有已定义的值即可实现选中(undefined代表未定义)}
+        //取消勾选
+        jQ_b.prop('checked',false);
+        //jQ_b.prop('checked','');
+        //jQ_b.prop('checked',null);
+        //jQ_b.prop('checked',undefined);//没有任何效果,不会报错
+    }
+
+</script>
+<style>
+    .own{
+        border:solid 2px red;
+        padding:20px 5px 20px 40px;
+        width:300px;
+        margin:80 0 0 500;
+    }
+</style>
+<head>
+<body>
+<!--
+    通过实验得知：
+        初始化让单选框选中有4种方法可以实现：
+        1、checked
+        2、checked='checked'(建议用此方法，此方法对浏览器可以有很好的兼容性)
+        3、checked='true'
+        4、checked=true
+        小提示：通过给checked属性复制,只要checked存在,
+            赋予任何值都可以初始化选中(eg:checked='aaa' 或 checked='false')
+            不赋值都可以实现初始化选中
+        测试成功案例：
+            [checked],[checked='checked'],[checked='true'],[checked=true],[checked='aaa'],[checked='false'],
+            [checked='undefined'],[checked=false],[checked=null],[checked=undefined],[checked=''],[checked='-1']
+
+        当有多个被选中时，最后选中的单选框为最后一个
+-->
+                                    <!-- 当勾选时即为高亮状态 -->
+<div class='own'>                       
+<div>原生js操作</div>
+<label>A1</label><input id='a1' type='radio' value='1' name='test1' checked />
+<label>B1</label><input id='b1' type='radio' value='2' name='test1' checked='checked'/>
+<label>C1</label><input id='c1' type='radio' value='3' name='test1' checked='true' />
+<label>D1</label><input id='d1' type='radio' value='4' name='test1' checked=true />
+<button onclick='fn1()'>测试点击一下</button>
+</div>
+
+<div class='own'>
+<div>利用jQuery操作</div>
+<label>A2</label><input id='a2' type='radio' value='1' name='test2' />
+<label>B2</label><input id='b2' type='radio' value='2' name='test2' checked/>
+<label>C2</label><input id='c2' type='radio' value='3' name='test2' />
+<label>D2</label><input id='d2' type='radio' value='4' name='test2' />
+<button onclick='fn2()'>测试点击一下</button>
+</div>
+<div class="own">
+<div>正常的单选框</div>
+<input type="radio">
+<input type="radio">
+<input type="radio">
+<input type="radio">
+</div>
+<div class="own">
+<div>相同的name，所以只勾选一个</div>
+<input type="radio" name="same">
+<input type="radio" name="same">
+<input type="radio" name="same">
+<input type="radio" name="same">
+</div>
+<div class="own">
+    <input type="" name="">
+    
+</div>
+</body>
+</html>

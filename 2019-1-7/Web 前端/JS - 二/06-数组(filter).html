@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>        https://www.cnblogs.com/cjx-work/p/8052865.html    </title>
+</head>
+<body>
+    
+</body>
+<script>
+//回调函数
+//filter()接收的回调函数，其实可以有多个参数。通常我们仅使用第一个参数，表示Array的某个元素。
+//回调函数还可以接收另外两个参数，表示元素的位置和数组本身：
+                var arr = ['A', 'B', 'C'];
+                    var r = arr.filter(function (element, index, self) {
+                        console.log(element);  // 依次打印'A', 'B', 'C'
+                        console.log(index);    // 依次打印0, 1, 2
+                        console.log(self);     // self就是变量arr
+                        return true;
+            });
+
+//利用filter，可以巧妙地去除Array的重复元素：       (去重方法一)
+            var arr = ['apple', 'strawberry', 'banana', 'pear', 'apple', 'orange', 'orange', 'strawberry']
+
+            var r = arr.filter(function (element, index, self) {
+                return self.indexOf(element) === index;
+            });
+
+            console.log(r);                 //数组形式
+            console.log(r.toString());      //toString 方法会返回一个“以文本方式表示”此对象的字符串。
+            console.log(JSON.stringify(r))  //数组转字符串
+
+//去重方法之filter封装                             (去重方法二)
+            Array.prototype.unique = function(){  
+                var arr = this 
+            return arr.filter(function(element,index,self){     //注意添加 return
+                return self.indexOf(element) === index          //注意添加 return
+            })
+            }
+            var a = arr.unique()        //只要使用unique方法都可直接去重（封装）
+            console.log(a);
+
+//把一个Array中的空字符串删掉，可以这么写：
+            var arr = ['A', '', 'B', null, undefined, 'C', '  '];
+            var a = arr.filter(function (s) {
+                return s && s.trim(); // 注意：IE9以下的版本没有trim()方法
+            });
+           console.log(a)     // ['A', 'B', 'C']
+</script>
+</html>

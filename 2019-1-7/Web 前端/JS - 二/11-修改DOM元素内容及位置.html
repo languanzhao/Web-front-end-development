@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+  <div id="main">
+    
+  </div>
+    <script type="text/javascript">
+// 修改DOM元素内容
+// 	innerText
+// 	innerHTML
+// 	style
+// 	createElement
+// 	createTextNode
+// 修改DOM元素位置
+// 	appendChild()
+// 	insertBefore()
+// 	removeChild()
+// 	replaceChild(new,old)
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 	// // 第二题 价格
+// // 获取tr
+// 	var tr = document.querySelectorAll("tbody tr")
+	
+// 	var allTotal = document.querySelector(".total_price") //总价
+// 	var allTotalTxt = Number(allTotal.innerText)
+	
+	
+// 	tr.forEach(function(item,i){
+// 		var price = item.querySelector(".price") //价钱
+// 		var itemPrice = Number(price.innerText)
+		
+// 		var num = item.querySelector(".num")    //数量
+// 		var itemVal = Number(num.value)
+		
+// 		var total = item.querySelectorAll(".total")    //小计
+// 		var itemTotal = 0
+		
+// 		total.forEach(function(item,i){
+// 			item.innerText = itemPrice * itemVal     //单个小计
+			
+// 			itemTotal = Number(item.innerText)      //单个小计转换成数字
+			
+// 			allTotalTxt += itemTotal                //小计相加得出总价
+			
+// 		})	
+// 	})
+// 	allTotal.innerText = allTotalTxt                 //总价元素的值修改为上面得出的值
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//例子如上
+//1. innerText  //js 写法                               //jq 写法
+        //item.innerText = itemPrice * itemVal          //var total = item.text(itemPrice * itemVal)
+			
+		//itemTotal = Number(item.innerText)            //itemTotal = Number(total)  
+//2. innerHTML
+// <div>
+//        <p>这是p标签</p>
+//        <b>这是b标签</b>
+//        <div>内容</div>
+// </div>  
+  var a = document.createElement("div")                        //先创造出div标签,命名为 a
+  a.innerHTML += "<p>这是p标签</p>"                             //在div标签里可以添加 p 标签
+  a.innerHTML += "<b>这是b标签</b>"                             //在div标签里可以添加 b 标签
+
+  var a1 = document.createElement("div")
+
+  a1.innerText = "内容"                                         //在标签里可以加入文本内容
+
+  a.appendChild(a1)                                             //把a1 添加进入 a 里
+
+  document.querySelector("#main").appendChild(a)                //最后把 a 添加进入 #main
+  
+
+  
+  document.write("<table>这是一个表格</table>") 
+  document.write("<table>") 
+  document.write("这是第二个表格")
+  document.write("</table>") 
+ 
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		.number{color: red;}
+		.alert{display: none;width: 500px;height: 300px;border: 1px solid;position: absolute;left: 0px;right: 0px;top: 0px;bottom: 0px;margin: auto;}
+		.alert .word{margin:60px 0px 60px 0px;}
+		</style>
+
+	</head>
+	<body>
+		<div class="box">
+			微信号：<span class="number">dgh234</span>
+		</div>
+		<div class="btn">
+			弹窗点击确定并复制微信号
+		</div>
+		<div class="alert">
+			<div class="word">文字</div>
+			<div class="copy">复制</div>
+		</div>
+	</body>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		var number = document.querySelector('.number')
+		var btn = document.querySelector('.btn')
+		var alertTo = document.querySelector('.alert')
+		var word = document.querySelector('.word').innerHTML
+		var copy1 = document.querySelector('.copy')
+		var arr = ['dfgsgergea22', 'werw', 'etre234', 'dfgjf3678', 'klk23', 'ass24fngh']
+		//刷新改变微信号
+		window.onload = function() {
+			var change = Math.floor(Math.random() * arr.length)
+			number.innerText = arr[change]
+		}
+
+		//点击弹窗
+		btn.onclick = function() {
+			alertTo.style.display = 'none'
+			if (alertTo.style.display === 'none') {
+				alertTo.style.display = 'block'
+			}
+
+		}
+		//点击复制
+		copy1.onclick = function() {
+
+			alertTo.style.display = 'none'
+			var input = document.createElement('input')
+			document.body.appendChild(input)
+			input.setAttribute('value', word)
+			input.select()
+			if (document.execCommand('copy')) {
+				document.execCommand('copy')
+				alert('复制成功')
+			}
+			document.body.removeChild(input)
+		}
+	</script>
+</html>

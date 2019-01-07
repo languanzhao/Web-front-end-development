@@ -1,0 +1,11 @@
+ol,li{margin: 0px;padding: 0px;}
+.banner{width: auto;height: 600px;position: relative;}
+.slidebox{width: 1920px;height: 600px;overflow: hidden;position:absolute;left:50%;margin-left:-960px;}
+.slidebox .btn{width:300px ;height:50px;position: absolute;left: 50%;bottom: 20px;margin-left: -100px;}
+.slidebox .btn ul li{width: 50px;height: 50px;background: #00F6F6;margin:0px 10px;float: left;list-style-type: none;}
+.slidebox .btn ul li:hover{background: red;}
+.slidebox .btn ul .on{background: red;}
+.banner	.prev{display:block;width: 40px;height: 40px;background: url(../img/index_prev.png);position: absolute;left:100px;top:280px;}
+.banner	.next{display:block;width: 40px;height: 40px;background:url(../img/index_next.png);position: absolute;right:100px;top:280px;}
+.banner	.prev:hover{background: url(../img/index_prev_hover.png);}
+.banner	.next:hover{background: url(../img/index_next_hover.png);}

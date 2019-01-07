@@ -1,0 +1,12 @@
+body{background: url(../001-网页换肤/bg.gif);position: absolute;left: 0px;right: 0px;top: 0px;bottom: 0px;}
+ul{width: 639px;height: 378px;border: 5px solid #f1e9ef;background: #669999; padding: 20px; margin: 32px auto 0px;opacity: 0.9;}
+ul li{margin-bottom: 12px;padding-left: 32px;overflow: hidden;}
+ul li:first-child{width: 600px;height: 50px;border-bottom: 1px solid #ffffff;line-height: 50px;}
+ul li b{font-weight: bold;font-size: 18px;color: #ffffff;float: left;}
+ul li a{width: 55px;height: 24px;display:block;float:left;background: #cbcbcb;color: #000000;text-align: center;line-height: 24px;margin: 15px 10px 13px 0px;}
+ul li b+a{background: red;}
+ul li label{font-size: 14px;color: #ffffff;}
+ul li .message{display:block;height: 124px;float: left;}
+ul li input{width: 500px;height: 35px;opacity: 0.9;padding-left: 8px;}
+ul li .submit{width: 120px;height: 40px;opacity: 0.9;display: block;margin: 20px auto 0px;font-size: 18px;cursor: pointer;padding: 0px;}
+ul li textarea{width: 500px;height: 116px;opacity: 0.9;margin-left: 4px;padding: 8px 0px 0px 8px;}

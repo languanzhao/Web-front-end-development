@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script type="text/javascript" src="js/jquery1.83.js"></script>
+<style type="text/css">
+	table{border: 1px solid red;padding: 5px;}
+	tr{border: 1px solid red;padding: 5px;}
+	td{border: 1px solid red;padding: 5px;}
+</style>
+</head>
+<body>
+    <div id="content">
+	    <input>
+	    <input tabIndex="2">
+	    <select tabIndex="3">
+	        <option>select  </option>
+	          <option>select menu</option>
+	            <option>  menu</option>
+	              <option>sel u</option>
+	                <option>s u</option>
+	    </select>
+	    <div tabIndex="4">
+	                           这是一个div
+	    </div>
+	</div>
+               <!--tr 行
+               td 列-->
+
+	<table>
+	  <tr>                            
+	  	<td>Value 1</td>
+	  	<td>2</td>
+	  </tr>
+	  <tr>
+	  	<td>Value 2</td>
+	  	<td>3</td>
+	  </tr>
+	  <tr>
+	  	<td>Value 1</td>
+	  	<td>2</td>
+	  	<td>Value 1</td>
+	  	
+	  </tr>
+	</table>
+</body>
+<script type="text/javascript">
+	$( "#content" ).delegate( "select", "focus blur", function( event ) {
+	    var elem = $( this );
+	    setTimeout(function() {
+	       elem.toggleClass( "focused", elem.is( ":focus" ) );
+	    }, 0);
+	});
+
+
+	console.log($("td:parent"));
+</script>
+</html>

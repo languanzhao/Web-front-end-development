@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+            <!-- <my-component1></my-component1> -->
+            <com1></com1>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script type="text/javascript">
+//全局组件
+    // Vue.component('my-component1', {
+	// 			template:"<div><p>组件1</p><my-component2></my-component2></div>"             
+	// 		})
+
+    // Vue.component('my-component2', {
+    //     template:"<div><p>组件2</p></div>"             
+    // })
+
+//局部组件
+    var com2 = {
+        template:"<p>局部组件2</p>"
+    }
+    var com1 = {
+        template:"<div><p>局部组件1</p><com2></com2></div>",
+        components:{
+            com2:com2                 //同名简写 com2 即可
+        }
+    }
+			var vm = new Vue({
+				el: "#app",
+				components:{
+                    com1:com1         //同名简写 com2 即可
+                }
+			})
+    </script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{width: 100px;height: 100px;background: #999999;
+			transition:width 3s,height 3s,transform 3s,background 3s;	
+					/*过渡宽高时间各3s*//*且旋转时间为3秒*//*背景色为3秒*/
+			transition-delay: 1s;								/*等待2s再开始过渡*/
+			}						
+			
+			div:hover{height: 300px;width: 300px;  /*过渡时宽高变化都为300px*/
+			transform:rotate(360deg);	/*顺时针旋转360度       时间上面定义为3秒*/
+										/*逆时针为负数*/
+			background: red;		/* 旋转颜色变化为红色  时间为3秒		*/		
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			世界杯
+		</div>
+	</body>
+</html>

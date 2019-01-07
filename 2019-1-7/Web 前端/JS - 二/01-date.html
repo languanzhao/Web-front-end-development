@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+      <script type="text/javascript">
+      	var week = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"]
+      	var mydate = new Date();
+      	var year = mydate.getFullYear();
+      	var month = mydate.getMonth()+1;
+      	var date = mydate.getDate();
+      	var day = mydate.getDay();
+      	var hour = mydate.getHours();
+      	var minutes = mydate.getMinutes();
+      	var second = mydate.getSeconds();
+      	console.log(year+"年"+month+"月"+date+"日"+week[day]+hour+"时"+minutes+"分"+second+"秒");
+      </script>
+</body>
+</html>

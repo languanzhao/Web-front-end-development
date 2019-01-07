@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>访问元素</title>
+    <style>
+    .main{width: 238px;display: flex;flex-wrap: wrap;}
+    .cell{width: 25px;height: 25px;border: 1px solid;margin-right: -1px;margin-bottom: -1px;
+            text-align: center;line-height: 25px;}
+    .cell-move{transition: transform 1s;}
+	</style>
+</head>
+<body>
+    <div id="app">
+        <button @click="shuffle()">shuffle</button>
+        
+        <transition-group tag="div" name="cell" class="main">
+            <div v-for="item of list" :key="item.id" class="cell">{{item.number}}</div>
+        </transition-group>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</body>
+
+    <script type="text/javascript">
+                    var vm = new Vue({
+                        el: '#app',
+                        data:{
+                            list:Array.apply(null,{length:81})     //添加81个格子
+                            .map(function(_,index){
+                                return{
+                                    id:index,
+                                    number:index                    //每个格子的内容为list的下标
+                                }
+                            })
+                        },
+                        methods:{
+                            shuffle(){
+                                this.list = _.shuffle(this.list)     // .shuffle 固定写法   Lodash 插件做的效果
+                            }
+                        }
+                    })
+
+    </script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<!-- props类型：
+        props: ['title', 'likes', 'isPublished', 'commentIds', 'author']
+        props: {
+        title: String,
+        likes: Number,
+        isPublished: Boolean,
+        commentIds: Array,
+        author: Object
+        } -->
+</head>
+<body>
+    <div id="app">
+            <!-- <my-component1 :value="text"></my-component1> 当不写:value="text"时，有默认值default-->
+            <my-component1></my-component1>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script type="text/javascript">
+    Vue.component('my-component1', {
+//  props:["value"]                                   //props还可以写成以下写法
+    props:{
+        // value:{
+        // type:Number,                               //数字类型
+        // default:18497                              //默认值
+        //       }
+
+        // value:{                                    //对象类型
+        //     type:Object,                                   // 对象或数组默认值必须从一个工厂函数获取
+        //     //required: true,                              //必填的对象
+        //     default:function(){
+        //         return{name:'xiaohong',age:789}
+        //     }                 
+        // }
+
+        value:{                                        //数组类型
+            type:Array,
+            default:function(){
+                  return ["默认1","默认2","默认3"]
+            }
+        }
+        },
+		//template:`<div>{{value}}</div>`               //数字类型 
+        //template:`<div><p>{{value.name}}</p><p>{{value.age}}</p></div>` //对象类型     
+        template:`<div>                                   
+                    <ul>
+                      <li v-for="item of value">{{item}}</li>
+                    </ul>
+                 </div>`                                //数组类型
+            })
+
+			var vm = new Vue({
+				el: "#app",
+                data:{
+                // text:123,                            //数字类型  
+                // obj:{                                //对象类型
+                //     name: "小明",
+                //     age:20
+                //     },
+                arr:["1","2","3"]                       //数组类型
+                }
+				
+			})
+    </script>
+</html>

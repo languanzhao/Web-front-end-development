@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>JS获取HTML DOM元素的8种方法  
+https://www.jb51.net/article/116460.htm 或 https://www.cnblogs.com/diasa-fly/p/7054660.html</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+	 <form>
+    	<input type="text" name="username">
+    	<input type="password" name="password">
+    	<input type="button" name="submit">
+    </form>
+    <!-- 0.DOM:document object model 文档对象模型;DOM就是描述整个html页面中节点关系的图谱
+	1.（以数字作为索引，索引从0开始，逐级递增，索引代表的是当前对应的某一个元素，有一个叫做length的属性代表获取的个数）
+    2.通过name属性（getElementsByName）我们一般也只用它获取表单元素 -->
+</body>
+<script type="text/javascript">
+	var username = document.getElementsByName('username')[0];
+	var submit = document.getElementsByName('submit')[0];
+	submit.onclick = function (){
+		username.style.border = '3px solid #E014BD';
+	 }
+</script>
+</html>

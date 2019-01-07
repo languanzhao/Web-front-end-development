@@ -1,0 +1,102 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>运算符</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    
+</body>
+<script type="text/javascript">
+	var a =1; b=2;
+	c = a + b;
+	d = b - a;
+	e = a * b;
+	f = a / b;
+	g = a % b;
+	// console.log(c);
+	// console.log(d);
+	// console.log(e);
+	// console.log(f);
+	// console.log(g);
+
+
+	var x = 0;
+	//相当于x = x+1;  先执行后运算
+	// x++;
+	// console.log(x);
+
+	//相当于x = x+1   先运算后执行
+	// ++x;
+	// console.log(x);
+
+	// var sum = 
+	0  +  2
+	// console.log(sum);
+
+	//var sum = x++ + x++;
+	//     1  =  0  +  1
+	//console.log(sum);
+
+
+	// var sum = x++ + x++ + x++;
+	//      3  =  0  +  1  +  2
+	// console.log(sum);
+
+
+
+	// var sum = ++x + ++x + x++ + x++ + ++x + ++x;
+	// 	19  =     1  +  2  +  2  +  3  +  5  +  6
+	// console.log(sum);
+
+
+
+
+	// var sum = ++x + x++ + x++ + x++ + x++ + ++x + ++x + x++ + ++x;
+	//	40	=  	   1  +  1  +  2  +  3  +  4  +  6   + 7  +  7  + 9
+	// console.log(sum);
+
+
+	// var sum = ++x + --x - --x - --x - --x + x++ + ++x;
+	//	3	=  1  +  0  -  -1 -  -2 -  -3 +  -3 +  -1
+	// console.log(sum);
+	
+
+	var s = 2;
+	var k = s;
+	var l = 5;
+	s+=l;
+	l-=s;
+	// console.log(k);
+	// console.log(s);
+	// console.log(l);
+
+	var num = 1;
+	var str = 'hello';
+	var num1 = num + str;
+	var num2 = num - str;
+	// console.log(num1);
+	// console.log(num2);
+
+	// if (NaN == NaN) {
+	// 	alert('相等');
+	// }else{
+	// 	alert('不相等');
+	// }
+
+	var x = 7;
+	// if (x>1) {
+	// 	alert(x);
+	// }else{
+	// 	alert(1);
+	// }
+	//三元运算符
+	// x>1 ? alert(x) : alert(1);
+
+	x>1 ? x>5 ? alert(x) : alert(5) : alert(1);
+</script>
+</html>

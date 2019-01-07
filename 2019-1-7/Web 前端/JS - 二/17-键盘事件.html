@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+	<p>当你在输入框内按 键盘任意键 时触发的键盘事件</p>
+	<input type="text" class="text">
+
+	<p>当用户在输入字段释放一个按键时触发函数。函数将字符转换为大写。</p>
+输入你的名称: <input type="text" id="fname">
+
+	
+	<p>onkeypress 事件会在键盘按键被按下并释放一个键时发生</p>
+	<input type="text" id="text">
+</body>
+    <script type="text/javascript">
+    	// onkeydown 事件会在用户按下一个键盘按键时发生。
+    	var text = document.querySelector('.text')
+    	text.onkeydown = function (event){
+    			console.log(event);          //同时可以测试出所按下的键的 keycode 为多少
+    	}
+
+    	// onkeyup 事件会在键盘按键被松开时发生。
+
+	    var x=document.getElementById("fname");
+		x.onkeyup = function (){
+	    x.value=x.value.toUpperCase();
+}
+
+		// onkeypress 事件会在键盘按键被按下并释放一个键时发生。 即 onkeydown 及 onkeyup 的合并
+		var y=document.getElementById("text");
+		y.onkeypress = function (){
+			y.value=y.value.toUpperCase();
+		}
+    </script>
+</html>

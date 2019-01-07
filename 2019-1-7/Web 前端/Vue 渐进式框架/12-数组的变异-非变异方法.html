@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+      <ul>
+          <li v-for="(item,i) of list" @click="toClick()">{{item}}</li>
+      </ul>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script type="text/javascript">
+            var vm = new Vue({
+                el:"#app",
+                data:{
+                    list:[1,39,33,33,33,22,22,6,7,9,0,99,99]
+                //  list:["一号","二号","九三号","四号","五号","六号"]
+                },
+                methods:{
+                    toClick:function(){
+
+    //数组的变异方法(splice,pop,shift,unshift,sort,reverse,push)  
+
+                            //this.list.splice(i,1)            //点击哪个删除哪个
+                            //this.list.splice(1,1)            //删除第二个，删除一个
+                            //this.list.pop()                   //删除最后一个
+                            //this.list.shift()                 //删除最前一个
+                            //this.list.unshift("0号")          //将参数添加到原数组开头
+                            //this.list.sort(function(a,b){    //排序
+                            //          return a > b
+                            //})
+                            //this.list.reverse()                //反转顺序
+                            //this.list.push("小明")              //尾部添加
+
+    //数组的非变异方法(filter,concat,slice)
+
+                    //filter 取奇数
+                            // var arr = this.list.filter(function(x){   //把Array的某些元素过滤掉
+                            //         return x % 2 !== 0
+                            //     })
+                            // console.log(arr);
+                    //filter的参数
+                            // var arr = this.list.filter(function(element,index,self){
+                            //     console.log(element)
+                            //     console.log(index)
+                            //     console.log(self)
+                            // })
+                    //filter去重       
+                            // var arr = this.list.filter(function(element,index,self){
+                            //     return self.indexOf(element) === index
+                            // })
+                            // console.log(arr);
+                            
+                    }  
+                }
+               
+            })
+
+            // vm.list = vm.list.slice(0,5)    //找出第0个到第4个
+            // console.log(vm.list)
+            
+</script>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+
+<style type="text/css">
+*{
+    margin: 0px; padding: 0px; font-size:14px; font-family:'微软雅黑'; font-size:12px;
+}
+.clearfix:after{content:'.';display:block;height:0;clear:both;visibility:hidden}
+.clearfix{display:inline-block;}
+* html .clearfix{height:1%}
+.clearfix{display:black;}
+ul li{
+  list-style:none;
+}
+</style>
+<body>
+<script type="text/javascript">
+window.onload = function(){
+   var oBtnT = document.getElementById('btn1');
+   var oBtnB = document.getElementById('btn2');
+   var oTab = document.getElementById('tab1');
+   var arr = [];
+   var oTr = oTab.tBodies[0].rows;
+   oBtnT.onclick = function(){
+      tab();
+      for(var i=0;i<arr.length;i++){
+          //alert(arr[i].cells[1].innerHTML);
+          oTab.tBodies[0].appendChild(arr[i]);
+      }
+   };
+   oBtnB.onclick = function(){
+      tab();
+      for(var i=0;i<arr.length;i++){
+          //alert(arr[i].cells[1].innerHTML);
+          oTab.tBodies[0].insertBefore(arr[i],oTr[0]);
+      }
+   };
+   function tab(){
+      for(var i=0;i<oTr.length;i++){
+        arr[i] = oTr[i];
+      }
+      arr.sort(function(t1,t2){
+        var n1 = parseInt(t1.cells[3].innerHTML);
+        var n2 = parseInt(t2.cells[3].innerHTML);
+        return n1-n2;
+      });
+   };
+}
+</script>
+<input type='button' id='btn1' value='价格↑'>
+<input type='button' id='btn2' value='价格↓'>
+<table id='tab1'  width='400'>
+   <thead>
+      <td>ID</td>
+      <td>姓名</td>
+      <td>年龄</td>   
+      <td>价格</td>    
+   </thead>
+   <tbody>
+      <tr>
+        <td>1</td>
+        <td>黑哥</td>
+        <td>22</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>宇哥</td>
+        <td>24</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>荡哥</td>
+        <td>26</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>二哥</td>
+        <td>22</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>段少</td>
+        <td>22</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>老群主</td>
+        <td>22</td>
+        <td>30</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>牛儿</td>
+        <td>22</td>
+        <td>31</td>
+      </tr>
+   </tbody>
+</table>
+</body>
+</html>

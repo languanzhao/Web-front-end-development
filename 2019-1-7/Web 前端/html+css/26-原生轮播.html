@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="js/banner.js"></script>			<!--两个js文件和一个css表需链接好-->
+		<link rel="stylesheet" type="text/css" href="css/公共样式.css"/>
+		<style type="text/css">
+	
+	/*第一*/ 	.banner{width:auto;height: 600px;
+						position:relative;		/*相对定位:*/ /*作为参照物*/
+						overflow:hidden;}       /*溢出隐藏,当把网页放的过大时,下面的滑动条消失，且三张图片只显示一张*/       
+	/*第二*/		.banner ul{width:1920px;height: 600px;
+						position:absolute;left: 50%;	/* 绝对定位:*/
+						margin-left:-960px; }			/*ul宽度的一半*/
+	/*第三*/		.banner ol{width:180px;height:40px;	
+						position: absolute;left: 50%;/* 绝对定位:*/	
+						margin-left: -90px;/*ol宽度的一半*/
+						bottom:20px;}
+	/*第四*/		.banner ol li{width:50px;height: 40px;margin:0 5px;float:left;background:#999999;
+				             					/*边框半径是 ol li 的高的一半,把矩形变为圆形*/
+						cursor: pointer;}               /*光标滑过变为手指点击状态*/
+
+
+	/*第五*/
+				.banner .prev{width:40px;height: 40px ;display:block;background:url(img/index_prev.png);position:absolute;top: 280px;left:100px;}
+				.banner .next{width:40px;height: 40px ;display:block;background:url(img/index_next.png);position:absolute;top: 280px;right:100px;}
+
+				.banner .prev:hover{background:url(img/index_prev_hover.png) ;}
+				.banner .next:hover{background:url(img/index_next_hover.png) ;}
+
+				.banner ol .on{background: #01A1FF;}    /*上面有一个ol li 重叠,要给它加个父级*/;
+		</style>
+		
+	</head>
+	<body>
+		<div class="banner">
+				<ul>
+					<li><img src="img/banner1.jpg" /></li>
+					<li><img src="img/banner2.jpg" /></li>
+					<li><img src="img/banner3.jpg" /></li>
+				</ul>
+				<ol>
+					<li> </li>
+					<li> </li>
+					<li> </li>
+				</ol>
+			<a class="prev" href="javascript:void(0);"></a>
+			<a class="next" href="javascript:void(0);"></a>
+			</div>
+	</body>
+	
+</html>

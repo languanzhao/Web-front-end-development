@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+<link type="text/css" href="css/common.css" rel="stylesheet" />
+<style>
+div{width: auto;height: 100px;background:#EEDFEC;}
+div ul{display: none;position: absolute;}       /* 需要定位*/
+
+</style>
+</head>
+<body>
+		<div id="box">
+		<ul id="menu">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+		</div>
+<script>
+	var box = document.getElementById('box');
+	var menu = document.getElementById('menu');
+	box.oncontextmenu = function(ev){                 //oncontextmenu为右击点击事件
+    
+		var oEvent=ev||event;                         //兼容各个浏览器
+	
+		menu.style.display = 'block';				  //先让其隐藏，然后在发生右击事件时显示出来
+		menu.style.left = oEvent.clientX+'px';
+		menu.style.top = oEvent.clientY+'px';
+		return false;
+	}
+	box.onclick= function(){						//发生左击事件时右键菜单隐藏
+		menu.style.display= 'none';
+	}
+</script>
+
+
+</body>
+</html>

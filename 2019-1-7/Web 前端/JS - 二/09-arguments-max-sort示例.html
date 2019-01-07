@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <script type="text/javascript">
+		// function i(a,b,c){
+		// 	console.log(a);
+		// 	console.log(b);
+		// 	console.log(c);
+		// }
+		// i(1,2,3)
+
+		//arguments 实际传入的参数
+		//arguments.length 获取实际参数的长度
+
+    	// function i(a,b,c){
+    	// 	console.log(arguments);
+    	// }
+    	// i(1,2,3,4,5,6)
+    	// 
+    	
+    	//1.取最大值
+    	//1.1
+		   //var arr = [10,5,40,25,100,1,243,657,23];
+    // 	   var max = Math.max.apply(null, arr)
+    // 	    console.log(max);
+    		
+
+  //   	2.实现从小到大排序
+  //   	2.1
+    	// function sortNumber(a,b){		//升序排列 a - b ; 降序排列 b - a
+		// 	return a - b
+		// 	};
+		
+		// var arr = [10,5,40,25,1000,1];
+
+		// for(var i in arr){ 
+		// 	arr.sort(sortNumber)
+		// 	console.log(arr[i]);
+		//  }
+
+//     2.2. 冒泡排序  
+       var arr = [24,78,1,45,8,43,536]
+       function bubbleSort(){
+			for (var i = 0; i < arr.length - 1; i++) {
+				for (var j = 0; j < arr.length - 1 - i; j++) {
+					if (arr[j] > arr[j+1]) {        // 相邻元素两两对比
+						var c = arr[j+1];        	// 元素交换
+						arr[j+1] = arr[j];
+						arr[j] = c;
+					}
+				}
+				}
+       }
+	   bubbleSort()
+       console.log(arr);
+// a,b
+// c
+// c = b
+// b = a
+// a = c
+
+         
+
+
+        // https://www.cnblogs.com/lengyuehuahun/p/5643625.html
+
+//     apply的一些其他巧妙用法
+
+// （1）Math.max 可以实现得到数组中最大的一项：
+
+// 因为Math.max不支持Math.max([param1,param2])也就是数组，但是它支持Math.max(param1,param2...)，所以可以根据apply的特点来解决 var max=Math.max.apply(null,array)，这样就轻易的可以得到一个数组中的最大项（apply会将一个数组转换为一个参数接一个参
+
+// 数的方式传递给方法）
+
+// 这块在调用的时候第一个参数给了null，这是因为没有对象去调用这个方法，我只需要用这个方法帮我运算，得到返回的结果就行，所以直接传递了一个null过去。
+
+// 用这种方法也可以实现得到数组中的最小项：Math.min.apply(null,array)
+
+// （2）Array.prototype.push可以实现两个数组的合并
+
+// 同样push方法没有提供push一个数组，但是它提供了push(param1,param2...paramN)，同样也可以用apply来转换一下这个数组，即：
+
+// var arr1=new Array("1","2","3");
+// var arr2=new Array("4","5","6");
+// Array.prototype.push.apply(arr1,arr2);    //得到合并后数组的长度，因为push就是返回一个数组的长度
+// 也可以这样理解，arr1调用了push方法，参数是通过apply将数组转换为参数列表的集合
+
+// 通常在什么情况下，可以使用apply类似Math.max等之类的特殊用法：
+
+// 一般在目标函数只需要n个参数列表，而不接收一个数组的形式，可以通过apply的方式巧妙地解决这个问题。
+    </script>
+</body>
+</html>

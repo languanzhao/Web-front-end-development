@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>banner</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/common.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery1.11.js"></script>
+<style type="text/css" media="screen">
+	.banner{width: auto;height: auto;}
+	.slidebox{width: 1920px;height: 600px;position: relative;left: 50%;margin-left: -960px;overflow: hidden;}
+	ol{width:1920px;height:50px;position: absolute;left: 0px;bottom:30px;text-align: center;font-size: 0px;}
+	ol li{width: 50px;height: 50px;background: #EFE8E8;display: inline-block;margin:0px 10px;}
+	ol .on{background: #21E4B3;}
+	
+	.banner .prev{width:40px;height: 40px ;display:block;background:url(img/index_prev.png);position:absolute;top: 280px;left:100px;}
+	.banner .next{width:40px;height: 40px ;display:block;background:url(img/index_next.png);position:absolute;top: 280px;right:100px;}
+	.banner .prev:hover{background:url(img/index_prev_hover.png) ;}
+	.banner .next:hover{background:url(img/index_next_hover.png) ;}
+</style>
+</head>
+<body>
+    <div class="banner">
+    	<div class="slidebox">
+    	<ul>
+    		<li><a href="" title=""><img src="img/banner1.jpg" alt=""></a></li>
+    		<li><a href="" title=""><img src="img/banner2.jpg" alt=""></a></li>
+    		<li><a href="" title=""><img src="img/banner3.jpg" alt=""></a></li>
+    	</ul>
+    	<ol>
+    		<li class="on"></li>
+    		<li></li>
+    		<li></li>
+    	</ol>
+    	<a href="javascript:void(0)" class="prev"></a>
+    	<a href="javascript:void(0)" class="next"></a>
+    	</div>
+    </div>
+</body>
+							      <!--  jq版 -->
+
+<!-- <script type="text/javascript">
+	(function(){
+		var index = 0
+		var time
+		function Banner(props){
+			this.main = $(props.main)
+			this.li = $(props.li)
+			this.btn = $(props.btn)
+			this.prev = $(props.prev)
+			this.next = $(props.next)
+			this.onClick()
+			this.autoPlay(props.delayTime)					//delayTime 传参
+			this.StartStop(props.delayTime)                 //delayTime 传参
+			this.leftBtn()
+			this.rightBtn()
+		}
+		//点击切换按钮
+		Banner.prototype.onClick = function(){
+			var that = this 
+			that.btn.each(function(i,item){
+				$(item).click(function(){
+					$(this).addClass("on").siblings().removeClass('on')
+					that.li.eq(i).css("display","block").siblings().css("display","none")
+					index = i         //需要添加   当显示第三个时点击第二个会跳到第一个
+				})
+			})
+		}
+		//自动播放           判断可用 三元运算符
+		Banner.prototype.autoPlay = function(delayTime = 1000){   //默认播放时间
+			var that = this 
+			time = setInterval(function(){
+				(index >= that.btn.length-1) ? index = 0 : index++
+				// if(index >= that.btn.length-1){
+				// 	index = 0
+				// }else{
+				// 	index++
+				// }
+				that.btn.eq(index).addClass("on").siblings().removeClass('on')
+				that.li.eq(index).css("display","block").siblings().css("display","none")
+			},delayTime)
+		}
+		//移入暂停，移出播放
+		Banner.prototype.StartStop = function(delayTime = 1000){   //默认播放时间
+			var that = this
+			that.main.hover(function(){
+				clearInterval(time)
+			},function(){
+				that.autoPlay(delayTime)   
+			})
+			// that.main.mouseover(function(){
+			// 	clearInterval(time)
+			// })
+			// that.main.mouseleave(function(){
+			// 	that.autoPlay(delayTime)                           //delayTime 传参
+			// })
+		}
+		//左按钮
+		Banner.prototype.leftBtn = function(){
+			var that = this
+			that.prev.click(function(){
+				(index <= 0) ? index = that.btn.length-1 : index--
+				// if(index <= 0){
+				// 	index = that.btn.length-1
+				// }else{
+				// 	index--
+				// }
+				that.btn.eq(index).addClass("on").siblings().removeClass('on')
+				that.li.eq(index).css("display","block").siblings().css("display","none")
+			})
+		}
+		//右按钮
+		Banner.prototype.rightBtn = function(){
+			var that = this
+			that.next.click(function(){
+				(index >= that.btn.length-1) ? index = 0 : index++
+			// if(index >= that.btn.length-1){
+			// 		index = 0
+			// 	}else{
+			// 		index++
+			// 	}
+				that.btn.eq(index).addClass("on").siblings().removeClass('on')
+				that.li.eq(index).css("display","block").siblings().css("display","none")
+			})
+		}
+		var banner = new Banner({
+			"main":".slidebox",
+			"li":"ul li",
+			"btn":"ol li",
+			"prev":".prev",
+			"next":".next",
+			"delayTime":1000                         //设置播放时间
+		})
+	})()
+</script> -->
+										<!-- js版 -->
+
+<!-- <script type="text/javascript">
+	(function(){
+		var index = 0
+		var time 
+		function Banner(props){
+			this.main = document.querySelector(props.main)
+			this.img = document.querySelectorAll(props.img)
+			this.btn = document.querySelectorAll(props.btn)
+			this.prev = document.querySelector(props.prev)
+			this.next = document.querySelector(props.next)
+			this.onClick()
+			this.autoPlay(props.delayTime)
+			this.StartStop(props.delayTime)               
+			this.leftBtn()
+			this.rightBtn()
+		}
+		//点击切换按钮
+		Banner.prototype.onClick = function(){
+			var that = this
+			that.btn.forEach(function(item,i){
+				item.onclick = function(){
+					for(var j=0;j < that.btn.length;j++){
+					that.btn[j].className = ""
+					that.img[j].style.display = "none"
+					}
+				that.btn[i].className = "on"
+				that.img[i].style.display = "block"
+				index = i         //需要添加   当显示第三个时点击第二个会跳到第一个
+				}
+			})
+		}
+		//自动播放
+		Banner.prototype.autoPlay = function(delayTime = 1000){    //默认值为1000
+			var that = this
+			time = setInterval(function(){
+				if(index >= that.btn.length-1){
+					index = 0
+				}else{
+					index++
+				}
+				for(var j=0;j < that.btn.length;j++){
+					that.btn[j].className = ""
+					that.img[j].style.display = "none"
+					}
+				that.btn[index].className = "on"
+				that.img[index].style.display = "block"
+			},delayTime)
+		}
+		//移入暂停，移出播放
+		Banner.prototype.StartStop = function(delayTime = 1000){    //默认值为1000
+			var that = this 
+			that.main.onmouseover = function(){
+				clearInterval(time)
+			}
+			that.main.onmouseleave = function(){
+				that.autoPlay(delayTime)                            //离开重新启动计时器
+			}
+		}
+		//右按钮
+		Banner.prototype.rightBtn = function(){
+			var that = this 
+			that.next.onclick = function(){    
+			if(index >= that.btn.length-1){
+					index = 0
+				}else{
+					index++
+				}
+				for(var j=0;j < that.btn.length;j++){
+					that.btn[j].className = ""
+					that.img[j].style.display = "none"
+					}
+				that.btn[index].className = "on"
+				that.img[index].style.display = "block"
+				}
+		}
+		//左按钮
+ 		Banner.prototype.leftBtn = function(){
+ 			var that = this
+ 			that.prev.onclick = function(){   
+				if(index <=0){
+					index = that.btn.length-1
+				}else{
+					index--
+				}
+				for(var j=0;j < that.btn.length;j++){
+					that.btn[j].className = ""
+					that.img[j].style.display = "none"
+					}
+				that.btn[index].className = "on"
+				that.img[index].style.display = "block"
+				  }
+ 		}
+	var banner = new Banner({
+		"main":".slidebox",
+		"img":"ul li",
+		"btn":"ol li",
+		"prev":".prev",
+		"next":".next",
+		"delayTime":1000
+	})
+	})()
+
+</script> -->
+                   					<!-- 初始版 -->
+
+<!-- <script type="text/javascript">
+	var index = 0
+	var time
+	function Banner(info){
+		this.banner = document.querySelector(info.banner)
+		this.li = document.querySelectorAll(info.li)
+		this.btn = document.querySelectorAll(info.btn)
+		this.toPlay()
+		this.autoPlay(info.delayTime)
+		this.StopStart(info.delayTime)
+	}
+
+	Banner.prototype.toPlay = function(){
+		var that = this
+		that.btn.forEach(function(item,i){
+			item.onclick = function(){
+				for (var j = 0; j < that.btn.length; j++) {
+					that.btn[j].className = ''
+					that.li[j].style.display = 'none'
+				}
+				that.btn[i].className = 'on'
+				that.li[i].style.display = 'block'
+				index = i         //需要添加   当显示第三个时点击第二个会跳到第一个
+			}
+		})
+	}
+	
+	Banner.prototype.autoPlay = function(delayTime = 1000){      //注意是Banner
+		var that = this
+		time = setInterval(function(){
+			if(index >= that.btn.length -1){
+					index = 0
+			}else{
+					index++
+			}
+			for (var j = 0; j < that.btn.length; j++) {
+					that.btn[j].className = ''
+					that.li[j].style.display = 'none'
+				}
+				that.btn[index].className = 'on'
+				that.li[index].style.display = 'block'
+		},delayTime)
+	}
+
+	Banner.prototype.StopStart = function(delayTime = 1000){
+		var that = this
+		that.banner.onmouseenter = function(){
+		clearInterval(time)	
+		}
+
+		that.banner.onmouseleave = function(){
+			time = setInterval(function(){
+			if(index >= that.btn.length -1){
+					index = 0
+			}else{
+					index++
+			}
+			for (var j = 0; j < that.btn.length; j++) {
+					that.btn[j].className = ''
+					that.li[j].style.display = 'none'
+				}
+				that.btn[index].className = 'on'
+				that.li[index].style.display = 'block'
+		},delayTime)
+		}
+	}
+
+	var banner = new Banner({
+		banner:'.slidebox',
+		li:".banner ul li",              //注意写标点符号
+		btn:".banner ol li",
+		delayTime:1000                   //可控制时间
+	})
+</script> -->
+</html>

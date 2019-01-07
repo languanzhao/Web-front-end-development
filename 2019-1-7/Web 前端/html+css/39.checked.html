@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>两个类名来相互替换</title>
+</head>
+<style>
+    label .a{width: 42px;height: 42px;background: url("img/check_none.png");background-size: 42px;display: block;}
+    label .f{width: 42px;height: 42px;background: url("img/check.png");background-size: 42px;display: block;}
+</style>
+
+<body>
+    <label>
+        <b class="a"></b>
+        <input type="checkbox" hidden>
+    </label>
+</body>
+<script>
+    var b = document.querySelector("b")
+    var input = document.querySelector("input")
+    b.onclick = function(){
+        if(b.className == "a"){
+            b.className = "f"
+        }else{
+            b.className = "a"
+        }
+        console.log(input.checked);  
+    }
+</script>
+</html>

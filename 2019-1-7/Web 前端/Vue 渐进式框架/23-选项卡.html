@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{margin: 0px;padding: 0px;list-style-type: none;}
+    #app{margin: 0px auto;width: 210px;height: 200px;border: 1px solid;}
+    .title{font-style: 18px;color:red;width: 210px;height: 30px;display:flex;border-bottom: 1px solid;}
+    .title li{width: 70px;height: 30px;border-left:1px solid;text-align: center;line-height: 30px;}
+    .title li:first-child{border: 0px none;}
+    .con{text-align: justify;}
+    .current{background:#74e008}
+    </style>
+
+</head>
+<body>
+    <div id="app" @mouseover="over()" @mouseleave="leave()">
+        <ul class="title">
+            <li v-for="(item,i) of list" @click="toClick(i)" :class="i === index ? 'current' : null">{{item}}</li>
+        </ul>
+      <component :is="on"></component>   
+      <!-- <component is="component1"></component> 
+        1. 可不绑定：is 直接使用不用添加function 则会输出component1的内容 即为 静态传值和 动态传值-->
+    <!--2. 动态组件 -->
+        <!--<ul>                                           3. 组件基础 ==> 解析 DOM 模板时的注意事项
+                <li is="on"></li>
+            </ul>  
+            -->
+        <!--<table>
+                <tr is="on"></tr>
+            </table> -->
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script type="text/javascript">
+// 第一个组件
+    Vue.component("component1",{
+        template:`<div class="con">
+          <ul>
+              <li>智力环，又称“智环”、“连环”，是我国一种富有民族风格的智力游戏，亦是中国民间古典智力玩具的精粹。</li>
+          </ul></div>`
+    })
+// 第二个组件
+    Vue.component("component2",{
+        template:`<div class="con">
+          <ul>
+              <li>text-align:justify</li>
+          </ul></div>`
+    })
+// 第三个组件    
+    Vue.component("component3",{
+        template:`<div class="con">
+          <ul>
+              <li>display:flex;</li>
+          </ul></div>`
+    })
+            var vm = new Vue({
+                 el:"#app",
+                data:{
+                    list:["标题一","标题二","标题三"],
+                    con:["component1","component2","component3"],
+                    on:"component1",
+                    index:0
+                },
+                methods:{
+                    toClick(i){
+                        this.index = i
+                        this.on = this.con[i] 
+                    },
+                    autoPlay(){
+                        var that = this
+                        this.timer = setInterval(function(){
+                            that.index >= that.list.length - 1 ? that.index = 0 : that.index++
+                            that.on = that.con[that.index]
+                        },1000)
+                    },
+                    over(){
+                        clearInterval(this.timer)
+                    },
+                    leave(){
+                        this.autoPlay()
+                    }
+                },
+                    mounted(){
+                        this.autoPlay()
+                }
+                    })
+    </script>
+</html>

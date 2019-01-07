@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css" media="screen">
+	ul,ol,dl{list-style: none;}
+	dt{ cursor: pointer; }
+	dd{ display: none; margin: 0px; }
+</style>
+<script type="text/javascript" src="js/jquery1.11.js"></script>
+</head>
+<body>
+    <div class="wrap">
+		<ul>
+			<li>
+				<dl>
+					<dt>11111111<span>+</span></dt>
+					<dd><a href="">111111111</a></dd>
+					<dd><a href="">222222222</a></dd>
+					<dd><a href="">333333333</a></dd>
+				</dl>
+			</li>
+			<li>
+				<dl>
+					<dt>11111111<span>+</span></dt>
+					<dd><a href="">111111111</a></dd>
+					<dd><a href="">222222222</a></dd>
+					<dd><a href="">333333333</a></dd>
+				</dl>
+			</li>
+			<li>
+				<dl>
+					<dt>11111111<span>+</span></dt>
+					<dd><a href="">111111111</a></dd>
+					<dd><a href="">222222222</a></dd>
+					<dd><a href="">333333333</a></dd>
+				</dl>
+			</li>
+		</ul>
+    </div>
+</body>
+<script type="text/javascript">
+	$('.wrap ul li').click(function(event) {
+
+		var str = $(this).find('span').text();
+		if (str == '+') {
+			$(this).siblings('li').find('dd').hide();
+			$(this).find('dd').slideDown();
+			$(this).find('span').text('+');
+			$(this).find('span').text('-');
+		} else {
+			$(this).siblings('li').find('dd').hide();
+			$(this).find('dd').slideUp();
+			$(this).find('span').text('+');
+		}
+	});
+</script>
+</html>

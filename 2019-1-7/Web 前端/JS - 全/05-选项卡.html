@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>选项卡</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/common.css" rel="stylesheet">
+<style type="text/css">
+	.slidebox{ width: 450px; height: 230px; border: 1px solid #000; margin:0 auto;  }
+	.pointer{ border: 1px solid #ddd; }
+	.pointer ul{ width: 450px;  }
+	.pointer ul li{ float: left; width: 54px; height: 30px; line-height: 30px; cursor: pointer; text-align: center; }
+	.pointer ul li.on{ background: #71F6CF;border: 1px solid #ddd; border-top: 0 none;  border-bottom: 1px solid #fff;  }
+	.show{}
+	.show ul{}
+	.show ul li{}
+    .btn{ float: right; height: 30px; line-height: 30px; }
+    .btn a{ font-size: 24px; }
+</style>
+</head>
+<body>
+    <div class="slidebox">
+    	<div class="pointer">
+            <div class="btn">
+                <a class="prev" href="javascript:void(0)">&lt;</a>
+                <a class="next" href="javascript:void(0)">&gt;</a>
+            </div>
+    		<ul class="clearfix">
+    			<li class="on">教育</li>
+    			<li>培训</li>
+    			<li>出国</li>
+                <li>培训1</li>
+                <li>出国1</li>
+    		</ul>
+    	</div>
+    	<div class="show">
+    		<ul style="display: block;">
+    			<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">中国打破了世界软件巨头规则</a></li>
+    			<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">口语：会说中文就能说英语！</a></li>
+    			<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">农场摘菜不如在线学外语好玩</a></li>
+    			<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">数理化老师竟也看学习资料？</a></li>
+    			<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">学英语送ipad2,45天突破听说</a></li>
+    			<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">学外语，上北外！</a></li>
+    			<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">那些无法理解的荒唐事</a></li>
+    		</ul>
+    		<ul style="display: none;">
+    			<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">名师教作文：３妙招巧写高分</a></li>
+    			<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">耶鲁小子：教你备考SAT</a></li>
+    			<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">施强：高端专业语言教学</a></li>
+    			<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">数理化老师竟也看学习资料？</a></li>
+    			<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">【推荐】名校英语方法曝光！</a></li>
+    			<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">2012高考“考点”大曝光!!</a></li>
+    			<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">涨价仍爆棚假日旅游冰火两重天</a></li>
+    		</ul>
+    		<ul style="display: none;">
+    			<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">澳大利亚八大名校招生说明会</a></li>
+    			<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">2012世界大学排名新鲜出炉</a></li>
+    			<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">新加坡留学，国际双语课程</a></li>
+    			<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">高考后留学日本名校随你选</a></li>
+    			<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">教育培训行业优势资源推介</a></li>
+    			<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">即刻预约今年最后一场教育展</a></li>
+    			<li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">女友坚持警局完婚不抛弃</a></li>
+    		</ul>
+            <ul style="display: none;">
+                <li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">名师教作文：３妙招巧写高分</a></li>
+                <li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">耶鲁小子：教你备考SAT</a></li>
+                <li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">施强：高端专业语言教学</a></li>
+                <li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">数理化老师竟也看学习资料？</a></li>
+                <li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">【推荐】名校英语方法曝光！</a></li>
+                <li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">2012高考“考点”大曝光!!</a></li>
+                <li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">涨价仍爆棚假日旅游冰火两重天</a></li>
+            </ul>
+            <ul style="display: none;">
+                <li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">澳大利亚八大名校招生说明会</a></li>
+                <li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">2012世界大学排名新鲜出炉</a></li>
+                <li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">新加坡留学，国际双语课程</a></li>
+                <li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">高考后留学日本名校随你选</a></li>
+                <li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">教育培训行业优势资源推介</a></li>
+                <li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">即刻预约今年最后一场教育展</a></li>
+                <li><span class="date">2011-11-11</span><a href="http://www.SuperSlide2.com" target="_blank">女友坚持警局完婚不抛弃</a></li>
+            </ul>
+    	</div>
+    </div>
+</body>
+<script type="text/javascript">
+    //获取包裹层
+    var slidebox = document.getElementsByClassName('slidebox')[0];
+    //获取点击区的对象
+    var pointer = document.getElementsByClassName('pointer')[0];
+    //获取点击的元素
+    var li = pointer.getElementsByTagName('ul')[0].getElementsByTagName('li');
+    //获取左按钮
+    var left = document.getElementsByClassName('prev')[0];
+    //获取右按钮
+    var right = document.getElementsByClassName('next')[0];
+    //获取显示区
+    var ul = document.getElementsByClassName('show')[0].getElementsByTagName('ul');
+    //点击前的下标
+    var index = 0;
+    //创建定时器变量
+    var timer = null;
+    for (var i = 0; i < li.length; i++) {
+        //任何一个li点击时触发处理
+        li[i].onclick = function(){
+            //先消除所有的li的高亮名
+            for (var i = 0; i < li.length; i++) {
+                li[i].className = '';
+                li[i].index = i;
+            }
+            //获取当前高亮的下标
+            index = this.index;
+            //当前选中的li加上高亮名
+            this.className = 'on';
+            //先让显示区的ul全部消失
+            for (var i = 0; i < li.length; i++) {
+                ul[i].style.display = 'none';
+            }
+            //让ul中跟li当前下标的显示出来
+            ul[this.index].style.display = 'block';
+        }
+    }
+        //左按钮点击时，需要什么条件？
+        //点击左按钮前，当前的li是第几个
+        left.onclick = function(){
+            //把index减去1
+            if (index<=0) {
+                index = li.length-1;
+            } else {
+                index--;
+            }
+            //先消除所有的li的高亮名
+            for (var i = 0; i < li.length; i++) {
+                li[i].className = '';
+                // li[i].index = i;
+            }
+            //当前选中的li加上高亮名
+            li[index].className = 'on';
+            //先让显示区的ul全部消失
+            for (var i = 0; i < li.length; i++) {
+                ul[i].style.display = 'none';
+            }
+            //让ul中跟li当前下标的显示出来
+            ul[index].style.display = 'block';
+        }
+
+        right.onclick = function(){
+            autoplay();
+            
+        }
+
+    timer = setInterval(autoplay,1000);
+
+    //消除定时器操作
+    slidebox.onmouseenter = function(){
+        clearInterval(timer);
+        timer = null;
+    }
+
+    
+    slidebox.onmouseleave = function(){
+        timer = setInterval(autoplay,1000);
+    }
+
+    //定义默认执行的事件
+    function autoplay(){
+            //把index减去1
+            if (index>=li.length-1) {
+                index = 0;
+            } else {
+                index++;
+            }
+            //先消除所有的li的高亮名
+            for (var i = 0; i < li.length; i++) {
+                li[i].className = '';
+                // li[i].index = i;
+            }
+            //当前选中的li加上高亮名
+            li[index].className = 'on';
+            //先让显示区的ul全部消失
+            for (var i = 0; i < li.length; i++) {
+                ul[i].style.display = 'none';
+            }
+            //让ul中跟li当前下标的显示出来
+            ul[index].style.display = 'block';
+    }
+</script>
+</html>

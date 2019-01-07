@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script type="text/javascript" src="js/jquery1.11.js"></script>
+                            <!-- 
+                                定时器
+                                      setInterval()
+                                      setTimeout()
+                                清除计时器
+                                      clearInterval()
+                                      clearTimeout() 
+                             -->
+</head>
+<body>
+	<div style="font-size: 18px">
+      10
+   </div>
+	<button class="start">开始</button>
+   <button class="stop">停止</button>
+   <script type="text/javascript">
+      //jq 的setTimeout 写法
+ //     var time
+ //     function startTime(){
+ //   time = setTimeout(function(){
+ //           var txt = Number($("div").text())
+ //           if(txt >0){
+ //           txt--
+ //           $("div").text(txt)
+ //           startTime()
+ //        }
+  //       },1000)
+  //             }
+  //       $(".start").click(function(){
+  //          startTime()
+   //      })
+//
+   //      $(".stop").click(function(){
+   //         clearTimeout(time)
+   //      })
+ 
+
+   //js 的 setInterval 写法    
+// var start = document.querySelector(".start")
+// var stop = document.querySelector(".stop")
+// var div = document.querySelector("div")
+// var time
+// function a(){  
+//      time =  setInterval(function(){
+//      var txt = Number(div.innerText)
+//      if(txt >=2){
+//       txt--
+//       $("div").text(txt)
+//    }
+// },1000)
+//  }
+
+// start.onclick = function(){
+//          a()
+// }
+
+// stop.onclick = function(){
+//    clearInterval(time)
+// }
+   </script>
+</body>
+</html>

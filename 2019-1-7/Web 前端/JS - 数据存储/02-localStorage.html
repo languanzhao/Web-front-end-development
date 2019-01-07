@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>本地存储</title>
+</head>
+<body>
+<!-- cookie  针对的是  document
+	localStorage  针对的是  window -->
+	<script>
+//本地存储
+	
+	//当对象已经存放在数组时可直接使用 arr    第一种情况
+	// var arr = [
+	// 		   {"name":"xiaoming",
+	// 		   "price":100,
+	// 		   "color":"white"
+	// 		   },
+	// 		   {"name":"xiaohong",
+	// 		   "price":100000,
+	// 		   "color":"red"
+	// 		   }]
+
+	//当对象需要添加进数组时要使用 push        第二种情况
+	var arr = []
+	var obj = {"name":"xiaoming",
+			   "price":100,
+			   "color":"white"
+			   }
+	var obj2 = {"name":"xiaohong",
+			   "price":100000,
+			   "color":"red"
+			   }
+	var obj3 = {"name":"xiaohong",
+			   "price":100000,
+			   "color":"green"
+			   }
+	arr.push(obj,obj2,obj3)	
+	
+	//console.log(arr);
+
+	//传送到本地存储
+	//localStorage.setItem("key","value");    //以“key”为名称存储一个值“value”
+	//JSON.stringify(arr)                     //数组转为字符串
+	var str = JSON.stringify(arr)
+	localStorage.setItem("info",str)
+
+	//从本地存储里获取出来
+	//localStorage.getItem("key");             //获取名称为“key”的值
+	//JSON.parse(localStorage.getItem("info")) //字符串转为数组
+	var get = localStorage.getItem("info")
+	var getarr = JSON.parse(get);
+	 
+
+	getarr.forEach(function(item,i){
+		console.log(item.color);
+	})
+	</script>
+</body>
+</html>

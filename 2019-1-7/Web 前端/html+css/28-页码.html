@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul,li,a{margin: 0px;padding: 0px;}
+			
+			.page{width: 1200px;height: 600px;background: pink;margin:0 auto;padding-top: 60px;}
+			
+			ul{width: auto;height: 30px;text-align:center;}
+			
+			ul li{width: 50px;height: 30px;background:#DBDEE2;margin:0px 5px;display: inline-block;;line-height: 30px;font-family: "宋体";font-size: 12px;color: #666666;}
+			
+			ul li a:hover,ul li .on{background: #01A1FF;color: #FFFFFF;}
+			
+			ul li a{display:block;font-family: "宋体";font-size:12px;color: #666666;text-decoration: none;}
+			.prev{width: 80px;height: 30px;}/* text-align: left;text-indent: 30px;*//*可在ul用了居中的时候使用,文本向左,再用缩进，即可控制文本位置*/
+			.next{width: 80px;height: 30px;}
+		</style>
+	</head>
+	<body>
+		<div class="page">
+			<ul>
+				<li class="prev"><a href="">上一页</a></li>
+				<li><a href="" class="on">1</a></li>
+				<li><a href="">2</a></li>
+				<li><a href="">3</a></li>
+				<li><a href="">4</a></li>
+				<li>...</li>
+				<li class="next"><a href="">下一页</a></li>
+			</ul>
+		</div>
+	</body>
+</html>
+<!--1. li转为行内块,则 不 需li进行float:left; 只需ul用text-align:center;
+	2. li和a需设置字体大小；
+	3. .prev和.next 可在ul用了居中的时候使用,文本向左,再用缩进，即可控制文本位置-->

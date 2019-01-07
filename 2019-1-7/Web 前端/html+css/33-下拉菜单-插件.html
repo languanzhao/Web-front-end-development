@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/公共样式.css"/>
+		<script type="text/javascript" src="js/jquery1.42.min.js"></script>
+		<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.source.js"></script>
+		
+		<style type="text/css">
+			.list{float: left;width: 200px;height:auto;}
+			.list h3{width: 200px;height: 80px;text-align: center;line-height: 80px;font-family: "微软雅黑";font-size: 18px;background: #01A1FF;}
+			.list h3 a{color: #FFFFFF;width: 200px;height: 80px;display: block;}
+			.list:hover h3 a{background: #505050;color: #FFFFFF;}
+			
+			.hide{display: none;}
+			.hide li{width: 200px;height: 30px;}
+			.hide li a{font-size: 18px;font-family: "微软雅黑";text-align: center;display:block;width: 200px;height: 30px;line-height: 30px;background: #505050;color:#ffffff;}
+			.hide li a:hover{background: #A1A1A1;}
+			
+			.list .on{ color: #FF0000; }
+		</style>
+							<!--下拉菜单使用css样式书写见 创晟 index.html-->
+	</head>
+	<body>
+		<ul id="nav">
+			<li class="list">
+				<h3><a href="" class="on">首页</a></h3>
+			</li>
+			<li class="list">
+					<h3><a href="">新闻</a></h3>
+					<ul class="hide">
+						<li><a href="#">新闻首页</a></li>
+						<li><a href="#">新闻人物</a></li>
+						<li><a href="#">新闻电视</a></li>
+						<li><a href="#">新闻图片</a></li>
+						<li><a href="#">新闻视频</a></li>
+						<li><a href="# ">新闻专题</a></li>
+					</ul>
+			</li>
+			<li class="list">
+					<h3><a href="">预告片</a></h3>
+					<ul class="hide">
+						<li><a href="#">新闻首页</a></li>
+						<li><a href="#">新闻人物</a></li>
+						<li><a href="#">新闻电视</a></li>
+						<li><a href="#">新闻图片</a></li>
+						<li><a href="#">新闻视频</a></li>
+						<li><a href="# ">新闻专题</a></li>
+					</ul>
+			</li>
+			<li class="list">
+					<h3><a href="">影评</a></h3>
+					<ul class="hide">
+						<li><a href="#">新闻首页</a></li>
+						<li><a href="#">新闻人物</a></li>
+						<li><a href="#">新闻电视</a></li>
+						<li><a href="#">新闻图片</a></li>
+						<li><a href="#">新闻视频</a></li>
+						<li><a href="# ">新闻专题</a></li>
+					</ul>
+			</li>
+			<li class="list">
+					<h3><a href="">资料库</a></h3>
+					<ul class="hide">
+						<li><a href="#">新闻首页</a></li>
+						<li><a href="#">新闻人物</a></li>
+						<li><a href="#">新闻电视</a></li>
+						<li><a href="#">新闻图片</a></li>
+						<li><a href="#">新闻视频</a></li>
+						<li><a href="# ">新闻专题</a></li>
+					</ul>
+			</li>
+		</ul>
+	</body>
+	<script  type="text/javascript">
+			
+			jQuery("#nav").slide({ 
+				type:"menu",// 效果类型，针对菜单/导航而引入的参数（默认slide）
+				titCell:".list", //鼠标触发对象
+				targetCell:".hide", //titCell里面包含的要显示/消失的对象
+				effect:"slideDown", //targetCell下拉效果
+				delayTime:300 , //效果时间
+				triggerTime:0, //鼠标延迟触发时间（默认150）
+				returnDefault:true //鼠标移走后返回默认状态，例如默认频道是“预告片”，鼠标移走后会返回“预告片”（默认false）
+			});
+		</script>
+</html>

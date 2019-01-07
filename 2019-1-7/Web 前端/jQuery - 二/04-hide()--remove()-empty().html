@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script type="text/javascript" src="js/jquery1.11.js"></script>
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <ul>
+    	<li>1<span>删除</span></li>
+    	<li>2<span>删除</span></li>
+    	<li>3<span>删除</span></li>
+    	<li>4<span>删除</span></li>
+    	<li>5<span>删除</span></li>
+    </ul>
+    <p class="a">有class a</p>
+    <p>无</p>
+    <p class="a">有class a</p>
+    <p>无</p>
+    <p class="a">有class a</p>
+    <button type="">点击清空标签里的内容</button>
+</body>
+<script type="text/javascript">
+	//js需要循环，jq不需要                   js为parentNode     jq为parent()
+	 $("ul li span").click(function(){
+        $(this).parent().hide();            // $(this).parent().hide(3000);可设消失时长
+        $(this).parent().remove()
+  });
+     
+     $("button").click(function(){
+        $("p").remove(".a");                  //移除含有类名 a的 p标签
+  });
+
+    $("button").click(function(){
+        $("ul li span").empty()          //清空标签里的内容
+  }); 
+
+</script>
+</html>

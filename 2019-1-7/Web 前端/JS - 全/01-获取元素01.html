@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+
+<style>
+div {
+    border: 1px solid black;
+    margin: 5px;
+}
+</style>		
+</head>	
+<body>
+			<div class="example">						
+  				<p>P 元素在在第一个样式为 class="example" 的 Div 元素中。Div 的索引值为 0。</p>
+			</div>
+			<div class="example color">
+ 				<p>P 元素在在第一个样式为 class="example color" 的 Div 元素中。Div 的索引值为 0。</p>
+			</div>
+			<div class="example color">
+ 				 <p>P 元素在在第二个样式为 class="example color" 的 Div 元素中。Div 的索引值为 1。</p>
+			</div>
+				<p>点击按钮修改第一个类为 "example" 的 div 元素的背景颜色。</p>
+			<button id="button" onclick="myFunction()">点我</button>
+<!-- 方法一              若放在头部需加window.onload = function(){   }  --> 
+<!--<script>
+    var x = document.getElementsByClassName("color");          
+	var button = document.getElementById('button');
+	button.onclick = function(){
+    x[1].style.backgroundColor = "red";
+}	
+</script>-->
+
+<!-- 方法二             可直接放在头部运行 -->
+<!--<script>
+	function myFunction() {
+    var x = document.getElementsByClassName("example");
+    x[0].style.backgroundColor = "red";
+}
+</script>-->
+
+<!-- 方法三 	  可直接放在头部运行-->
+	<!--<script type="text/javascript">
+		var x = document.getElementsByClassName("color");
+		var button = document.getElementById('button');
+		button.onclick = function form01(){
+			 x[0].style.backgroundColor = "red";
+		}
+		button.form01();
+	</script>-->
+
+</body>
+</html>

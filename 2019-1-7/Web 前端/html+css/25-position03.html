@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			h2,p{margin: 0px;padding: 0px;}
+			.div{width: 1200px;height: 600px;margin: 0 auto;background: pink;}
+.title{width:250px;height: 65px;margin: 0 auto;text-align: center;}
+.title:before{content: "";width: 250px;height: 2px;background: #cecece;display: block;position:relative;left: -300px;top:30px}   /*原本位置位于标题上方,通过relative可使其位于标题左方*/
+.title:after{content: "";width: 250px;height: 2px;background: #cecece;display: block;position: absolute;left: 300px;top:330px}  /* 原本位置位于屏幕左上方,通过absolute {left: 300px;top:330px},且可根据屏幕自动适应*/
+.title h2{font-family: "微软雅黑";font-size: 30px;color: #333333;}
+.title p{font-family: "微软雅黑";font-size: 14px;color: #5d5959;}
+.title span{width: 32px;height: 2px;display: block;background: #eb791b;margin: 0px auto;}
+		</style>
+	</head>
+	<body>
+		<div class="div">
+			
+	
+		<div class="title">
+					<h2>企业新闻</h2>
+					<p>ENTERPRIES NEWS</p>
+					<span></span>
+				</div>
+					</div>
+		
+	</body>
+</html>

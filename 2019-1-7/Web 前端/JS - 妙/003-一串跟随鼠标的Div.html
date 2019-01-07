@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+div {width:10px; height:10px; background:red; position:absolute;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+	//步骤分析：首先是Onmousemove触发对象，移动时 div 不断减少。·
+	//后一个div等于前一个div且同时在x,y轴上移动；
+window.onload=function ()
+{
+	var aDiv=document.getElementsByTagName('div');
+	var i=0;
+	
+	document.onmousemove=function (ev){
+		var oEvent=ev||event;		//获取事件对象，这个是兼容写法
+		for(i=aDiv.length-1;i>0;i--)
+		{
+			aDiv[i].style.left=aDiv[i-1].style.left;	//后面的位置等于前面的位置
+			aDiv[i].style.top=aDiv[i-1].style.top;
+		}
+			aDiv[0].style.left=oEvent.clientX+'px';//在X轴上移动
+			aDiv[0].style.top=oEvent.clientY+'px';//在Y轴上移动
+	};
+};
+</script>
+</head>
+
+<body>
+<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+</body>
+</html>
+<!-- obj.offsetTop 指 obj 相对于版面或由 offsetParent 属性指定的父坐标的计算上侧位置，整型
+
+obj.offsetLeft 指 obj 相对于版面或由 offsetParent 属性指定的父坐标的计算左侧位置，整型
+
+obj.offsetWidth 指 obj 控件自身的绝对宽度，不包括因 overflow 而未显示的部分，也就是其实际占据的宽度，整型
+
+obj.offsetHeight 指 obj 控件自身的绝对高度，不包括因 overflow 而未显示的部分，也就是其实际占据的高度，整型
+
+event.clientX(Y)分别是鼠标相对于浏览器内容窗口左边和上边的偏移像素数值 -->

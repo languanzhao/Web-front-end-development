@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css" media="screen">
+	        #text1{display: none;}
+       </style>
+		<script  type="text/javascript">
+	window.onload=function(){
+	var oButton = document.getElementById('button');
+	var oText = document.getElementById('text');
+	var oText1 = document.getElementById('text1');
+	oButton.onclick = function(){
+		oText.style.display = 'none';
+		oText1.style.display = 'block';
+	
+	}
+	}
+
+</script>
+	</head>
+	
+	<body>
+		<p id="text1">其实我也是一个段落文本</p>
+   <p id="text">这是一个段落文本</p>			
+    <button type="button" id="button">按钮</button>
+	</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>访问元素</title>
+    <style>
+    *{margin: 0;padding: 0;list-style: none;}
+    .tab{width: 500px;height: 500px;border: 1px solid;margin: 0 auto;}
+    .hd{height: 100px;border-bottom: 1px solid;}
+    .hd li{width: 100px;height: 100px;float: left;border-right: 1px solid;text-align: center;line-height: 100px;}
+    .hd .on{background: #9acd32;}
+    .bd div{display: none;}
+    .bd .on{display: block;}
+    </style>
+</head>
+<body>
+    <div id="app">
+      <tab></tab>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</body>
+
+    <script type="text/javascript">
+        var myPlugin = {}                                      //定义
+        myPlugin.install = function(Vue,options){              //安装
+            Vue.component("tab",{
+                data(){
+                    return{                                    //全局的data要写return
+                        list:options.list,                     //传值；类似于面向对象的写法
+                        con:options.con,
+                        index:options.index
+                    }
+                },                                              //注意符号``
+                template:`<div class="tab">                    
+                <ul class="hd">
+                    <li 
+                        v-for="(item,i) of list" 
+                        @click="toClick(i)" 
+                        :class="i === index ? 'on' : null"
+                        >{{item}}</li>
+                </ul>
+                <div class="bd">
+                    <div 
+                    v-for="(item,i) of con" 
+                    :class="i === index ? 'on' : null"
+                    >{{item}}</div>
+                </div>
+                </div>`,
+                methods:{
+                    toClick(i){
+                        this.index = i
+                    }
+                }
+            })
+        }
+        Vue.use(myPlugin,{                                     //使用  
+            list:["标题一","标题二","标题三"],
+            con:["内容一","内容二","内容三"],
+            index:0
+        })
+
+            var vm = new Vue({
+                el: '#app'
+            })
+        
+    </script>
+</html>

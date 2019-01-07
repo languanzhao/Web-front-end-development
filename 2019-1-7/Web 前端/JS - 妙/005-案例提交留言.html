@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    
+<form>
+	<textarea name="message">sdfswedwsfewaf</textarea><br>
+	<input type="text" name="text" >
+	<input type="button" name="submit" value="提交" >
+</form>
+</body>
+<script>
+	var oTxt1 = document.getElementsByName('message')[0];
+    var oTxt2 = document.getElementsByName('text')[0];
+    var oBtn = document.getElementsByName('submit')[0];
+    oBtn.onclick=function (){
+		oTxt1.value+=oTxt2.value+'\n';
+		oTxt2.value='';
+	};
+	// console.log(oTxt1.value);   textarea标签的内容即value值
+</script>
+</html>

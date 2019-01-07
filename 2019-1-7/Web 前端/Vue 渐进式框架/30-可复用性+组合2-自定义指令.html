@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>全局注册/局部注册</title>
+</head>
+<body>
+    <div id="app">
+      <input type="text" v-focus>
+      <p v-red>文字变红色</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</body>
+
+<!-- <script type="text/javascript">
+    //a.全局注册
+        Vue.directive("focus",{
+            inserted:function(el){                       //inserted 与生命周期函数相似
+                el.focus()
+            }                     
+        })
+            var vm = new Vue({
+                el: '#app'
+            })
+</script> -->
+
+
+<script type="text/javascript">
+    //a.局部注册
+            var vm = new Vue({
+                el: '#app',
+                directives:{                        //注意1.有 s 2.写在同一个directives
+                    focus:{
+                        inserted(el){
+                            el.focus()
+                        }
+                    },
+                    red:{
+                        inserted(el){
+                            el.style.color = "red"
+                        }
+                    }
+                }
+            })
+</script>
+</html>

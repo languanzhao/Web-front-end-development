@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>访问元素</title>
+<link rel="stylesheet" href="css/common.css">
+<style>
+    .banner{width: 1920px;height: 600px;position: relative;left: 50%;margin-left: -960px;overflow: hidden;}
+    ul li{display: none;}
+    ul .on{display: block;}
+    ol{width:1920px;height:50px;position: absolute;left: 0px;bottom:30px;text-align: center;font-size: 0px;}
+    ol li{width: 50px;height: 50px;background: #EFE8E8;display: inline-block;margin:0px 10px;font-size: 36px;color:red;text-align: center;line-height: 50px;border-radius: 50%;}
+    ol .on{background: #21E4B3;}
+
+    .banner .prev{width:40px;height: 40px ;display:block;background:url(img/index_prev.png);position:absolute;top: 280px;left:350px;}
+    .banner .next{width:40px;height: 40px ;display:block;background:url(img/index_next.png);position:absolute;top: 280px;right:350px;}
+    .banner .prev:hover{background:url(img/index_prev_hover.png) ;}
+    .banner .next:hover{background:url(img/index_next_hover.png) ;}
+</style>
+</head>
+<body>
+    <div id="app">
+            <banner></banner>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</body>
+
+    <script type="text/javascript">
+    var myPlugin = {}
+    myPlugin.install = function(Vue,options){
+        Vue.component("banner",{
+            data(){
+                return{                          //注意在全局里写data需要添加上  return
+                pic:options.pic,
+                btn:options.btn,
+                index:options.index,
+                timer:options.timer,
+                delayTime:options.delayTime
+                }
+            },                                   //注意src是绑定   :src
+            template:`<div class="banner" @mouseover="over" @mouseleave="leave">                        
+          <ul>
+              <li v-for="(item,i) of pic" :class="i === index ? 'on' : null"><a href="#"><img :src="item.src" alt=""></a></li>
+          </ul>
+          <ol>
+              <li v-for="(item,i) of btn" :class="i === index ? 'on' : null" @click="toClick(i)">{{item}}</li>
+          </ol>
+            <a href="javascript:void(0)" class="prev" @click="leftBtn"></a>
+            <a href="javascript:void(0)" class="next" @click="rightBtn"></a>
+      </div>`,
+      methods:{
+          toClick(i){
+              this.index = i
+          },
+          leftBtn(){
+              this.index <= 0 ? this.index = this.btn.length - 1 : this.index --
+          },
+          rightBtn(){
+              this.index >= this.btn.length - 1 ? this.index = 0 : this.index ++
+          },
+          autoPlay(){
+              var that = this
+            this.timer = setInterval(function(){
+                  that.rightBtn()
+              },this.delayTime)
+          },
+          over(){
+            clearInterval(this.timer)   
+          },
+          leave(){
+            this.autoPlay()
+          }
+      },
+      mounted(){
+          this.autoPlay()
+      }
+
+        })
+
+    }
+    Vue.use(myPlugin,{
+        pic:[
+            {"src":"img/banner1.jpg"},
+            {"src":"img/banner2.jpg"},
+            {"src":"img/banner3.jpg"}
+            ],
+        btn:["","",""],
+        index:0,
+        timer:"",
+        delayTime:1000
+    })
+
+            var vm = new Vue({
+                el:"#app"
+            })
+    </script>
+</html>

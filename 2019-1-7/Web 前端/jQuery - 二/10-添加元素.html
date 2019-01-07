@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    http://www.runoob.com/jquery/jquery-dom-add.html
+
+    那有木有考虑过append/prepend和after/before有什么区别呢？
+
+1.append
+<p>
+  <span class="s1">s1</span>
+</p>
+<script>
+$("p").append('<span class="s2">s2</span>');
+</script> 结果是这样的:
+<p>
+  <span class="s1">s1</span>
+  <span class="s2">s2</span>
+</p>
+
+2.after
+<p>
+  <span class="s1">s1</span>
+</p>
+<script>
+$("p").after('<span class="s2">s2</span>');
+</script>
+结果是这样的:
+
+<p>
+  <span class="s1">s1</span>
+</p>
+<span class="s2">s2</span>
+
+							总结：
+
+							append/prepend 是在选择元素内部嵌入。
+
+							after/before 是在元素外面追加。
+
+(appendTo)
+$("<b> Hello World!</b>").appendTo("p");        在p元素的结尾添加内容
+</body>
+</html>

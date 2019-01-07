@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>获取元素</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+</head>
+<body>
+    <div class="box1">有class的box</div>
+    <div class="box1">有class的box1</div>
+    <div class="box1">有class的box2</div>
+    <img id="img" src="img/20150416H4556_cPMUt.thumb.224_0.gif" alt="">
+    <a id="change" href="javascript:void(0);">点击切换图片</a>
+    <a href="javascript:void(0)" onClick="change_one()">还原</a>
+</body>
+<script type="text/javascript">
+	//获取class集合
+	var box1 = document.getElementsByClassName('box1');           		   //方法一
+	
+	// alert(box1[0].innerHTML);
+	// alert(box1[1].innerHTML);
+	// alert(box1[2].innerHTML);
+	box1[1].innerHTML = '修改后的box1' ;
+
+	//获取id元素
+	var change = document.getElementById('change');								//方法二
+	change.onclick = function(){
+		document.getElementById('img').src = 'img/t01469090aede1d7e8e.gif';
+	}
+
+	var img_change = document.getElementById('img');
+	img_change.onclick = function(){
+		img_change.src = 'img/t013e00681fc28e663d.gif';
+	}
+
+	function change_one(){
+		// alert(1111);
+		img_change.src = 'img/20150416H4556_cPMUt.thumb.224_0.gif';
+	}
+	
+//		<div id="text">点击我改变颜色</div>                                      //方法三
+
+//		var oText = document.getElementById('text');
+//				oText.onclick = function change_a(){
+//					oText.style.color = 'red';
+//				}
+//				oText.change_a();
+
+//		window.onload = function (){	 
+//		 otext = document.getElementById('text');    去掉var             //方法四
+//			}
+//		
+//			function change(){                         //function 方法放外面且去掉var
+//			otext.style.color = 'red';
+//			}
+			
+		
+</script>
+</html>

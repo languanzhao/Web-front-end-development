@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css" media="screen">
+	.on{color:red;}
+</style>
+<script type="text/javascript" src="js/jquery1.11.js"></script>
+</head>
+<div>
+	知道结果
+
+<ul>
+	<li>1</li>
+	<li>2</li>
+	<li class="a">3</li>
+	<li>4</li>
+	<li>5</li>
+</ul>
+<input type="text" name="">
+</div>
+<body>
+   <script type="text/javascript">
+//1.   	//console.log($("ul li").eq(2)); 获取第三个元素li
+   	
+//2.1   	//console.log($(".a").index());  获取第三个li的下标
+   	
+//2.2  	//js写法
+   	// var a = document.querySelector(".a")
+   	// var li = document.querySelectorAll("ul li")
+   	// li.forEach(function(item,i){
+   	// 	if(item.innerText === a.innerText){
+   	// 		console.log(i);
+   	// 	}
+   	// })
+//2.3   //面向对象写法
+   	// function getIndex(props){
+   	// 	this.a = document.querySelector(props.a)
+   	// 	this.li = document.querySelectorAll(props.li)
+   	// 	this.fn()
+   	// }
+
+   	// getIndex.prototype.fn = function(){
+   	// 	var that = this
+   	// 	that.li.forEach(function(item,i){
+   	// 		if(item.innerText === that.a.innerText){
+   	// 			console.log(i);
+   	// 		}
+   		
+   	// 	})	
+   	// }
+   	// var getindex = new getIndex({
+   	// 	"li":"ul li",
+   	// 	"a":".a"
+   	// })
+   	
+   	//3.first()  与eq(0)用法相同
+   	//console.log($("ul li").first());   
+   	//4.last()   与eq($("ul li").length - 1)用法相同
+   	//console.log($("ul li").last().text());
+   	//console.log(   $("ul li").eq($("ul li").length - 1).text()   );
+   	//5.filter()
+   	
+   	//6.
+   	// $("ul li").each(function(i,item){
+   	// console.log($(item).not(".a").text());
+   	// })
+   	//7.http://www.runoob.com/jquery/jquery-traversing-ancestors.html
+   	//console.log($("li").parent().text());   //只能获取某个标签的父级
+   	//console.log($("li").parent().parent().text()); //与parents用法相同
+
+   	//console.log($("li").parents("div").text()); //可以获取某个标签的父级的父级
+   	//8.
+   	//console.log($(".a").prev().text());
+   	//console.log($(".a").next().text());
+   
+   	//console.log($(".a").prevAll().addClass('on'));
+   
+   	//console.log($(".a").nextAll().addClass('on'));
+//9.
+   	//console.log($(".a").siblings().text());
+   
+   	//console.log($("ul li").slice(1,5).text());        //   第几个 到  第几个-1
+   	
+//10.
+   	// $("input").select(function(){           //当input框中的内容被选中时发生的事件
+   	// 	alert(1)
+   	// })
+   	
+   </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>案例五星好评</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/common.css" rel="stylesheet">
+<style type="text/css" media="screen">
+	ul li {float: left;width: 27px;height: 29px;background: url(img/star_01.jpg);cursor: pointer;} 
+	   
+</style>
+</head>
+<body>
+    <div class="mark">
+    	<ul>
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    	</ul>
+    </div>
+</body>
+<script type="text/javascript">     //使用两张图片
+	
+	var mark = document.getElementsByClassName('mark')[0];
+    var li = mark.getElementsByTagName('li');
+    var i=0;
+     for(i=0;i < li.length;i++){
+        li[i].index = i;
+        li[i].onmouseover = function(){
+            for(i=0;i < li.length;i++){
+                if(i <= this.index){
+                 li[i].style.background = 'url(img/star_02.jpg)'
+                }else{
+                 li[i].style.background = 'url(img/star_01.jpg)'
+                }
+            }
+        }
+       li[i].onmousedown = function(){
+        alert('提交成功:' + (this.index+1) + '分')
+       }
+     }
+	
+</script>
+</html>

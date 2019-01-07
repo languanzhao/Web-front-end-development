@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>http://www.jq22.com/jquery-info10768</title>
+    <script src="js/jquery1.42.min.js"></script>
+    <style>
+        *{margin: 0;padding: 0;}
+        .word div{width: 100px;background: #999;}
+        .Toalert{width: 100%;height: 100%;background: rgba(0,0,0,0.5);position: fixed;left: 0;top: 0;color: #fff;display: none;text-align: center;}
+        .Toalert .show{width: 300px;height: 300px;left: 0;right: 0;top: 0;bottom: 0;margin: auto;position: absolute;}
+        .Toalert .close{text-align:right;font-size:30px;background: rgba(0,0,0,0.2);display:inline-block;width: 30px;height: 30px;text-align: center;line-height: 30px;position: absolute;right: 0;}
+    </style>
+</head>
+<body>
+    <button class="btn">点击</button>
+    <button class="btn">点击</button>
+    <div class="Toalert">
+        <div class="show">
+            <span class="close">×</span>
+           
+            <img src="img/clock.jpg" alt="" style="width:100%;height:100%;">
+            
+        </div>
+    </div>
+    <div class="word">
+            <div class="copy">文字1</div>
+            <div class="copy">文字2</div>
+            <div class="copy">文字3</div>
+            <div class="copy">文字4</div>
+            <div class="copy">文字5</div>
+            <div class="copy">文字6</div>
+    </div>
+
+</body>
+<script src="js/clipboard.js"></script>
+<script>
+    //点击弹窗
+    var btn = document.querySelectorAll(".btn")
+    var close = document.querySelector(".close")
+    var Toalert = document.querySelector(".Toalert")
+    Toalert.style.display = "none"
+    for(var i=0;i<btn.length;i++){
+        btn[i].onclick = function(){
+        if(Toalert.style.display === "none"){
+            Toalert.style.display = "block"
+        }else{
+            Toalert.style.display = "none"
+        }
+    }
+    }
+    close.onclick = function(){
+        Toalert.style.display = "none"
+    }
+
+
+
+
+    //获取随机微信号
+    var arr_wx = ['yunlong0458','yunlong00114','yunlong6520','yunlong1523'];
+	var wx_index = Math.floor((Math.random() * arr_wx.length));
+    stxlwx = arr_wx[wx_index];
+
+    //点击后复制
+    var clipboard =new ClipboardJS(".copy",{
+            text:function(){
+                return stxlwx
+            }
+         })
+    //复制成功后执行事件
+    clipboard.on('success',
+    function(e) {
+        console.log(e)
+        alert("已复制"+stxlwx)
+        Toalert.style.display = "block"
+    })
+</script>
+</html>

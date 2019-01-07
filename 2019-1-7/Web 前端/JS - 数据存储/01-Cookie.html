@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Js基础2</title>
+	<!-- cookie  针对的是  document
+	localStorage  针对的是  window -->
+</head>
+<body>
+	<!-- 如果cookie不显示有两种情况
+1. 浏览器没有使用cookie
+允许网站保存和读取 Cookie 数据（推荐）  打开
+仅将本地数据保留到您退出浏览器为止       关闭
+阻止第三方网站保存和读取 Cookie 数据    关闭
+2. 新版的谷歌浏览器禁止在本地客户端使用cookie -->
+<!-- 使用步骤：
+1.运行php环境并找到php路径
+2.将自己的demo放入 WWW 文件夹中
+3.运行时地址栏运行路径为  localhost/js_demo/a.html 
+-->
+	
+	<script>
+//添加Cookie		document.cookie="键 = 值";
+		document.cookie="name = 中华人民共和国"
+		document.cookie="age = 19"
+		document.cookie="sex = 男"
+		// console.log(document.cookie)
+
+//获取Cookie里面的值
+		// function getCookie(key){     			
+		// 	var arr = document.cookie.split("; ")
+		// 	var val
+		// 	arr.forEach(function(item,i){
+		// 		var arr2 = item.split("=")
+		// 		if(key === arr2[0]){
+		// 			val = arr2[1]
+		// 		}
+		// 	})
+		// 	return val
+		// }
+		// console.log(getCookie("name"))
+		
+//设置Cookie清除时间
+		function setCookie(cookieName, cookieVal, cookieTime) {
+				var str = cookieName + "=" + cookieVal
+				var time = new Date()
+				if (cookieTime > 0) {							   //设置的时间需要大于0
+					time.setTime(time.getTime() + cookieTime)
+
+					str += ";expires=" + time.toGMTString()
+
+					document.cookie = str;
+				}
+			}
+ 		 setCookie("name","中华人民共和国",5000)        				//5秒后清除
+		 //setCookie("name","中华人民共和国",1000 * 60 * 60 * 24 * 2)  //两天后清除
+			console.log(document.cookie)
+		
+	</script>
+</body>
+</html>

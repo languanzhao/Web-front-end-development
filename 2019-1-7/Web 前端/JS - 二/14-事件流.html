@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css" media="screen">
+	.a{width: 300px;height: 300px;background: green;}
+	.b{width: 200px;height: 200px;background: blue;}
+</style>
+</head>
+<body>
+    <!-- 
+    	事件流   
+    	1.冒泡 从小到大(从b>a>body>html)     
+    	2.捕获 从大到小(从html>body>a>b) 
+    -->
+    <div class="a">
+    	<div class="b"></div>
+    </div>
+    <script type="text/javascript">
+			var a = document.querySelector('.a')
+			var b = document.querySelector('.b')
+
+			//常用的触发事件默认为冒泡
+			// a.onclick = function(){
+			// 	console.log("a");
+			// }
+
+			// b.onclick = function(){
+			// 	console.log("b");
+			// }
+
+			//addEventListener("触发事件"，函数，true/false）  
+			//当为false时，为冒泡事件
+			//当为true时，为捕获事件
+	
+			// a.addEventListener("click",function(){
+			// 	console.log("a");
+			// },true)                                 
+
+			// b.addEventListener("click",function(){
+			// 	console.log("b");
+			// },true)
+    </script>
+</body>
+</html>

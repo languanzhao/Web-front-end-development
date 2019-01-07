@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>混入/全局混入</title>
+    <style></style>
+</head>
+<body>
+    <div id="app">
+      
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</body>
+
+    <script type="text/javascript">
+     //a.混入
+        var mixin = {                     
+            data(){
+                return{
+                    text:123,
+                    mes1:'hello'
+                }
+            },
+            created(){
+                console.log("我是混入函数") 
+            }
+        }
+            var vm = new Vue({
+                el: '#app',
+                mixins:[mixin],            //混入 (mixins) 固定写法
+                data:{
+                    text:"文本",
+                    mes2:"word"            //选项合并 相同key值以这里的data显示，不同合并
+                },
+                created(){
+                    console.log("我是组件函数")
+                } 
+            })
+    console.log(vm.$data)
+
+//类似于    $.extend            选项合并
+    </script>
+
+
+
+<script type="text/javascript">
+    //b.全局混入
+        Vue.mixin({                      //全局混入   若Vue下也有text则以Vue的为主
+	data(){
+		return{
+			text:123
+		}
+	}
+    //     ,
+    // methods:{
+    //     say(){
+    //         console.log("Hello!Girl")
+    //     }
+    // }
+})
+
+                var vm = new Vue({
+                el: '#app',
+                data:{
+                    //text:"文本"
+                }
+            })
+    console.log(vm.$data)
+    //console.log(vm.say())
+
+//类似于    $.extend            选项合并
+    </script>
+</html>

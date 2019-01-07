@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+  <!--  一.DOM元素关系         document object model  文档对象模型
+	1.访问父级元素
+	1.1 parentNode
+
+	2.访问同级元素
+		nextSibling 获取下一个节点(文字、属性、空格、换行等等)
+	2.1 nextElementSibling 获取下一个元素
+		previousSibling 
+	2.2 previousElementSibling
+
+	3.访问子级元素
+		firstChild
+	3.1 firstElementChild
+		lastChild 
+	3.2 lastElementChild
+		childNodes 
+	3.3 children -->
+	<ul class="ul">
+		<li> <b>新闻1</b> <span>删除</span> </li>
+		<li> <b>新闻2</b> <span>删除</span> </li>
+		<li> <b>新闻3</b> <span>删除</span> </li>
+		<li> <b>新闻4</b> <span>删除</span> </li>
+		<li> <b>新闻5</b> <span>删除</span> </li>
+	</ul>
+</body>
+<script type="text/javascript">
+//1.1
+  // var allspan = document.querySelectorAll('ul li span')
+		   // for(var i = 0;i < allspan.length;i++){
+		   // 	   allspan[i].onclick = function(){
+		   // 	   	this.parentNode.remove()                   //当前的父级元素即 span 的父级 li
+		   // 	 // this.parentNode.style.display = 'none'
+		   // 	   }  
+		   // }
+//2.1	 
+		// var li = document.querySelectorAll('li')[0]
+		// 	console.log(li.nextElementSibling);
+//2.2
+		// var li = document.querySelectorAll('li')[1]      //获取前面的邻居
+		// 	console.log(li.previousElementSibling);
+		
+//3.1   三种方法获取 ul
+      //var ul = document.getElementsByClassName('ul')[0]
+     
+      //var ul = document.querySelector('.ul')              //单个使用
+        
+     // var ul = document.querySelectorAll('ul')[0]	        //多个使用
+       
+       //console.log(ul.firstElementChild)                   //ul 下的第一个li
+
+//3.2
+      //console.log(ul.lastElementChild)					   //ul 下的最后一个li
+
+//3.3  例子见 08-select示例.html
+		     
+		// 		var list = document.querySelectorAll("li")
+		// // 		console.log(Object.prototype.toString.call(list))
+		// // 		
+		// // 		var li = [...list]
+		// // 		console.log(Object.prototype.toString.call(li))
+		// 		list.forEach(function(item,i){
+		// 			var span = item.children[1]     //获取li下的子元素，children[1],因此获取的为span
+		// 			span.onclick = function(){
+		// 				item.remove()
+		// 			}
+		// 		})
+</script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>预加载</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css" media="screen">
+#show{ width: 250px; height: 250px;background: #F5F720; }
+</style>
+</head>
+<body>
+	<div id="show">
+		
+	</div>
+    <a href="javascript:void(0)" onclick="change()">点击更换颜色</a>
+</body>
+<script type="text/javascript">
+	function change() {
+		//创建颜色数组数据
+		var color = ['#FC6060','#DC0D0D','#E729E9','#6F11A3','#171BEA','#2AEF95','#FE6224','#841A11'];
+		//获取数组的长度								length
+		var length = color.length;       			
+		//获取0-1的随机数								Math.random()
+		var random = Math.random();      			
+		//把随机数变为数组的倍数						random
+		var random1 = random * length;            	
+		//把随机数向下取整：例如1.554545555变为 1		Math.floor()
+		var floor = Math.floor(random1);		    //var floor = parseInt(random1);parseInt也能向下取整
+		//取出随机颜色								color[floor]
+		var color_random = color[floor];
+		//赋予show随机颜色
+//		var color_random = color[Math.floor(Math.random() * color.length)];         简写
+		document.getElementById('show').style.background = color_random;
+	}
+
+// 		var a = [13,24,33,45,5,63,47,448]
+    
+//    	var length = a.length                                    //获取数组的长度
+//    	var random = Math.random() * length     				 //获取随机的数组长度
+//    	var floor = Math.floor(random) 							 //向下取整数 ,获取数组里的每个数字的下标
+//    	var randomnumber = a[floor]								  //得出数组里的随机数
+//    	//console.log(randomnumber)
+    	
+ //    	//console.log(a[Math.floor(Math.random() * a.length )]);       //简写
+
+</script>
+</html>
+		

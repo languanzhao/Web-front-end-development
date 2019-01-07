@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style type="text/css" media="screen">
+.first{width: 200px;height: 20px;background: red;	transition: width 3s,height 3s,transform 3s,background 3s;}
+.first:hover{	width: 600px;height: 600px;transform: rotate(360deg);background: green;}        /*这是css3的功能*/
+.second{width: 200px;height: 20px;background: blue;}
+.third{width: 200px;height: 20px;background: green;}
+
+</style>
+<script  type="text/javascript" >
+	window.onload = function(){
+		var oFirst = document.getElementById('first');
+		var oSecond = document.getElementById('second');
+		var oThird = document.getElementById('third');
+		oFirst.onclick = function(){													
+																	//			这是Js的点击功能
+			oFirst.style.opacity = '0';
+			// oFirst.style.display = 'none';               visibility: hidden;设置为不可见，但仍有空间
+//															display:none;			消失
+//															opacity:0;            设置透明度为0；看不见，但仍有空间
+			 
+
+		}
+		oSecond.onclick = function(){
+			// oSecond.style.display = 'none';
+		oSecond.style.opacity = '0';
+		}
+		oThird.onclick = function(){
+			oThird.style.opacity = '0';
+				// oThird.style.display = 'none';
+					
+		}
+	}
+</script>
+</head>
+<body>
+   <p class="first" id="first">惦记我消失</p>
+   <p class="second" id="second">惦记我消失</p>
+   <p class="third" id="third">惦记我消失</p>
+</body>
+</html>

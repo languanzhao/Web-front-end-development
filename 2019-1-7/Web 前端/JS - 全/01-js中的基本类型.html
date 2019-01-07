@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>js中的基本类型</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>    <!--第六个类型console 的插件连接-->
+</head>
+<body>
+    <div id="obj">
+    	<ul>
+    		<li>	JavaScript 数据类型	</li>
+    		<li>	字符串（String）		</li>
+    		<li>	数字(Number)    		</li>
+    		<li>	布尔(Boolean)   	    </li>
+    		<li>	数组(Array)     		</li>
+    		<li>	对象(Object)    		</li>
+    		<li>	空（Null）            		</li>
+    		<li>	未定义（Undefined）	    </li>
+    	</ul>
+    </div>
+</body>
+<script type="text/javascript">
+//1.数字类型
+//	var number = 1234567890;
+// 	var number1 = 520.1314;
+//	alert(typeof number);
+
+
+//2.字符串
+// var string = '字符串类型需要加单引号';
+// var string1 = '1234567890';
+// alert(typeof string1);
+
+
+// if (1234567890 == '1234567890') {
+// 	alert('相等');
+// }
+
+
+//3. 布尔类型 boolean 只能有两个值：true 或 false。
+var TRUE = true;
+var FALSE = false;
+// alert(typeof TRUE);
+// alert(typeof FALSE);
+
+// if (true == 1) {
+// 	alert('相等');
+// }
+
+//	if (false == 0) {
+// 	alert('相等');
+//}
+
+// if (true === 1) {
+// 	alert('全等');
+// }else{
+// 	alert('不全等');
+// }
+
+//空对象
+var NULL = null;
+//4. alert(typeof NULL);
+
+// if (NULL == '') {
+// 	alert('相等');
+// }else{
+// 	alert('不相等');
+// }
+
+// if (NULL == 0) {
+// 	alert('相等！');
+// }else{
+// 	alert('不相等！');
+// }
+
+//5.数组：一个班级
+var array = ['阙静','胡雪怡','福雪怡','蓝观钊','全军覆没'];
+//alert(typeof array);
+ //alert(array[2])                [2]从0开始算
+
+
+//6. 对象              console 控制台里查询测试
+var obj = document.getElementById('obj');
+// alert(obj);
+//console.log(obj);
+//console.log(obj.getElementsByTagName('ul')[0].getElementsByTagName('li')[5].innerHTML);
+//console.log($('#obj ul li').eq(0).text());   //$ 路径的 第n个 的 text (内容)  须连接jquery.js
+
+
+//7. json数据类型  键值对 { "key":"value"} //单个
+var person = {"username":"胡雪怡","sex":"人妖","height":"155cm","weight":"40kg","hobby":"吃肉"};
+// alert(typeof person);
+// alert(person.username + '性别是：' + person.sex + '，身高：' + person.height + '，体重' +  person.weight + '，喜欢' +  person.hobby );
+
+										 //多个
+var class_01 = [
+				{"username":"胡雪怡","sex":"人妖","height":"155cm","weight":"40kg","hobby":"吃肉"},
+				{"username":"福雪怡","sex":"人妖","height":"155cm","weight":"40kg","hobby":"吃肉"},
+				{"username":"胡雪姨","sex":"人妖","height":"155cm","weight":"40kg","hobby":"吃肉"}
+				];
+// alert(class_01[2].username + '性别是：' + class_01[2].sex + '，身高：' + class_01[2].height + '，体重' +  class_01[2].weight + '，喜欢' +  class_01[2].hobby);
+// alert(class_01[1].username + '性别是：' + class_01[1].sex + '，身高：' + class_01[1].height + '，体重' +  class_01[1].weight + '，喜欢' +  class_01[1].hobby);
+
+
+
+
+//8. Undefined
+	//var un;   
+	//alert(un);
+	
+	
+</script>
+</html>

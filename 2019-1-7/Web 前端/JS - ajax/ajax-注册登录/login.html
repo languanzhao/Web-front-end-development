@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>登陆页</title>
+	</head>
+	<body>
+		<!-- 注册、登陆 -->
+		<h1>登陆页</h1>
+		<form>
+			<label>账号</label>
+			<input type="text" class="text">
+			
+			<label>密码</label>
+			<input type="password" class="password">
+			
+			<img class="image" src="http://api.imecho.cn/dodiapi/code.php?n=4&info=20$80$45">
+			<input type="text" class="code"/>
+			
+			<input type="submit" value="提交表单" class="submit"/>
+		</form>
+		
+		<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+		<script src="js/login.js"></script>
+		
+		<script>
+			$(".image").click(function(){
+				$(this).attr("src","http://api.imecho.cn/dodiapi/code.php?n=4&info=20$80$45")
+			})
+		</script>
+	</body>
+</html>

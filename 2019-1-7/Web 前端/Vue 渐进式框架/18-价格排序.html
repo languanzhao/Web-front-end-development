@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{margin: 0px ;padding: 0px;list-style-type: none;}
+    ul li{float: left;width: 100px;}
+    </style>
+    
+</head>
+<body>
+    <div id="app">
+      <ul>
+          <li v-for="(item,i) of list">
+              <h1>{{item.title}}</h1>
+              <p>{{item.price}}</p>
+          </li>
+        <button type="button" class="numSort"  @click="numSort()">升序</button>
+		<button type="button" class="priceSort"  @click="priceSort()">降序</button>
+      </ul>
+
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script type="text/javascript">
+                var vm = new Vue({
+                       el:"#app",
+                       data:{
+                            list:[
+                              {"title":"苹果","price":2},
+                              {"title":"华为","price":9},
+                              {"title":"联想","price":6}
+                                 ]
+                       },  
+                       methods:{
+                        numSort(){
+                            var that = this
+                            var arr = this.list
+                            for(i=0;i<=arr.length-1;i++){
+                                for(j=i+1;j<=arr.length-1;j++){
+                                    if(arr[i].price > arr[j].price){
+                                        var c = arr[i]
+                                         arr[i] = arr[j]
+                                         arr[j] = c
+                                    }
+                                }
+                            }
+                            arr.forEach(function(item,i){
+                                that.list.splice(i,1,item)
+                            })
+                        },
+                        priceSort(){
+                            var that = this
+                            var arr = this.list
+                            for(i=0;i<=arr.length-1;i++){
+                                for(j=i+1;j<=arr.length-1;j++){
+                                    if(arr[i].price < arr[j].price){
+                                        var c = arr[j]
+                                         arr[j] = arr[i]
+                                         arr[i] = c
+                                    }
+                                }
+                            }
+                            arr.forEach(function(item,i){
+                                that.list.splice(i,1,item)
+                            })
+                        }
+                       
+                       }      
+                            })
+    </script>
+</html>

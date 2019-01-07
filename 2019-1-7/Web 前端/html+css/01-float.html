@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{font-family: "微软雅黑";font-size: 36px;color: #FFFFFF;}
+			.header{border:5px solid red;}
+			.h1{border:10px solid black;}
+			.middle{border:5px solid green;}
+			
+	.a{width:200px;height: 600px;background:blueviolet;		float:left;}
+	.b{width:200px;height: 400px;background:orange;			float:left;}  /*a,b,c是父级header大标签里的子级*/
+	.c{width:200px;height: 200px;background:pink;			float:left;}
+			
+	.e{width:200px;height: 200px;background:blueviolet;		float:left;}
+	.f{width:200px;height: 200px;background:orange;			float:left;}	/*e,f,g是父级middle的子级*/
+	.g{width:200px;height: 200px;background:pink;			float:left;}	
+				
+	.a1{width:200px;height: 200px;background:blueviolet;}
+	.a2{width:200px;height: 200px;background:orange;	}		  			/*a1,a2,a3是父级a子级*/
+	.a3{width:200px;height: 200px;background:pink;		}	
+			
+	.b1{width:200px;height: 200px;background:green;		}
+	.b2{width:200px;height: 200px;background:purple;	}		  
+		
+			.header:after{
+				content:"";
+				display:block;  	/* 设置这些属性目的是使a,b,c的父级header形成一个包含a,b,c的框*/
+				clear:both;
+				}
+				
+			.middle:after{
+				content:"";
+				display:block;		/* 设置这些属性目的是使e,f,g的父级middle形成一个包含e,f,g的框*/
+				clear:both;
+				}
+			</style>
+	</head>
+	<body>
+		<div class="h1">
+		<div class="header">
+			<div class="a">
+				<div class="a1">1</div>
+				<div class="a2">2</div>     <!--若想在a里进行第二行，则直接在a里添加小标签，添加一个就为一行-->
+				<div class="a3">3</div>
+			</div>
+			<div class="b">
+				<div class="b1">1</div>			<!--注意看数字，float用于排列位置。-->
+				<div class="b2">2</div>
+			</div>
+			<div class="c">3</div>
+		</div>
+		<div class="middle">
+			<div class="e">1</div>
+			<div class="f">2</div>
+			<div class="g">3</div>
+		</div>
+		</div>
+	</body>
+</html>

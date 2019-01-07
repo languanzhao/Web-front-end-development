@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="https://blog.csdn.net/wangjolly/article/details/40510135" rel="stylesheet">
+<style type="text/css" media="screen">
+    table{border-collapse:collapse;border:2px solid red;text-align: center;} /*实现文字居中*/
+    th,tr,td{border:2px solid red;}
+    .button{ background:url(img/1.jpg) no-repeat;}
+</style>
+</head>
+<!--http://www.divcss5.com/ 进入DIVCSS5网站CSS学习指南
+    http://www.divcss5.com/html/h380.shtml 导航   
+-->
+
+<body>
+    <table width="300" height="100">  <!-- cellpadding="0px" -->
+    <tr> 
+        <th>班级</th> 
+        <th>日期</th> 
+        <th>标题</th> 
+    </tr> 
+    <tr> 
+        <td>一班</td> 
+        <td>2012-5-10</td> 
+        <td>标题1</td> 
+    </tr> 
+    <tr> 
+        <td>二班</td> 
+        <td>2012-5-20</td> 
+        <td>标题2</td> 
+    </tr> 
+</table> 
+<table border="1">
+    <caption>跨行</caption>
+        <tr>
+          <th>姓名</th>
+          <td>Bill Gates</td>
+        </tr>
+        <tr>
+          <th rowspan="2">电话</th>
+          <td>555 77 854</td>
+        </tr>
+        <tr>
+          <td>555 77 855</td>
+        </tr>
+    </table>
+    <table border="1">
+    <caption>跨列</caption>
+        <tr>
+          <th>姓名</th>
+          <th colspan="2">电话</th>
+    </tr>
+    <tr>
+          <td>Bill Gates</td>
+          <td>555 77 854</td>
+          <td>555 77 855</td>
+    </tr>
+</table>
+<table border="1" class="button">
+    <tr>
+        <td>
+            <p>这是一个段落，hello World！</p>
+        </td>
+        <td>
+            <ul>
+                <li>这是一个列表
+                    <ul>
+                        <li>html</li>
+                        <li>css</li>
+                        <li>javascript</li>
+                    </ul>
+                </li>
+            </ul>
+        </td>
+    </tr>
+</table>
+<table border="1" width="200px">
+  <tr>
+      <td width="50px">1</td>
+      <td>2</td>
+  </tr>
+ 
+  <tr>
+      <td>3</td>
+      <td>4</td>
+  </tr>
+ 
+  <tr>
+      <td>a</td>
+      <td>b</td>
+  </tr>
+ 
+</table>
+<table border="1" width="200px">
+  <tr>
+      <td width="50%" align="left">1</td>
+      <td>2</td>
+  </tr>
+ 
+  <tr>
+      <td align="center">3</td>
+      <td>4</td>
+  </tr>
+ 
+  <tr>
+      <td align="right">a</td>
+      <td>b</td>
+  </tr>
+ 
+</table>
+<table border="1" width="200px">
+  <tr>
+      <td width="50%" valign="top" >1</td>
+      <td>
+             2   <br/>
+             2   <br/>
+             2   <br/>
+      </td>
+  </tr>
+  
+  <tr>
+      <td valign="middle"  >3</td>
+      <td>
+             4   <br/>
+             4   <br/>
+             4   <br/>
+      </td>
+  </tr>
+  
+  <tr>
+      <td valign="bottom" >a</td>
+      <td>
+             b   <br/>
+             b   <br/>
+             b   <br/>
+      </td>
+  </tr>
+  
+</table>
+<table border="1" width="200px">
+  <tr bgcolor="gray">
+      <td width="50%">1</td>
+      <td>2</td>
+  </tr>
+ 
+  <tr>
+      <td>3</td>
+      <td>4</td>
+  </tr>
+ 
+  <tr>
+      <td>a</td>
+      <td  bgcolor="pink">b</td>
+  </tr>
+ 
+</table>
+<div>
+ 设置td的属性width 
+在示例里，1单元格设置了宽度，那么3，和a单元格，自动继承该宽度 
+2单元格的宽度由table宽度和1单元格的宽度决定
+</div>
+<div>
+    tr 一行     th 表头     td 列（单元格）
+</div>
+<div>
+    调整字体与单元格边框之间的内间距，（cellpadding="11px"意思是字体与单元格边框之间的距离是11个像素格）
+</div>
+<div>
+    调整单元格与单元格之间的外间距（cellspacing="10px"意思是单元格与单元格之间的外间距是10个像素格）
+</div>
+<div>
+    <th>不光是粗体，还是居中的
+<caption>也是居中的，而且如果table有border的话则caption不在border之内
+TFOOT 元素内包含的有效标签有：  TD  TH  TR  
+任何给定的 table 对象都只能定义一个 tFoot
+</div>
+<div>
+width height–仅table和td使用 
+align水平对齐–table+tr+td 
+valign垂直对齐–tr+td 
+cellpadding cellspacing内外边距–table 
+注：thead/tbody/tfoot是不可见元素 无法给它们设置属性 
+</div>
+</body>
+</html>

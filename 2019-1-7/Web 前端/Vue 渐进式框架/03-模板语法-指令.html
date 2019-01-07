@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+</head>
+<body>
+    <div class="app">
+    	<p v-bind:class="css" v-html="html"></p>
+    	<p>{{type === true ? 1 : 0}}</p>
+    	<p v-if="seen">看得见</p>
+    	<p v-else>看不见</p>
+    	<p v-for="txt in arr">{{txt.text}}</p>
+    	<p v-for="(item,i) of arr2" v-on:click="a(item,i)">{{item}}</p>
+    	<p v-for="item of arr3" v-on:click="b(item)">{{item.name}}今年{{item.age}}岁,喜欢{{item.hobby}}</p>
+    	<input type="text" name="" v-model="bind">
+    	<p>{{bind}}</p>
+    	<input type="text" name="" v-bind:value="v" v-on:input="v = $event.target.value">
+    	<p>{{v}}</p>
+    	<form>    												<!-- .prevent 阻止事件的默认行为-->		
+    		<input type="text" name="">
+    		<input type="password" name="">
+    		<input type="submit" name="" value="提交" v-on:click.prevent="c">
+    	</form>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script type="text/javascript">
+                var vm = new Vue({
+                    el:".app",
+                    data:{
+                       css:"a",
+                       html:"<span>插入标签</span>",  
+                       type:false,                         //if若为true,else则看不见，反之
+                       seen:true,                          //控制元素是否显示 true 和 false
+                       arr:[                             //v-for指令可以绑定数组的数据来渲染一个项目列表
+                       		{ text: '学习 JavaScript' },       
+      						{ text: '学习 Vue' },
+      					 	{ text: '整个牛项目' }
+                           ],
+                       arr2:["小明","小红","德玛西亚"],    //v-for指令可以绑定数组的数据来渲染一个项目列表
+                       arr3:[
+                       		{name:"小明",age:18,hobby:"跳舞"},
+                       		{name:"小红",age:318,hobby:"唱歌"},
+                       		{name:"德玛西亚",age:189,hobby:"打球"}
+                       		],
+                       bind:"Two-way binding 双向绑定",          //v-model 指令  双向绑定
+                       v:"v-model 的原型"                         //v-model 的另一种方法 原型
+                    },
+                    methods:{                                       // 注意 传参
+                    	a:function(item,i){                        //v-on指令添加一个事件监听器
+                    		alert(item + "的下标是:" + i)
+                    	},
+                    	b:function(item){
+                    		alert(item.name+"今年"+item.age+"岁,喜欢"+item.hobby)
+                    	},
+                    	c:function(){
+                    		//alert(".prevent 阻止事件的默认行为")
+                    	}
+                    }
+
+
+                })
+    </script>
+    <span></span>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			h2,p{margin:0px;padding: 0px;}
+.title{width:1200px;height: 60px;position: relative;margin: 0 auto;}
+.title:before{content: "";width: 250px;height: 2px;background: #cecece;position: absolute;display: block;top: 29px;left:200px;}
+.title:after{content: "";width: 250px;height: 2px;background: #cecece;position: absolute;display: block;top: 29px;right: 200px;}
+.title h2{font-family: "微软雅黑";font-size: 30px;color: #333333;text-align: center;padding-top: 8px;}
+.title p{font-family: "微软雅黑";font-size: 14px;color: #5d5959;text-align: center;padding:3px 0px 3px 0px;}
+.title span{width: 32px;height: 2px;display: block;background: #eb791b;margin: 0 auto;}
+
+
+.comon_title {text-align: center;font-size: 0;margin-top:100px;}
+.comon_title b {font-size: 36px;padding: 0 20px;display: inline-block;}
+.comon_title span {display: inline-block;position: relative;top: -10px;width: 110px;height:2px;background: #a1a1a1;}
+.c333 { color: #333;}
+   		/*本身span和b标签呈上中下排列,但只要这两个同时给他们加上display:inline-block;即可呈左中右排列,再用相对定位移动位置即可*/
+		</style>
+	</head>
+	<body>
+		<div class="title">
+					<h2>企业新闻</h2>
+					<p>ENTERPRIES NEWS</p>
+					<span></span>
+				</div>
+		
+         <div class="comon_title">
+          <span></span>
+          <b class="c333">学员作品展示</b>
+          <span></span>
+        </div>
+	</body>
+</html>

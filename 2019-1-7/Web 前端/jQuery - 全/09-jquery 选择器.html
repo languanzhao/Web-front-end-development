@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>	选择器	http://jquery.cuishifeng.cn/</title>
+		<script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.8.3/jquery.js"></script>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		1.$("#myDiv");             根据给定的ID匹配一个元素。
+		2.$("div");                查找所有 DIV 元素
+		3.$(".myClass");           根据给定的css类名匹配元素。
+		4.$("*") 		                                 匹配所有元素
+		5.$("div,span,p.myClass")  找到匹配任意一个类的元素。
+		6.$("form input")          找到表单中所有的 input 元素
+		7.$("form > input")        匹配表单中所有的子级input元素。
+		8.$("label + input")       匹配所有跟在 label 后面的 input 元素
+		9.$("form ~ input")        找到所有与表单同辈的 input 元素
+		  代码：<form>
+ 		 <label>Name:</label>
+ 		 <input name="name" />
+ 		 <fieldset>
+     	 <label>Newsletter:</label>
+     	 <input name="newsletter" />
+		 </fieldset>
+		 </form>
+		 <input name="none" />
+
+         结果：[ <input name="none" /> ]
+		10. $('li:first');          获取匹配的第一个元素
+		11. $("input:not(:checked)")去除所有与给定选择器匹配的元素
+
+			在jQuery 1.3中，已经支持复杂选择器了（例如:not(div a) 和 :not(div,a)）
+			代码：<input name="apple" />
+			<input name="flower" checked="checked" />
+			结果：[ <input name="apple" /> ]
+		12. $("tr:even")   偶数是从0开始计算
+			匹配所有索引值为偶数的元素，从 0 开始计数
+			查找表格的1、3、5...行（即索引值0、2、4...）
+		13. $("tr:odd")匹配所有索引值为奇数的元素，从 0 开始计数
+			查找表格的2、4、6行（即索引值1、3、5...）
+	    14. $("tr:eq(1)")匹配一个给定索引值的元素
+			代码：
+			<table>
+             <tr><td>Header 1</td></tr>
+             <tr><td>Value 1</td></tr>
+             <tr><td>Value 2</td></tr>
+            </table>
+           结果：
+ 				[ <tr><td>Value 1</td></tr> ]
+		15.$("tr:gt(0)")查找第二第三行，即索引值是1和2，也就是比0大
+			代码：
+			<table>
+  				<tr><td>Header 1</td></tr>
+  				<tr><td>Value 1</td></tr>
+  				<tr><td>Value 2</td></tr>
+			</table>
+			结果：
+				[ <tr><td>Value 1</td></tr>, <tr><td>Value 2</td></tr> ]
+		16. $("tr:lt(2)")查找第一第二行，即索引值是0和1，也就是比2小
+
+		17. $('li:last') 获取匹配的最后个元素
+		18. $(":header").css("background", "#EEE");给页面内所有标题加上背景色
+				代码：
+				<h1>Header 1</h1>
+			<p>Contents 1</p>
+			<h2>Header 2</h2>
+				<p>Contents 2</p>
+				结果：
+			[ <h1 style="background:#EEE;">Header 1</h1>, <h2 style="background:#EEE;">Header 2</h2> ]
+		19.:animated 匹配所有正在执行动画效果的元素,只有对不在执行动画效果的元素执行一个动画特效
+		20.:focus 添加一个"focused"的类名给那些有focus方法的元素
+		21.$("div:contains('John')") 查找所有包含 "John" 的 div 元素
+		22.$("td:empty") 查找所有不包含子元素或者文本的空元素
+		HTML 代码:
+
+		<table>
+ 		 <tr><td>Value 1</td><td></td></tr>
+ 		 <tr><td>Value 2</td><td></td></tr>
+		</table>
+		结果:
+		[ <td></td>, <td></td> ]
+		23.$("div:has(p)").addClass("test"); 给所有包含 p 元素的 div 元素添加一个 text 类
+		24.$("td:parent")  查找所有含有子元素或者文本的 td 元素
+		25.$("tr:hidden") 配所有不可见元素，或者type为hidden的元素
+		26.$("tr:visible") 查找所有可见的 tr 元素
+		27.$("div[id]") 查找所有含有 id 属性的 div 元素
+		28.$("input[name='newsletter']").attr("checked", true); 查找所有 name 属性是 newsletter 的 input 元素
+		29.$("input[name!='newsletter']").attr("checked", true); 查找所有 name 属性不是 newsletter 的 input 元素
+		30.$("input[name^='news']") 查找所有 name 以 'news' 开始的 input 元素
+		31.$("input[name$='letter']") 查找所有 name 以 'letter' 结尾的 input 元素
+		32.$("input[name*='man']") 查找所有 name 包含 'man' 的 input 元素
+		33.$("input[id][name$='man']") 找到所有含有 id 属性，并且它的 name 属性是以 man 结尾的
+		34.$("ul li:first-child") 在每个 ul 中查找第一个 li
+		35.$("ul li:last-child") 在每个 ul 中查找最后一个 li
+		36.$("ul li:nth-child(2)") 在每个 ul 查找第 2 个li
+		37.$("ul li:only-child") 在 ul 中查找是唯一子元素的 li
+		 HTML 代码:
+         <ul>
+           <li>John</li>
+           <li>Karl</li>
+           <li>Brandon</li>
+         </ul>
+         <ul>
+   		<li>Glen</li>
+		</ul>
+		结果:
+		[ <li>Glen</li> ]
+		38.$(":input") 匹配所有 input, textarea, select 和 button 元素
+		39.$(":text") 查找所有文本框 type="text"
+		40.$(":password") 查找所有密码框
+		41.$(":radio") 查找所有单选按钮
+		42.$(":checkbox") 查找所有复选框
+		
+	</script>
+</html>

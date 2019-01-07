@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>中断/跳出</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    
+</body>
+<script type="text/javascript">
+	/*var str = 5;
+	switch(str) {
+		case 5:
+			alert('等于5');
+			break;
+		case 10:
+			alert('完美');
+			break;
+		default:
+			alert('未定义');
+	}*/
+
+
+	for (var i = 0; i < 6; i++) {
+		if (i == 3) {
+			break;
+		}
+		console.log(i);
+	}
+
+	for (var i = 0; i < 6; i++) {
+		if (i == 3) {
+			continue;
+		}
+		console.log(i);
+	}
+</script>
+</html>

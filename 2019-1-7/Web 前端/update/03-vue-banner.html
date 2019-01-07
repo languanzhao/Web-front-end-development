@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			.banner{width:1920px;height:600px;position: relative;overflow:hidden;left:50%;margin-left:-960px;}
+			.banner ul{width:1920px;height:600px;position: absolute;}
+			.banner ol{position: absolute;bottom:30px;text-align: center;width:100%;}
+			ol li{width: 60px;height:60px;border-radius: 50%;background:#999;display: inline-block;margin:0 30px;}
+			ul li{display: none;}
+			ul .on{display: block;}
+			ol .on{background: #FF0000;}
+			
+			.banner ul li img{width:1920px;height:600px;}
+			.leftClick{font-size:60px;position: absolute;left:100px;top:250px;color:red;}
+			.rightClick{font-size:60px;position: absolute;right:100px;top:250px;color:red;}
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			<div class="banner" @mouseover="stop" @mouseleave="start">
+				<ul>
+					<li 
+					v-for="(item,i) of list" 
+					:key="item.id" 
+					:class="i === index ? 'on' : null"
+					><img 
+					:src="item.src"
+					/></li>
+				</ul>
+				<ol>
+					<li 
+					v-for="(item,i) of btnList" 
+					:key="i" 
+					@mouseover="btn(i)" 
+					:class="i === index ? 'on' : null"
+					></li>
+				</ol>
+				<a href="javascript:void(0);" @click="leftClick" class="leftClick">左</a>
+				<a href="javascript:void(0);" @click="rightClick" class="rightClick">右</a>
+			</div>
+		</div>
+	</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script type="text/javascript">
+	var vm = new Vue({
+		el:"#box",
+		data:{
+			list:[
+				{
+					id:1,
+					src:"img/banner01.jpg"
+				},
+				{
+					id:2,
+					src:"img/banner02.jpg"
+				},
+				{
+					id:3,
+					src:"img/banner03.jpg"
+				}
+			],
+			btnList:["","",""],
+			index:0,
+			time:""
+		},
+		methods:{
+			btn(i){
+				this.index = i
+			},
+			autoPlay(){
+				var that = this
+				 this.time = setInterval(function(){
+					that.index < that.btnList.length -1 ? that.index ++ : that.index = 0
+				},1000)
+			},
+			stop(){
+				clearInterval(this.time)
+			},
+			start(){
+				this.autoPlay()
+			},
+			leftClick(){
+				this.index <= 0 ? this.index = this.btnList.length -1 : this.index--
+			},
+			rightClick(){
+				this.index >= this.btnList.length - 1 ? this.index = 0 : this.index ++
+			}
+			
+		},
+		mounted:function(){
+			this.autoPlay()
+		}
+	})
+</script>
+</html>

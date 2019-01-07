@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 数组形式，二维数组形式及一个对象形式的写法 -->
+</head>
+<body>
+                                                             <!-- 数组形式 -->
+    <!-- <ul id="example-1">                                      
+        <li v-for="(item,i) in arr">
+        {{item.firstname}} : {{item.age}} : {{item.sex}}
+        </li>
+      </ul> -->
+                                                            <!-- 数组形式中添加 key属性  -->
+        <ul id="example-1">                                      
+        <li v-for="item in arr" :key="item.id">
+        {{item.firstname}} : {{item.age}} : {{item.sex}}
+        </li>
+      </ul>
+
+                                                                <!-- 一个对象的 v-for 形式 -->
+      <!-- <ul id="example-1">                                          
+            <li v-for="(value,key,index) in object">
+            {{index}} : {{key}} : {{value}}
+            </li>
+       </ul> -->
+                                                                         <!-- 二维数组 -->
+       <!-- <ul id="example-1">                                      
+           <li v-for="items of place">
+               <ul>
+                   <li v-for="item of items.cities">{{item.countryName}}</li>
+               </ul>
+           </li>
+       </ul> -->
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script>
+                    var example1 = new Vue({
+                    el: '#example-1',
+                    data: {
+                        // arr:[{                                 //数组形式
+                        //     "firstname":"小明",
+                        //     "age":18,
+                        //     "sex":"女"
+                        //       },{
+                        //     "firstname":"小红",
+                        //     "age":20,
+                        //     "sex":"女" 
+                        //       }]
+
+                            arr:[{                                 //数组形式中添加key属性
+                                "id":1,                               
+                            "firstname":"小明",
+                            "age":18,
+                            "sex":"女"
+                              },{
+                                "id":2,
+                            "firstname":"小红",
+                            "age":20,
+                            "sex":"女" 
+                              }]
+
+                        // object:{                                  //一个对象的 v-for 形式
+                        //     "firstname":"小明",
+                        //     "age":18,
+                        //     "sex":"女"
+                        //        }
+
+                        // place:[{"countryName":"中国",                //二维数组
+                        //         "cities":[{
+                        //             "countryName":"广州"
+                        //         },{
+                        //             "countryName":"上海"
+                        //         },{
+                        //             "countryName":"北京"
+                        //         }]
+                        //     },
+                        //         {"countryName":"澳大利亚",
+                        //         "cities":[{
+                        //             "countryName":"墨尔本"
+                        //         },{
+                        //             "countryName":"悉尼"
+                        //         },{
+                        //             "countryName":"肯倍拉"
+                        //         }]
+                        //     },
+                        //         {"countryName":"新加坡",
+                        //         "cities":[{
+                        //             "countryName":"麦波申"
+                        //         },{
+                        //             "countryName":"义顺"
+                        //         },{
+                        //             "countryName":"裕廊"
+                        //         }]
+                        //     }
+                        //         ]
+
+                    }
+                    })
+</script>
+</html>

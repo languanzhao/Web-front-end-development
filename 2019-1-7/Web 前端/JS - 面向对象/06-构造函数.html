@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <script type="text/javascript">
+        //创建出实例化的对象
+        //creatpeople 实例化对象
+        
+        //构造函数
+        function CreatPeople(name,age){               //注意函数名的首字母大写问题
+         this.name = name
+         this.age = age
+        }
+       
+        CreatPeople.prototype.sex = '男'
+        
+        var creatpeople = new CreatPeople('小明',18)    //1.需要new一个对象出来才是构造函数 
+        var creatpeople2 = new CreatPeople('小米',20)
+
+        console.log(creatpeople.name + creatpeople.age + creatpeople.sex);
+        console.log(creatpeople2.name + creatpeople2.age + creatpeople.sex);
+
+    </script>
+</body>
+</html>

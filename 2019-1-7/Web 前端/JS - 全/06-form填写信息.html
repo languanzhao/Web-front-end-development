@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/填写信息.css" rel="stylesheet">
+</head>
+<body>
+    <form class="new_address" onsubmit="return false">
+
+					<h4>新建地址</h4>
+
+					<label for="name">姓名</label><input type="text" name="name" id="name" />
+
+					<div id="nametip">
+
+						*姓名不能为空
+
+					</div>
+
+					<br />
+
+					<label for="phone">电话</label><input type="text" name="phone" id="phone" maxlength="11" />
+
+					<div id="phonetip">
+
+						*手机格式不正确
+
+					</div><br />
+
+					<label>所在区域</label>
+
+					<select id="province">
+
+						<option>--省--</option>
+						<option>广东省</option>
+						<option>省</option>
+						<option>省</option>
+						<option>省</option>
+					</select>
+
+					<select id="city">
+
+						<option>--市--</option>
+						<option>广州市</option>
+						<option>广州市</option>
+						<option>广州市</option>
+						<option>广州市</option>
+
+					</select>
+
+					<select id="county">
+
+						<option>--区--</option>
+						<option>天河区</option>
+						<option>天河区</option>
+						<option>天河区</option>
+						<option>天河区</option>
+
+					</select>
+
+					<div id="protip">
+
+						*省不能为空
+
+					</div>
+
+					<div id="citytip">
+
+						*市不能为空
+
+					</div>
+
+					<div id="countytip">
+
+						*区不能为空
+
+					</div><br />
+
+					<label for="detail_address">详细地址</label><input type="text" name="detail_address" id="detail_address" />
+
+					<div id="detailtip">
+
+						*详细地址不能为空
+
+					</div><br />
+
+					<label for="email">邮箱</label><input type="text" name="email" id="email" />
+
+					<div id="emailtip">
+
+						*邮箱格式不正确
+
+					</div><br />
+
+					
+
+					<input type="submit" name="sub" id="sub" value="保存地址" onclick="subInput()"/>
+
+				</form>
+</body>
+<script type="text/javascript">
+
+var name_1 = document.getElementById("name");
+
+var phone = document.getElementById("phone");
+
+var detail = document.getElementById("detail_address");
+
+var email = document.getElementById("email");
+
+var reg_email = /^[a-zA-Z\d_]+(\.[a-zA-Z\d_]+)*@([\da-zA-Z](-[\da-zA-Z])?)+(\.{1,2}[a-zA-Z]+)+$/;
+
+var reg_phone = /^1[34578]\d{9}$/;
+
+
+
+
+
+name_1.onblur = function(){
+
+	if ((name_1.value).trim() == "" ) {
+
+			nametip.style.display = "inline-block";
+
+			return false;
+
+		}else{
+
+			nametip.style.display = "none";
+
+	}
+
+}
+
+
+
+phone.onblur = function(){
+
+	if ((phone.value).trim() == "" || !reg_phone.test(phone.value)) {
+
+			phonetip.style.display = "inline-block";
+
+			return false;
+
+		}else{
+
+			phonetip.style.display = "none";
+
+	}
+
+}
+
+
+
+detail.onblur = function(){
+
+	if ((detail.value).trim() == "") {
+
+			detailtip.style.display = "inline-block";
+
+			return false;
+
+		}else{
+
+			detailtip.style.display = "none";
+
+		}	
+
+}
+
+
+
+email.onblur = function(){
+
+	if (email.value == "" || !reg_email.test(email.value)) {
+
+			emailtip.style.display = "inline-block";
+
+			return false;
+
+		}else{
+
+			emailtip.style.display = "none";
+
+	}
+
+}
+
+</script>
+</html>

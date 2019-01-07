@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		
+<script type="text/javascript">
+//九九乘法表规律：
+//1.九行九列
+//2.随着行数各自是递增的
+//3.第一行有1列，第二行有2列……第九行有九列
+document.write('<table border="0"  bgcolor="#AEF0DB" cellspacing="10" cellpadding="5">');
+for (var i = 9; i >= 1; i--) {
+	document.write('<tr>');
+	for (var j = 1; j <= i; j++) {
+		document.write('<td style="border:1px solid #000000">');
+		document.write(j + 'X' + i + '=' + j*i);
+		document.write('</td>');
+	}
+	document.write('</tr>');
+}
+document.write('</table>');
+</script>
+	</body>
+	
+</html>

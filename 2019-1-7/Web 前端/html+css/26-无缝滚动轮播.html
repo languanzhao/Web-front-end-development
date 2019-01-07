@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/公共样式.css"/>
+		<script type="text/javascript" src="js/jquery1.42.min.js">
+			
+		</script>
+		<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.source.js">
+			
+		</script>
+		<style type="text/css">
+			.main{width: 1200px;height: 200px;margin: 0px auto;}
+			.slidebox{width: 1200px;height: 200px;position: relative;}
+			.pic{width: 1000px;height: 200px;overflow: hidden;margin: 0px auto;}
+			.pic ul li{float: left;margin-right: 50px;}
+			.pic ul{width:auto;height: 200px;}
+			.pic ul a{display: block;width: 300px;height: 200px;}
+			.pic ul li a img{float: left;}
+			.pic span{width: 300px;height: 50px;text-align: center;line-height: 50px;background: #999999;color: #FFFFFF;float: left;}
+			.prev{width: 40px;height: 40px;display: block;background: url(img/index_prev.png);position: absolute;left: 40px;top:80px;}
+			.next{width: 40px;height: 40px;display: block;background: url(img/index_next.png);position: absolute;right: 40px;top:80px;}
+			.prev:hover{background: url(img/index_prev_hover.png);}
+			.next:hover{background: url(img/index_next_hover.png);}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="slidebox">
+				<div class="pic">
+					<ul>
+						<li>
+							<a href="">
+								<img src="img/news_pic01.png"/>
+							<span>1</span>
+							</a>
+						</li>
+						<li>
+							<a href=""><img src="img/news_pic02.png"/>
+							<span>2</span>
+							</a>
+						</li>
+						<li>
+							<a href=""><img src="img/news_pic03.png"/>
+							<span>3</span>
+							</a>
+						</li>
+						<li>
+							<a href=""><img src="img/news_pic04.png"/>
+							<span>4</span>
+							</a>
+						</li>
+						<li>
+							<a href=""><img src="img/news_pic05.png"/>
+							<span>5</span>
+							</a>
+						</li>
+						<li>
+							<a href=""><img src="img/news_pic06.png"/>
+							<span>6</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<a class="prev" href="javascript:void(0);"></a>
+				<a class="next" href="javascript:void(0);"></a>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		jQuery(".slidebox").slide({mainCell:".pic ul",autoPlay:true,effect:"leftMarquee",vis:3,interTime:50,trigger:"click"});
+	</script>
+</html>

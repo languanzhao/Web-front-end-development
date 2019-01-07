@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>  
+	<script type="text/javascript">
+	//0.  i  大小写都可 
+	// var re = /a/i	
+	// console.log(re.test("A"));
+
+	//1.两种写法
+	//var re = /a/i
+	var re = new RegExp(/a/i)
+	console.log(re.test("a"));
+//1. 或  | 
+//	http://www.regexlab.com/zh/regref.htm
+//  http://www.regexlab.com/zh/workshop.htm?pat=Tom%7CJack&txt=I%27m+Tom%2C+he+is+Jack 
+    
+    //var re = /ac|bd/
+    //var re = new RegExp(/ac|bd/)
+		// console.log(re.test("ac"))
+		// console.log(re.test("bd"))
+	</script>
+</body>
+</html>

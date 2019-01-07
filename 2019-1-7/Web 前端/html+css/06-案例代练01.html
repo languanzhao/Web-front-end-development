@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		
+		.content{width: 1000px;height: 700px;margin:0 auto;margin-top: 200px;border:10px solid #000000;}
+		.showtime{width: 100px;height: 100px;border: 3px solid #000000;float: left;margin-left: 20px;}
+		.font{font-size:36px;margin-bottom: 80px;margin-top: 80px;margin-left: 20px;}
+		.show{width: 100px;height: 60px;border: 0 none;background: red;color: #FFFFFF;font-size: 20px;}
+		.box{width:400px;height: 200px;border: 20px solid #D3D3D3;
+				display: none;			/*设置隐藏*/
+				float: right;margin-right: 30px;}
+		.bgcolor{float: left;width: 180px;text-align: right;height: 50px;line-height: 50px;font-size: 20px;}
+		.width{float: left;width: 180px;text-align: right;height: 50px;line-height: 50px;font-size: 20px;}
+		.height{float: left;width: 180px;text-align: right;height: 50px;line-height: 50px;font-size: 20px;}
+		form{height: 50px;line-height: 50px;}
+		.last{text-align: center;line-height: 50px;}
+		.last input{border: 0 none;color: #FFFFFF;background:#0000FF;width: 70px;height: 40px;font-size: 18px;font-family: "宋体";}
+		.recover{margin-left: 85px;margin-top: 10px;}
+		.red{background:red;color: #FFFFFF;border: 0 none;width: 40px;height: 40px;}
+		.yellow{background:yellow;color: #FFFFFF;width: 40px;height: 40px;}
+		.blue{background:blue;color: #FFFFFF;width: 40px;height: 40px;}
+		form input{width: 40px;height: 33px;border: 0 none;background: #DBDEE2;font-family: "宋体";font-size: 14px;color: #505050;text-align: center;}
+		.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+	</style>
+	
+	<script type="text/javascript">
+		window.onload = function(){
+		var oShow = document.getElementById('show');
+		var oBox = document.getElementById('box');
+		var oRed = document.getElementById('red');
+		var oShowtime = document.getElementById('showtime');
+		var oYellow = document.getElementById('yellow');
+		var oBlue = document.getElementById('blue');
+		var oWidth1 = document.getElementById('width1');
+		var oWidth2 = document.getElementById('width2');
+		var oWidth3 = document.getElementById('width3');
+		var oHeight1 = document.getElementById('height1');
+		var oHeight2 = document.getElementById('height2');
+		var oHeight3 = document.getElementById('height3');
+		var oRecover = document.getElementById('recover');
+		var oSure = document.getElementById('sure');
+		var oContent = document.getElementById('content');
+		
+		oShow.onclick = function(){
+			oBox.style.display = 'block';
+			oContent.style.background='#666666';
+		}
+		oRecover.onclick = function(){
+			oShowtime.style.width = '100px';
+			oShowtime.style.height = '100px';
+			oShowtime.style.background = '#ffffff';
+		}
+		oRed.onclick = function(){
+			oShowtime.style.background = 'red';
+		}
+		oYellow.onclick = function(){
+			oShowtime.style.background = 'yellow';
+		}
+		oBlue.onclick = function(){
+			oShowtime.style.background = 'blue';
+		}
+		oWidth1.onclick = function(){
+			oShowtime.style.width = '200px';
+		}
+		oWidth2.onclick = function(){
+			oShowtime.style.width = '300px';
+		}
+		oWidth3.onclick = function(){
+			oShowtime.style.width = '400px';
+		}
+		oHeight1.onclick = function(){
+			oShowtime.style.height = '200px';
+		}
+		oHeight2.onclick = function(){
+			oShowtime.style.height = '300px';
+		}
+		oHeight3.onclick = function(){
+			oShowtime.style.height = '400px';
+		}
+		oSure.onclick = function(){
+			oBox.style.display='none';
+			oContent.style.background='none'
+		}
+		
+	};
+		
+	</script>
+	</head>
+	<body>
+		<div class="content" id="content">
+		<div class="font">请为下面的div设置样式：
+		<input type="button" value="点击设置" id="show" class="show"/>
+		
+		</div>
+		
+		<div class="showtime" id="showtime">
+			
+		</div>
+		
+		
+		<div id="box" class="box" class="clearfix">
+			<div class="bgcolor">请选择背景色:</div>
+			<form>
+			<input type="button" value="红色" class="red" id="red"/>
+			<input type="button" value="黄色" class="yellow" id="yellow"/>
+			<input type="button" value="蓝色" class="blue" id="blue"/>
+			</form>
+			<div class="width">请选择宽(px):</div>
+			<form>
+			<input type="button" value="200" id="width1"/>
+			<input type="button" value="300" id="width2"/>
+			<input type="button" value="400" id="width3"/>
+			</form>
+			<div class="height">请选择高(px):</div>
+			<form>
+			<input type="button" value="200" id="height1"/>
+			<input type="button" value="300" id="height2"/>
+			<input type="button" value="400" id="height3"/>
+			</form>
+		<form class="last">
+			<input type="button" value="恢复" id="recover"/>
+			<input type="button" value="确定" id="sure"/>
+			</form>
+		
+		</div>
+		</div>
+	</body>
+</html>

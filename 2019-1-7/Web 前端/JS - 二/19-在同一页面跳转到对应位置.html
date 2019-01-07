@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>在同一页面跳转到对应位置</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script type="text/javascript" language="JavaScript" src="js/jquery-1.11.0.js"></script>
+<script type="text/javascript">
+	window.onload = function(){
+// 		 $("#button").click(function() {
+//     $("html, body").animate({
+//       scrollTop: $("#last").offset().top }, {duration:1000,easing: "swing"});
+//     return false;
+//   });
+		$("#button").click(function() {
+    		$('html,body').animate({scrollTop:$("#last").offset().top},1000);
+
+})
+	}
+</script>
+</head>
+<body>
+    <div>                           <h1>  同一页面跳转到对应位置的三种方法 </h1>
+    <p>1. 用id名（a标签跳转到任意标签） <a标签 href="#move">所在位置</a> ==> <div id="move">跳转位置</div>  </p>   
+    <p>2. 用name名（a标签跳转到a标签） <a标签 href="#move">所在位置</a> ==> <a标签 href="" name="move">跳转位置</a> </p>
+	<p>3. 滑动效果 时间控制</p>
+	<p>代码如下： $("#button").click(function() {
+		  $('html,body').animate({scrollTop:$("#last").offset().top}
+		,1000);}) </p>
+ 	</div>   
+	<input type="button" name="" id="button" value="惦记我跳转到相对位置">
+	<div><a href="#move" style="color:red">惦记我跳转到相对位置 用name名来a标签跳a标签</a></div>
+	<div><a href="#demo" style="color:red">惦记我跳转到相对位置 用id名来a标签跳任意标签</a></div>
+    <div>这是头部位置</div>
+    <div>这是头部位置</div>
+    <div>这是头部位置</div>
+    <div>这是头部位置</div>
+    <div>这是头部位置</div>
+    <div>这是头部位置</div>
+    <div>这是头部位置</div>
+    <div>这是头部位置</div>
+    <div>这是头部位置</div>
+    <div>这是头部位置</div>
+    <div>这是头部位置</div>
+    <div>这是头部位置</div>
+    <div>这是头部位置</div>
+    <div>这是头部位置</div>
+    <div>这是头部位置</div>
+    <div>这是头部位置</div>
+    <div>这是头部位置</div>
+    <div>这是头部位置</div>
+    <div>这是头部位置</div>
+    <div>这是头部位置</div>
+    <div>这是头部位置</div>
+    <div>这是头部位置</div>
+    <div>/////////////////////////////////////////////////////////////////////////////////////////////////</div>
+    <div>我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊</div>	
+    <div>我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊</div>	
+    <div>我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊</div>	
+    <div>我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊</div>	
+    <div>我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊</div>	
+    <div>我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊</div>	
+    <div id="demo" style="color:orange">这是用id名来跳转的；a标签跳转到任意的标签</div>
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊</div>	
+	<div>我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊</div>	
+	<div>我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊</div>	
+    <div>我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊我在中间这里啊</div>
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>
+    <div>我在中间这里啊</div>		
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>
+    <div>我在中间这里啊</div>	
+
+    <div>我在中间这里啊</div>	
+    <div>我在中间这里啊</div>
+    <div>我在中间这里啊</div>	
+
+    <div><a href="" title="" name="move" style="color:pink">这是用name名来跳转的；a标签跳转到a标签</a></div>
+    <div>尾部</div>
+    <div>尾部</div>
+    <div>尾部</div>
+    <div>尾部</div>
+    <div>尾部</div>
+    <div>尾部</div>
+    <div>尾部</div>
+    <div>尾部</div>
+    <div>尾部</div>
+    <div>尾部</div>
+    <div>尾部</div>
+    <div>尾部</div>
+    <div>尾部</div>
+    <div>尾部</div>
+    <div>尾部</div>
+    <div>尾部</div>
+    <div>尾部</div>
+    <div id="last" style="color:red">尾部</div>
+    <div>尾部</div>
+    <div>尾部</div>
+    <div>尾部</div>
+    <div>尾部</div>
+    <div>尾部</div>
+    <div>尾部</div>
+    <div>尾部</div>
+    <div>尾部</div>
+    <div>尾部</div>
+</body>
+</html>

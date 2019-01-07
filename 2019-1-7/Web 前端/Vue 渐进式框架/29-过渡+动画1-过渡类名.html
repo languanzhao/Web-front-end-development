@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>过渡类名</title>
+<!--
+    1. transition封装组件  <transition></transition>
+    2. 过渡类名 <img src="img/transition.png" alt="">  图片详解
+    对于这些在过渡中切换的类名来说，如果你使用一个没有 name 的 <transition>，则 v- 是这些类名的默认前缀。
+    如果你使用了 <transition name="bounce">，那么 v-enter 会替换为 bounce-enter。
+    3. 例子 (点击显隐) 
+    3.1 多个元素过渡   --》相同元素用key区分，不同元素不用
+    3.2 过渡模式   mode in-out out-in
+-->
+    <style>
+.bounce-enter-active,.bounce-leave-active{
+        transition:opacity 1s;
+}
+.bounce-enter,.bounce-leave-to{
+        opacity:0;
+}
+.bounce-enter-to,.bounce-leave{
+        opacity: 1;
+} 
+    </style>
+</head>
+<body>
+        <div id="app">
+               <button @click="bool = !bool">点击</button>
+                                                                                    <!-- 过渡模式 -->
+               <transition name="bounce" mode="out-in">                    
+                   <!-- 简写 -->
+                   <p :key="bool">{{bool === true? "德玛西亚" : "超级无敌"}}</p> 
+            <!--   <p v-if="bool" key="1">德玛西亚</p>                       //相同元素用key区分,不同元素不用
+                   <p v-else key="2">超级无毒</p> -->
+               </transition>
+        </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script type="text/javascript">
+  
+			var vm = new Vue({
+				el:"#app",
+                data:{
+                    bool:true
+                }
+			
+			})
+      
+    </script>
+</html>

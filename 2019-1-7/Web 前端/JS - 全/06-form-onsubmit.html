@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form  onsubmit="form();">     											 <!--  使用onsubmit方法进行表单验证 -->
+			<input type="text" id="text" placeholder="请输入姓名" value=""/>
+  			<input type="submit" value="提交" id="submit"/>
+   </form>
+	</body>
+	<script type="text/javascript">
+	function form(){								//js表单验证方法
+													//通过id获取需要验证的表单元素的值
+  	var text=document.getElementById("text").value;
+  	 if(text == ''){    							//当上面获取的值为空时
+     alert("不能为空哦！");								//弹出提示
+     return false;    								//返回false（不提交表单）
+  	}
+     return true;      								//提交表单
+	}
+</script>
+</html>
+<!-- 
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form>     											
+			<input type="text" id="text" placeholder="请输入姓名" value=""/>
+  			<input type="submit" value="提交" id="submit"/>
+   </form>
+	</body>
+	<script type="text/javascript">
+	onsubmit=function form(){							
+													
+  	var text=document.getElementById("text").value;
+  	 if(text == ''){    							
+     alert("不能为空哦！");								
+     return false;    								
+  	}
+     return true;      								
+	}
+	form();
+</script>
+</html> -->

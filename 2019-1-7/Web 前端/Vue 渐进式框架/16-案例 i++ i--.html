@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div id="app">
+        <form>
+            <button @click.prevent="min()">-</button>
+            <input type="text" v-model.number="text" @blur="num()">
+            <button @click.prevent="add()">+</button>                  
+        </form>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script>
+                var vm = new Vue({
+                       el:"#app",
+                       data:{
+                           text:1
+                       },
+                       methods:{
+                           add(){
+                               this.text ++
+                               
+                           },
+                           min(){
+                            if(this.text > 1){
+                               this.text --
+                            }
+                           },
+                           num(){
+                            var  re = /^\+?[1-9][0-9]*$/
+                               if(!re.test(this.text)){
+                                   this.text = 1
+                               }
+                           }
+                       }         
+                            })
+    </script>
+</html>

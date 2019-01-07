@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/common.css" rel="stylesheet">
+<style>
+	.slidebox{width: 300px;height: 250px;background: #D7D2D2;margin: 0px auto;}
+	.nav {width: 300px;height: 50px;}
+	.nav ul li {width: 60px;height: 50px;float: left;cursor: pointer;}
+	.nav ul .on{background: #18EDDA}
+	.content{width: 300px;height: 200px;background: #DEF0CC}
+	.content div{display: none}
+	.content .on{display: block;}
+</style>
+</head>
+<body>
+    <div class="slidebox">
+    	<div class="nav">
+    		<ul>
+    			<li class="on">新闻一</li>
+    			<li>新闻二</li>
+    			<li>新闻三</li>
+    		</ul>
+    	</div>
+    	<div class="content">
+    	<div class="on">中国打破了世界软件巨头规则</div>
+    	<div>中国打破了世界软件巨头规则<br>
+    	中国打破了世界软件巨头规则</div>	
+    	<div>中国打破了世界软件巨头规则<br>
+    	中国打破了世界软件巨头规则<br>
+    	中国打破了世界软件巨头规则
+    	</div>
+    	</div>
+    </div>
+</body>
+<script type="text/javascript">
+	var slidebox = document.querySelector('.slidebox')
+	var li = document.querySelectorAll('li')
+	var div = document.querySelectorAll('.content div')
+	var index = 0
+	var time 
+		for (var i = 0; i < li.length; i++) {
+				li[i].onclick = function(){
+					for (var i = 0; i < li.length; i++) {
+						li[i].className = ''
+						div[i].className = ''
+						li[i].index = i
+					}
+					this.className = 'on'
+					div[this.index].className = 'on'
+					index = this.index
+				}
+		}
+		time = setInterval(
+			function (){
+			if(index >= li.length - 1){
+				index = 0
+			}else{
+				index ++
+			}
+			for (var i = 0; i < li.length; i++) {
+				li[i].className = ''
+				div[i].className = ''
+			}
+			li[index].className = 'on'
+			div[index].className = 'on'
+		},1000)
+
+		slidebox.onmouseenter = function(){
+			clearInterval(time)
+		}
+
+		slidebox.onmouseleave = function(){
+			time = setInterval(
+			function (){
+			if(index >= li.length - 1){
+				index = 0
+			}else{
+				index ++
+			}
+			for (var i = 0; i < li.length; i++) {
+				li[i].className = ''
+				div[i].className = ''
+			}
+			li[index].className = 'on'
+			div[index].className = 'on'
+		},1000)
+		}
+</script>
+</html>
